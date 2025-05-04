@@ -1,0 +1,55 @@
+Preparation:
+============
+use shop;
+
+-------------------------
+1. Equals OPERATOR $eq :
+-------------------------
+
+db.products.find({"name": {$eq: "Balls to the Wall"}});
+
+equivalent to
+
+db.products.find({"name": "Balls to the Wall"});
+
+-----------------------------
+2. Not equals OPERATOR $ne :
+-----------------------------
+
+db.products.find({"taxable": {$ne: false}});
+
+-------------------------------
+3. Greater than opeator $gt :
+-------------------------------
+
+db.products.find({"price": {$gt: 1000}});
+
+-------------------------------
+4. Less than OPERATOR $lt :
+-------------------------------
+
+db.products.find({"price": {$lt: 1000}});
+
+------------------------------------------
+5. Greater than equals to OPERATOR $gte :
+------------------------------------------
+
+db.products.find({"price": {$gte: 1524}});
+
+---------------------------------------
+6. Less than equals to OPERATOR $lte :
+---------------------------------------
+
+db.products.find({"price": {$lte: 1524}});
+
+---------------------
+7. In OPERATOR $in :
+---------------------
+
+db.products.find({"price": {$in: [1524, 1390, 1053]}});
+
+--------------------------
+8. Not in OPERATOR %nin :
+--------------------------
+
+db.products.find({"name": {$nin: ["BackBeat Soundtrack", "Audioslave"]}});

@@ -1,0 +1,17 @@
+ Operator    | Description                           | Example Usage 
+-------------|---------------------------------------|----------------
+ `$add`      | Adds numbers (or dates + numbers)     | `{ $add: ["$price", "$tax"] }` 
+ `$subtract` | Subtracts second value from first     | `{ $subtract: ["$total", "$discount"] }` 
+ `$multiply` | Multiplies numbers                    | `{ $multiply: ["$price", "$quantity"] }` 
+ `$divide`   | Divides first value by second         | `{ $divide: ["$total", "$quantity"] }` 
+ `$mod`      | Returns remainder of division         | `{ $mod: ["$score", 5] }` 
+ `$abs`      | Absolute value                        | `{ $abs: "$balance" }` 
+ `$ceil`     | Round up to nearest integer           | `{ $ceil: "$rating" }` 
+ `$floor`    | Round down to nearest integer         | `{ $floor: "$rating" }` 
+ `$round`    | Round to specified decimal places     | `{ $round: ["$rating", 1] }` 
+ `$sqrt`     | Square root                           | `{ $sqrt: "$area" }` |
+ `$trunc`    | Truncate to specified decimal places  | `{ $trunc: ["$rating", 2] }` 
+ `$exp`      | Raise *e* to the given power          | `{ $exp: "$growthRate" }` 
+ `$ln`       | Natural log (ln)                      | `{ $ln: "$value" }` |
+ `$log10`    | Base-10 log                           | `{ $log10: "$value" }` 
+ `$pow`      | Raise one number to power of another  | `{ $pow: ["$base", "$exponent"] }` 

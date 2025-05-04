@@ -1,0 +1,20 @@
+------------------------
+1. delete one document:
+------------------------
+
+use udemy;
+
+Syntax: db.dummyCourse.deleteOne({filterCondition});
+
+db.dummyCourse.deleteOne({"hours": "36 hrs"});
+
+
+-------------------------
+2. delete many document:
+-------------------------
+
+use udemy;
+
+Syntax: db.dummyCourse.deleteMany({filterCondition});
+
+db.dummyCourse.deleteMany({"hours": "25 hrs"});

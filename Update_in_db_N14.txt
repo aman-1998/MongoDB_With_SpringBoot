@@ -1,0 +1,142 @@
+------------------------------
+1. Update one document $set :
+------------------------------
+
+use udemy;
+
+Syntax: db.course.updateOne({filterCondition}, {$set: {field1: value1, field2: value2}});
+
+db.course.updateOne({"hours": "36 hrs"}, {$set: {"title": "Learn Java with SpringBoot"}});
+
+db.course.updateOne({"title": "Python using Django"}, {$set: {"hours": "45 hrs", "author": "Nimaai Venkateshwar"}});
+
+db.course.updateOne({"title": "MongoDB Zero to Hero"}, {$set: {"comments.1.user": "Naman", "comments.1.age": 21}});
+
+db.course.updateOne({"comments": {$elemMatch: {"user": "Aman", "age": 24}}}, 
+					{$set: {"hours": "15 hours", "comments.2.text": "Plz consider providing notes"}});
+					
+					
+db.dummyCourse.updateOne({"comments": {$elemMatch: {"user": "Aman", "age": 24}}}, 
+					{$set: {"hours": "15 hours", "comments.$.text": "Amazing course design"}});
+
+// This is wrong because value for positional operator($) can't be determined.					
+db.dummyCourse.updateOne({"title": "System Design Bootcamp"}, 
+					     {$set: {"hours": "25 hours", "comments.$.text": "Plz consider providing notes"}});
+					
+db.dummyCourse.updateOne({"title": "System Design Bootcamp"}, 
+					     {$set: {"hours": "18 hours", "comments.1.text": "Plz consider providing notes"}});
+						 
+Explanation on positional operator($) :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Based on filter condition, main document is filtered. After we got main document, 
+when we use $ operator for array of embeded documents, the value of $ is determined 
+by match the filter condition against each document in the array.
+						 
+									
+===============================================================================
+Note: If a field is not there then it will be created. This is called upsert.
+===============================================================================
+				
+----------------------------------------
+2. Delete field in one document $unset :
+----------------------------------------
+
+use udemy;
+
+Syntax: db.course.updateOne({filterCondition}, {$unset: {field1: 1, field2: 1}});
+
+db.dummyCourse.updateOne({"hours": "36 hrs"}, {$unset: {"title": 1}});
+
+db.dummyCourse.updateOne({"hours": "36 hrs"}, 
+				         {$unset: {"comments.0.text": 1, "comments.1.age": 1}});
+						 
+db.dummyCourse.updateOne({"comments.user": {$all: ["Aayushi", "Jaydeep"]}}, 
+					     {$unset: {"author": 1, "comments.0.age": 1}});
+						 
+
+-----------------------------------
+3. Renaming one document $rename :
+-----------------------------------
+
+use udemy;
+
+Syntax: db.dummyCourse.updateOne({filterCondition}, {$rename: {oldFieldName1: newFieldName1, oldFieldName2: newFieldName2}});
+
+db.dummyCourse.updateOne({"hours": "25 hrs"}, {$rename: {"author": "instructor", "hours": "time"}});
+
+
+// This is wrong. It does not work like that
+db.dummyCourse.updateOne({"hours": "25 hrs"}, {$rename: {"comments.user": "comments.username"}});
+
+						 
+-------------------------------
+4. Update many documens $set :
+-------------------------------
+
+use shop;
+
+db.customer.updateMany({"cus_id": {$lte: 4}}, {$set: {"company": "Amazon"}});
+
+use udemy;
+
+db.course.updateMany({filterCondition}, {$set: {field1: value1, field2: value2}});
+
+db.course.updateMany({"hours": "36 hrs"}, {$set: {"title": "Learn Java with SpringBoot"}});
+
+db.course.updateMany({"title": "Python using Django"}, {$set: {"hours": "45 hrs", "author": "Nimaai Venkateshwar"}});
+
+db.course.updateMany({"title": "MongoDB Zero to Hero"}, {$set: {"comments.1.user": "Naman", "comments.1.age": 21}});
+
+db.course.updateMany({"comments": {$elemMatch: {"user": "Aman", "age": 24}}}, 
+					{$set: {"hours": "15 hours", "comments.2.text": "Plz consider providing notes"}});
+					
+					
+db.dummyCourse.updateMany({"comments": {$elemMatch: {"user": "Aman", "age": 24}}}, 
+					{$set: {"hours": "15 hours", "comments.$.text": "Amazing course design"}});
+
+// This is wrong because value for positional operator($) can't be determined.					
+db.dummyCourse.updateMany({"title": "System Design Bootcamp"}, 
+					     {$set: {"hours": "25 hours", "comments.$.text": "Plz consider providing notes"}});
+					
+db.dummyCourse.updateMany({"title": "System Design Bootcamp"}, 
+					     {$set: {"hours": "18 hours", "comments.1.text": "Plz consider providing notes"}});
+						 
+Explanation on positional operator($) :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Based on filter condition, main document is filtered. After we got main document, 
+when we use $ operator for array of embeded documents, the value of $ is determined 
+by match the filter condition against each document in the array.
+					
+					
+===============================================================================
+Note: If a field is not there then it will be created. This is called upsert.
+===============================================================================
+
+---------------------------------
+5. Update many documens $unset :
+---------------------------------
+
+use udemy;
+					
+db.dummyCourse.updateMany({"hours": "25 hrs"}, {$unset: {"title": 1}});
+
+db.dummyCourse.updateMany({"hours": "25 hrs"}, 
+				         {$unset: {"comments.0.text": 1, "comments.1.age": 1}});
+						 
+db.dummyCourse.updateMany({"comments.user": {$all: ["Aayushi", "Jaydeep"]}}, 
+					     {$unset: {"author": 1, "comments.0.age": 1}});
+
+
+--------------------------------
+6. Renaming one document $rename :
+-----------------------------------
+
+use udemy;
+
+Syntax: db.dummyCourse.updateMany({filterCondition}, {$rename: {oldFieldName1: newFieldName1, oldFieldName2: newFieldName2}});
+
+db.dummyCourse.updateMany({"hours": "25 hrs"}, {$rename: {"author": "instructor", "hours": "time"}});
+
+
+// This is wrong. It does not work like that
+db.dummyCourse.updateMany({"hours": "25 hrs"}, {$rename: {"comments.user": "comments.username"}});

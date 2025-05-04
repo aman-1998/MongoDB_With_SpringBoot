@@ -1,0 +1,13 @@
+1. show dbs;
+or,
+show databases;
+
+2. use <database-name>;
+
+3. db.dropDatabase();
+
+4. show collections;
+
+5. db.createCollection("<collection-name>");
+
+5. db.<collection-name>.drop();

@@ -1,0 +1,22 @@
+ Type Number | Alias (used in `$type`)   | Description                         
+-------------|---------------------------|-------------------------------------
+ 1           | `"double"`                | 64-bit floating point               
+ 2           | `"string"`                | UTF-8 string                        
+ 3           | `"object"`                | Embedded document                   
+ 4           | `"array"`                 | Array                               
+ 5           | `"binData"`               | Binary data                         
+ 6           | `"undefined"`             | Deprecated                          
+ 7           | `"objectId"`              | ObjectId                            
+ 8           | `"bool"`                  | Boolean                             
+ 9           | `"date"`                  | Date                                
+ 10          | `"null"`                  | Null                                
+ 11          | `"regex"`                 | Regular expression                  
+ 13          | `"javascript"`            | JavaScript code (no scope)          
+ 14          | `"symbol"`                | Deprecated                          
+ 15          | `"javascriptWithScope"`   | JavaScript code with scope          
+ 16          | `"int"`                   | 32-bit integer                      
+ 17          | `"timestamp"`             | Internal timestamp                  
+ 18          | `"long"`                  | 64-bit integer                      
+ 19          | `"decimal"`               | 128-bit decimal (Decimal128)        
+ 255         | `"minKey"`                | Lower bound comparison value        
+ 127         | `"maxKey"`                | Upper bound comparison value        

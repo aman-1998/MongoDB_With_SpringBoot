@@ -1,0 +1,52 @@
+Preparation:
+============
+use shop;
+
+-------------------------------
+1. Logical AND operator $and :
+-------------------------------
+
+Syntax: db.customer.find({$and: [{condition1}, {condition2}, {condition3}]});
+
+db.customer.find({$and: [{"country": "Egypt"}, {"company": {$ne: "Zboncak-Miller"}}]});
+
+or,
+
+db.customer.find({"country": "Egypt", "company": {$ne: "Zboncak-Miller"}});
+
+-----------------------------
+2. Logical OR operator $or :
+-----------------------------
+
+Syntax: db.customer.find({$or: [{condition1}, {condition2}, {condition3}]});
+
+db.customer.find({$or: [{"country": "Egypt"}, {"country": "Congo"}, {"company": "Rath Group"}]});
+
+or,
+
+db.customer.find({$or: [{"country": {$in: ["Egypt", "Congo"]}}, {"company": "Rath Group"}]});
+
+-------------------------------
+3. Logical NOR operator $nor :
+-------------------------------
+
+Syntax: db.customer.find({$nor: [{condition1}, {condition2}, {condition3}]});
+
+db.customer.find({$nor: [{"country": {$in: ["Egypt", "Congo"]}}, {"company": "Rath Group"}]});
+
+equivalent to:
+
+db.customer.find({$and: [{"country": {$ne: "Egypt"}}, {"country": {$ne: "Congo"}}, {"company": {$ne: "Rath Group"}}]});
+or,
+db.customer.find({"country": {$nin: ["Egypt", "Congo"]}, "company": {$ne: "Rath Group"}});
+
+------------------------------
+4. Logic ANND operator $not :
+------------------------------
+
+Syntax: db.customer.find({filed: {$not: {operator: value}}});
+
+db.customer.find({"country": {$not: {$ne: "Egypt"}}});
+
+db.customer.find({"country": {$not: {$in: ["Egypt", "Congo"]}}});
+

@@ -1,0 +1,15 @@
+Preparation:
+============
+use school;
+
+-----------------------
+1. Read all at a time:
+-----------------------
+
+db.student.find();
+
+-----------------------
+2. Read all at a time:
+-----------------------
+
+db.student.find({"name": "Avinit"});

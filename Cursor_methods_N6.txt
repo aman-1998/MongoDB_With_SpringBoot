@@ -1,0 +1,43 @@
+Preparation:
+============
+use shop;
+
+----------
+1. Count:
+----------
+
+db.customer.find({"country" : {$ne: "Swaziland"}}).count();
+
+----------
+2. Limit:
+----------
+
+db.customer.find({"country": {$in: ["Egypt", "Israel"]}}).limit(5);
+
+-----------
+3. Skip:
+-----------
+
+db.customer.find({"country": {$in: ["Egypt", "Israel"]}}).limit(5).skip(2);
+
+---------------------
+4. Sort (Ascending):
+---------------------
+
+db.customer.find({"country": {$in: ["Egypt", "Israel"]}}).limit(5).sort({"cus_id": 1});
+
+----------------------
+5. Sort (Descending):
+----------------------
+
+db.customer.find({"country": {$in: ["Egypt", "Israel"]}}).limit(5).sort({"cus_id": -1});
+
+db.customer.find({"country": {$in: ["Egypt", "Israel"]}}).sort({"cus_id": -1}).limit(5);
+
+
+==============================================================================================
+Note:
+Both these queries are giving same result because in mongoDB, sort() is executed first and 
+then limit() is executed. So, best practice is to sort() first and then apply limit() to 
+void ambiguity accross tools.
+==============================================================================================

@@ -1,0 +1,25 @@
+Preparation:
+============
+use shop;
+
+-----------------------------------------
+1. Show only those fields which you want
+-----------------------------------------
+
+Syntax: db.customer.find({}, {"field1": 1, "field2": 1});
+
+db.customer.find({"country": "Congo"}, {"email": 1, "first": 1, "company": 1});
+
+======================================================================================
+Note:
+In projection, either all the fields mentioned should be 1 or all all should be 0. 
+It can't be a combination. 
+
+Exception:
+_id filed is an exception. It can be either 0 or 1 irrespective of other field's value.
+
+========================================================================================
+
+db.customer.find({"country": "Congo"}, {"email": 1, "first": 1, _id: 0});
+
+db.customer.find({"country": "Congo"}, {"last": 0, "created_at": 0, "cus_id": 0, _id: 0});

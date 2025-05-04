@@ -1,0 +1,104 @@
+Preparation:
+============
+use school;
+db.createCollection("student");
+
+------------------------
+1. Insert one document:
+------------------------
+
+db.student.insertOne({
+	"name": "Aman",
+	"age": 28
+});
+
+--------------------------
+2. Insert many documents:
+--------------------------
+
+db.student.insertMany([
+{
+	"name": "Alka",
+	"age": 30,
+	"roll": 138
+},
+{
+	"name": "Vishal",
+	"age": 36
+}
+]);
+
+==============================================================================================================
+Note: If a field contains special character or spaces or starts with a digit then using quotes is necessary.
+      If a field name is reserved word in mongoDB then also using quotes is necessary. Quote can be single
+	  or double quote. Best practice is to always use quotes.
+===============================================================================================================
+
+--------------------
+3. Ordered Inserts:
+--------------------
+
+By default inserts are ordered in mongoDB. Means when we are inserting multiple documents then if one document 
+has any error then remaining documents which comes after will also be ignored even if they are correct.
+
+db.student.insertMany([
+{
+	"name": "Avinit",
+	"subject": [
+	{
+		"name": "Math",
+		"marks": 94
+	},
+	{
+		"name": "Hindi",
+		"marks": 73
+	}
+	],
+	"class": "VIII"
+},
+{
+	"name": "Gauri",
+	"age": 26,
+	"_id": ObjectId("68123b24d9fe7c018db5f89a")
+},
+{
+	"name": "Tania",
+	"age": 25,
+	
+}
+]);
+
+Here, only 1st document will be inserted. Since 2nd document has errors(duplicate id). 
+So, last document will be ignored.
+
+
+----------------------
+4. Unordered Inserts:
+----------------------
+
+db.student.insertMany([
+{
+	"name": "Avinit",
+	"subject": [
+	{
+		"name": "Math",
+		"marks": 94
+	},
+	{
+		"name": "Hindi",
+		"marks": 73
+	}
+	],
+	"class": "VIII"
+},
+{
+	"name": "Gauri",
+	"age": 26,
+	"_id": ObjectId("68123b24d9fe7c018db5f89a")
+},
+{
+	"name": "Tania",
+	"age": 25,
+	
+}
+], {ordered: false});

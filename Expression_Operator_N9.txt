@@ -1,0 +1,31 @@
+Preparation:
+============
+use shop;
+
+
+-------------------------------
+1. Expression Operator $expr :
+-------------------------------
+Note: $expr is used when u want to do some operation within the document.
+
+Syntax: db.sales.find({$expr: {<expression>});
+db.sales.find({$expr: {operator: [field, value]}});
+
+=> Find documents where quantity is greater than 20
+db.sales.find({$expr: {$gt: ["$quantity", 20]}});
+
+=> Find documents where total sales is greater than the target price.
+db.sales.find({$expr: {$gt: [{$multiply: ["$quantity", "$price"]}, "$targetPrice"]}});
+
+=> Find documents where total sales is equals to the target price.
+db.sales.find({$expr: {$eq: [{$multiply: ["$quantity", "$price"]}, "$targetPrice"]}});
+
+=> Find documents where total sales is greater than the target price and 
+   target price is not morethan 2000
+db.sales.find({$expr: {
+		$and: [
+			{$gt: [{$multiply: ["$quantity", "$price"]}, "$targetPrice"]}, 
+			{$lte: ["$targetPrice", 2000]}
+		]
+	}
+});

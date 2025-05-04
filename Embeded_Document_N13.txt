@@ -1,0 +1,131 @@
+Preparation:
+============
+use shop;
+
+--------------------------------------------------
+1. Filter based on value inside embeded documents
+--------------------------------------------------
+
+=> 'details' field has many embeded documents. Find all ducuments in 'products' collection where
+   the field 'name' inside details is "Restless and Wild".
+db.products.find({"details.name": "Restless and Wild"});
+
+
+db.products.find({"details.singer": "Sonu Nigam"});
+db.products.find({"details.singer": "Sonu Nigam"}, {"details":0});
+db.products.find({"details.singer": "Sonu Nigam"}, {"details.bytes":0});
+db.products.find({"details.singer": "Sonu Nigam"}, {"details.bytes":0, "details.singer":0});
+
+Note: Here 'singer' is present in only one embeded document for the field 'details'.
+
+db.products.find({"vendor.id": {$lte: 8}});
+
+db.products.find({"vendor.name": "Billy Cobham", "details.composer": "George Duke"});
+
+
+Preparation:
+============
+use udemy;
+
+-----------------------
+2. ALL operator $all :
+-----------------------
+The $all operator in MongoDB is used to match arrays that contain all the specified elements, 
+regardless of order or additional elements.
+
+Syntax: db.course.find({"field": {$all: [value1, value2, value3]}});
+
+db.course.find({"author": {$all: ["Vinod Thapa", "Kangna Ranawat"]}});
+
+db.course.find({"comments.user": {$all: ["Aayushi", "Virendra"]}});
+
+---------------------------------------
+3. Element Match operator $elemMatch :
+---------------------------------------
+The $elemMatch operator in MongoDB is used to match documents with array fields that contain 
+at least one element that matches all the specified query criteria. It’s particularly useful 
+when querying arrays of embedded documents or applying multiple conditions on a single 
+array element.
+
+Syntax: db.course.find({"field": {$elemMatch: {condition1, condition2}}});
+
+db.course.find({"comments": {$elemMatch: {"user": "Aayushi", "age": 24}}});
+Result:
+[
+  {
+    _id: ObjectId('68162bc23523d6399b02d33c'),
+    title: 'Learn Spring Boot',
+    author: 'Ronit Jha',
+    hours: '36 hrs',
+    comments: [
+      { user: 'Aayushi', age: 24, text: 'Exelent explanation' },
+      { user: 'Jaydeep', age: 20, text: 'Plz go slow' }
+    ]
+  },
+  {
+    _id: ObjectId('68162bc23523d6399b02d33d'),
+    title: 'Python using Django',
+    author: 'Sam Altman',
+    hours: '40 hrs',
+    comments: [
+      { user: 'Aayushi', age: 24, text: 'Love the content' },
+      { user: 'Virendra', age: 30, text: 'Good for beginers' },
+      {
+        user: 'Sachin',
+        age: 38,
+        text: 'I left cricket to learn Python'
+      }
+    ]
+  }
+]
+
+
+
+Note: The result of above and below query are completely different.
+db.course.find({"comments.user": "Aayushi", "comments.age": 24});
+
+Result:
+[
+  {
+    _id: ObjectId('68162bc23523d6399b02d33c'),
+    title: 'Learn Spring Boot',
+    author: 'Ronit Jha',
+    hours: '36 hrs',
+    comments: [
+      { user: 'Aayushi', age: 24, text: 'Exelent explanation' },
+      { user: 'Jaydeep', age: 20, text: 'Plz go slow' }
+    ]
+  },
+  {
+    _id: ObjectId('68162bc23523d6399b02d33d'),
+    title: 'Python using Django',
+    author: 'Sam Altman',
+    hours: '40 hrs',
+    comments: [
+      { user: 'Aayushi', age: 24, text: 'Love the content' },
+      { user: 'Virendra', age: 30, text: 'Good for beginers' },
+      {
+        user: 'Sachin',
+        age: 38,
+        text: 'I left cricket to learn Python'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('68162bc23523d6399b02d340'),
+    title: 'System Design Bootcamp',
+    author: 'Vinod Thapa',
+    hours: '20 hrs',
+    comments: [
+      { user: 'Aman', age: 24, text: 'Thanks for sharing' },
+      { user: 'Aayushi', age: 23, text: 'Awsome article!' },
+      { user: 'Shreya', age: 27, text: 'Plz provide notes' }
+    ]
+  }
+]
+
+
+
+
+
+

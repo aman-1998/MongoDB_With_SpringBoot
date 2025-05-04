@@ -1,0 +1,21 @@
+---------------------------------------------------------------
+1. Import JSON data in mongoDB if data is not in Array format:
+---------------------------------------------------------------
+mongoimport C:\Users\DELL\Desktop\MongoDB_Concepts\sample_data\customer.json -d shop -c customer
+
+-----------------------------------------------------------
+2. Import JSON data in mongoDB if data is in Array format:
+-----------------------------------------------------------
+mongoimport C:\Users\DELL\Desktop\MongoDB_Concepts\sample_data\products.json -d shop -c products --jsonArray
+
+--------------------------------------------
+3. Export data from mongoDB in JSON format:
+--------------------------------------------
+mongoexport -d shop -c products -o C:\Users\DELL\Desktop\MongoDB_Concepts\sample_data\productsExportedData.json
+
+
+====================================================================================================================
+Note: Maximum size data that can be imported is 16 MB at a time. If your data is more than 16 MB then you have to
+break data into various parts such that each part is less than or equals to 16 MB.
+====================================================================================================================
+

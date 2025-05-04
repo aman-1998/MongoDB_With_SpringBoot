@@ -1,0 +1,40 @@
+Preparation:
+============
+use shop;
+
+---------------------------
+1. Exist operator $exits :
+---------------------------
+
+Syntax: db.sales.find(field: {$exists: <boolean>});
+
+=> Find all documents in which price exists
+db.sales.find({"price": {$exists: true}});
+
+=> Find all documents in which price exists and it value is greater than or equals to 300
+db.sales.find({$and: [{"price": {$exists: true}}, {"price": {$gte: 300}}]});
+
+-------------------------
+2. Type operator $type :
+-------------------------
+
+Syntax: db.sales.find({field: {$type: <bson-data-type>}});
+
+=> Find all documents in which price field is string.
+db.sales.find({"price": {$type: "number"}});
+
+=> Find all documents in which taxable field is boolean.
+db.products.find({"taxable": {$type: "bool"}});
+
+=> Find all documents in which price exists and it's type is number (int, long, double, decimal) 
+   and it's value is greater than 1500.
+db.products.find({"price": {$exists: true}, "price": {$type: "number"}, "price": {$gt: 1500}});
+
+-------------------------
+3. Size operator $size :
+-------------------------
+
+Syntax: db.products.find({fields: {$size: <array-length>}});
+
+=> Find all documents in which size of details field is 2.
+db.products.find({"details": {$size: 2}});
