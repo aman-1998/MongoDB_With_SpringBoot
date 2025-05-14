@@ -1,0 +1,6 @@
+{"_id":{"$oid":"68123b24d9fe7c018db5f89a"},"name":"Aman","age":28}
+{"_id":{"$oid":"68123bbfd9fe7c018db5f89b"},"name":"Alka","age":30,"roll":138}
+{"_id":{"$oid":"68123bbfd9fe7c018db5f89c"},"name":"Vishal","age":36}
+{"_id":{"$oid":"6812478dd9fe7c018db5f89d"},"name":"Avinit","subject":[{"name":"Math","marks":94},{"name":"Hindi","marks":73}],"class":"VIII"}
+{"_id":{"$oid":"681247e0d9fe7c018db5f89f"},"name":"Avinit","subject":[{"name":"Math","marks":94},{"name":"Hindi","marks":73}],"class":"VIII"}
+{"_id":{"$oid":"681247e0d9fe7c018db5f8a0"},"name":"Tania","age":25}

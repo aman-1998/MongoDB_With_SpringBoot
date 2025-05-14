@@ -1,0 +1,33 @@
+-----------------------------------
+1. Index-Of Operator $indexOfCP :
+-----------------------------------
+
+Syntax:
+
+{
+	$indexOfCP: [<string>, <search-string>]
+}
+
+db.customer.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"cus_id": 1,
+			"email": 1,
+			"name": {
+				$concat: ["$first", " ", "$last"]
+			},
+			"company": 1,
+			"created_date": {
+				$substrCP: ["$created_at", 0, 10]
+			},
+			"created_time": {
+				$substrCP: ["$created_at", 12, 13]
+			},
+			"position_of_T_in_created_at": {
+				$indexOfCP: ["$created_at", "T"]
+			},
+			"country": "Democratic People's Republic of Korea"
+		}
+	}
+]);

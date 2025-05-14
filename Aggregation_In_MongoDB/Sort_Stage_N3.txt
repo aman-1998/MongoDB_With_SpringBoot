@@ -1,0 +1,49 @@
+----------------------------
+1. Sorting the data $sort :
+----------------------------
+
+Syntax: 
+
+db.sales.aggregate([
+	{
+		$sort: {
+			"fieldValue": 1  // 1 for ascendig and -1 for descending
+		} 
+	}
+]);
+
+
+=> Sort the documents in ascending order
+db.sales.aggregate([
+	{
+		$sort: {
+			"targetPrice": 1
+		}
+	}
+]);
+
+
+=> Sort the documents in descending order
+db.sales.aggregate([
+	{
+		$sort: {
+			"targetPrice": -1
+		}
+	}
+]);
+
+
+=> Find shop wise sale and sort them in descending order of their earning.
+db.sales.aggregate([
+	{
+		$group: {
+			"_id": {"seller": "$seller"},
+			"total_sale": {$sum: {$multiply: ["$quantity", "$price"]}}
+		}
+	},
+	{
+		$sort: {
+			"total_sale": -1
+		}
+	}
+]);

@@ -1,0 +1,54 @@
+---------------------------------
+1.Substring operator $substrCP :
+---------------------------------
+Syntax: 
+
+{
+	$substrCP: [<string>, <start>, <length>]
+}
+
+=> Show created_date and created_time in separate field for customer collection
+
+db.customer.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"cus_id": 1,
+			"email": 1,
+			"name": {
+				$concat: ["$first", " ", "$last"]
+			},
+			"company": 1,
+			"created_date": {
+				$substrCP: ["$created_at", 0, 10]
+			},
+			"created_time": {
+				$substrCP: ["$created_at", 12, 13]
+			},
+			"country": "Democratic People's Republic of Korea"
+		}
+	}
+]);
+
+or, 
+
+db.customer.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"cus_id": 1,
+			"email": 1,
+			"name": {
+				$concat: ["$first", " ", "$last"]
+			},
+			"company": 1,
+			"created_date": {
+				$substrCP: ["$created_at", 0, 10]
+			},
+			"created_time": {
+				$substrCP: ["$created_at", 12, 200]
+			},
+			"country": "Democratic People's Republic of Korea"
+		}
+	}
+]);

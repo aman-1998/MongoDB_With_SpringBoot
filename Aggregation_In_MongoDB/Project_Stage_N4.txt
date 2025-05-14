@@ -1,0 +1,115 @@
+-------------------------------
+1. Project Operator $project :
+-------------------------------
+
+=> For each seller find product wise sale.
+db.sales.aggregate([
+	{
+		$project: {
+			"seller": 1,
+			"productCategory": 1,
+			"sale": {$multiply: ["$quantity", "$price"]}
+		}
+	},
+	{
+		$sort: {
+			"sale": 1
+		}
+	}
+]);
+
+or,
+
+db.sales.aggregate([
+	{
+		$group: {
+			"_id": {"seller": "$seller", "productCategory": "$productCategory"},
+			"sale": {$sum: {$multiply: ["$quantity", "$price"]}}
+		}
+	},
+	{
+		$sort: {
+			"sale": 1
+		}
+	}
+]);
+
+
+=> Find money earned by sellers by selling caps.
+db.sales.aggregate([
+	{
+		$match: {
+			"productCategory": "Caps"
+		}
+	},
+	{
+		$project: {
+			"_id": 0,
+			"seller": 1,
+			"productCategory": 1,
+			"sale":  {$multiply: ["$quantity", "$price"]},
+			"targetPrice": 1
+		}
+	}
+]);
+
+==================================================================================|
+NOTE:                                                                             |
+------                                                                            |
+db.sales.aggregate([                                                              |
+	{                                                                             |
+		$match: {                                                                 |
+			"productCategory": "Caps"                                             |
+		}                                                                         |
+	},                                                                            |
+	{                                                                             |
+		$project: {                                                               |
+			"productCategory": 0,                                                 |
+			"sale":  {$multiply: ["$quantity", "$price"]}                         |
+		}                                                                         |
+	}                                                                             |
+]);                                                                               |
+																				  |
+MongoServerError[Location31252]: Invalid $project :: caused by :: Cannot use      |
+expression other than $meta in exclusion projection                               |
+																				  |
+We can't use 0 and expression at the same time inside $project.                   |
+==================================================================================|
+
+=> Find the sellers who sell "Caps"
+db.sales.aggregate([
+	{
+		$match: {
+			"productCategory": "Caps"
+		}
+	},
+	{
+		$project: {
+			"_id": 0,
+			"productCategory": 0
+		}
+	}
+]);
+
+
+=> Apply 8% discount on prices .
+db.sales.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"seller": 1,
+			"productCategory": 1,
+			"price": {$multiply: ["$rice", 0.8]},
+			"quantity": 1,
+			"targetPrice": 1
+		}
+	}
+]);
+
+
+Note:
+In projection, either all the fields mentioned should be 1 or all all should be 0. 
+It can't be a combination.
+
+Exception:
+_id filed is an exception. It can be either 0 or 1 irrespective of other field's value.

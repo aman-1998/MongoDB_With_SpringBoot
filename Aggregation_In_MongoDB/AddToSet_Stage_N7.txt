@@ -1,0 +1,20 @@
+=> Find productwise sale for each Seller. And also show all the sellers.
+Avoid duplicates in the array.
+db.sales.aggregate([
+	{
+		$unwind: "$varietyOfProducts"
+	},
+	{
+		$group: {
+			"_id": {"productCategory": "$productCategory"},
+			"totalSale": {$sum: {$multiply: ["$quantity", "$price"]}},
+			"seller": {$addToSet: "$seller"},
+			"shopRating": {$addToSet: "$shopRating"},
+			"varietyOfProducts": {$addToSet: "$varietyOfProducts"} // Array of arrays will be created
+		}
+	}
+]);
+
+
+$addToSet is similar to $push. The only difference is $addToSet makes an 
+array which has unique elements.

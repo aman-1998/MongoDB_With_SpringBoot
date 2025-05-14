@@ -1,0 +1,120 @@
+-------------------------
+1. Size operator $size:
+-------------------------
+
+=> Find productwise sale. And also show all the sellers.
+Avoid duplicates in the array.
+db.sales.aggregate([
+	{
+		$unwind: "$varietyOfProducts"
+	},
+	{
+		$group: {
+			"_id": {"productCategory": "$productCategory"},
+			"totalSale": {$sum: {$multiply: ["$quantity", "$price"]}},
+			"seller": {$addToSet: "$seller"},
+			"shopRating": {$addToSet: "$shopRating"},
+			"varietyOfProducts": {$addToSet: "$varietyOfProducts"} // Array of arrays will be created
+		}
+	},
+	{
+		$project: {
+			"_id": 1,
+			"totalSale": 1,
+			"seller": 1,
+			"shopRating": 1,
+			"varietyOfProducts": 1,
+			"No_of_sellers": {$size: "$seller"}
+		}
+	}
+]);
+
+
+--------------------------
+2. Limit operator $limit:
+--------------------------
+
+=> Find productwise sale. And also show all the sellers.
+Avoid duplicates in the array. Set limit 3.
+db.sales.aggregate([
+	{
+		$unwind: "$varietyOfProducts"
+	},
+	{
+		$group: {
+			"_id": {"productCategory": "$productCategory"},
+			"totalSale": {$sum: {$multiply: ["$quantity", "$price"]}},
+			"seller": {$addToSet: "$seller"},
+			"shopRating": {$addToSet: "$shopRating"},
+			"varietyOfProducts": {$addToSet: "$varietyOfProducts"} // Array of arrays will be created
+		}
+	},
+	{
+		$project: {
+			"_id": 1,
+			"totalSale": 1,
+			"seller": 1,
+			"shopRating": 1,
+			"varietyOfProducts": 1,
+			"No_of_sellers": {$size: "$seller"}
+		}
+	},
+	{
+		$limit: 3
+	}
+]);
+
+
+--------------------------
+3. Skip operator $skip :
+--------------------------
+=> Find productwise sale. And also show all the sellers.
+Avoid duplicates in the array. Skip first two resultant documents.
+db.sales.aggregate([
+	{
+		$unwind: "$varietyOfProducts"
+	},
+	{
+		$group: {
+			"_id": {"productCategory": "$productCategory"},
+			"totalSale": {$sum: {$multiply: ["$quantity", "$price"]}},
+			"seller": {$addToSet: "$seller"},
+			"shopRating": {$addToSet: "$shopRating"},
+			"varietyOfProducts": {$addToSet: "$varietyOfProducts"} // Array of arrays will be created
+		}
+	},
+	{
+		$project: {
+			"_id": 1,
+			"totalSale": 1,
+			"seller": 1,
+			"shopRating": 1,
+			"varietyOfProducts": 1,
+			"No_of_sellers": {$size: "$seller"}
+		}
+	},
+	{
+		$skip: 2
+	}
+]);
+
+
+----------------------------
+4. Count operator $count :
+----------------------------
+=> Find no. of products sold by "Trends"
+
+db.sales.aggregate([
+	{
+		$match: {"seller": "Trends"}
+	},
+	{
+		$group: {
+			"_id": {"productCategory": "$productCategory"}
+		}
+	},
+	{
+		$count: "products_sold"
+	}
+]);
+

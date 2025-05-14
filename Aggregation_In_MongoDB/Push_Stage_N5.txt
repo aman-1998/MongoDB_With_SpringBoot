@@ -1,0 +1,63 @@
+-------------------------
+1. Push operator $push :
+-------------------------
+
+=> Find shop wise sale. And show their ratings
+db.sales.aggregate([
+	{
+		$group: {
+			"_id": {"seller": "$seller"},
+			"totalSale": {$sum: {$multiply: ["$quantity", "$price"]}},
+			"shopRating": {$push: "$shopRating"}
+		}
+	}
+]);
+
+
+=> Find productwise sale. And also show all the sellers and their shopRating.
+db.sales.aggregate([
+	{
+		$group: {
+			"_id": {"productCategory": "$productCategory"},
+			"totalSale": {$sum: {$multiply: ["$quantity", "$price"]}},
+			"seller": {$push: "$seller"},
+			"shopRating": {$push: "$shopRating"}
+		}
+	}
+]);
+
+
+=> Find productwise sale. And also show all the sellers, shopRating 
+and varietyOfProducts sold by those sellers.
+db.sales.aggregate([
+	{
+		$group: {
+			"_id": {"productCategory": "$productCategory"},
+			"totalSale": {$sum: {$multiply: ["$quantity", "$price"]}},
+			"seller": {$push: "$seller"},
+			"shopRating": {$push: "$shopRating"},
+			"varietyOfProducts": {$push: "$varietyOfProducts"} // Array of arrays will be created
+		}
+	}
+]);
+
+
+=> Find product wise sale for each seller
+db.sales.aggregate([
+	{
+		$group: {
+			"_id": {"seller": "$seller", "roductCategory": "$productCategory"},
+			"sale": {$sum: {$multiply: ["$quantity", "$price"]}},
+			"product": {$push: "$productCategory"},
+			"seller": {$push: "$seller"}
+		}
+	}
+]);
+
+
+==========================================================================================
+Note:                                                                                     
+The $push operator in MongoDB is used within the $group stage of an aggregation pipeline  
+to accumulate values into an array. Each document that matches the group is added to the  
+array under the specified field.                                                          
+==========================================================================================

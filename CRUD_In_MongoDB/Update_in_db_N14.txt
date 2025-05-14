@@ -69,8 +69,43 @@ db.dummyCourse.updateOne({"hours": "25 hrs"}, {$rename: {"author": "instructor",
 db.dummyCourse.updateOne({"hours": "25 hrs"}, {$rename: {"comments.user": "comments.username"}});
 
 						 
+---------------------------------------
+4. To add an element in array $push :
+---------------------------------------
+
+Syntax: db.dummyCourse.updateOne({filter}, {$push: {arrayField: "newElement"}})
+
+db.dummyCourse.updateOne(
+{"title": "Python using Django"}, 
+{$push: {
+	comments: {"user": "Rekha", "age": 23, "text": "I am so happy that I chose ur course", "rating": 5}
+}});
+
+
+------------------------------------------------------------------
+5. To remove elements from array either from top or bottom $pop :
+------------------------------------------------------------------
+
+Syntax: db.dummyCourse.updateOne({filter}, {$pop: {arrayField: value}});
+
+-- Remove from bottom
+db.dummyCourse.updateOne(
+{"title": "Python using Django"},
+{$pop: {
+	comments: 1
+}});
+
+
+-- Remove from top
+db.dummyCourse.updateOne(
+{"title": "Python using Django"},
+{$pop: {
+	comments: -1
+}});
+
+
 -------------------------------
-4. Update many documens $set :
+6. Update many documens $set :
 -------------------------------
 
 use shop;
@@ -113,7 +148,7 @@ Note: If a field is not there then it will be created. This is called upsert.
 ===============================================================================
 
 ---------------------------------
-5. Update many documens $unset :
+7. Update many documens $unset :
 ---------------------------------
 
 use udemy;
@@ -128,7 +163,7 @@ db.dummyCourse.updateMany({"comments.user": {$all: ["Aayushi", "Jaydeep"]}},
 
 
 --------------------------------
-6. Renaming one document $rename :
+8. Renaming many document $rename :
 -----------------------------------
 
 use udemy;

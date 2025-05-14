@@ -1,0 +1,62 @@
+-----------------------------------
+1. Conatination operator $concat :
+-----------------------------------
+db.customer.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"cus_id": 1,
+			"email": 1,
+			"name": {
+				$concat: ["$first", " ", "$last"]
+			},
+			"company": 1,
+			"created_at": 1,
+			"country": 1
+		}
+	}
+]);
+
+
+-------------------------------------
+2. To upper case operator $toUpper :
+-------------------------------------
+db.customer.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"cus_id": 1,
+			"email": 1,
+			"name": {
+				$toUpper: {
+					$concat: ["$first", " ", "$last"]
+				}
+			},
+			"company": 1,
+			"created_at": 1,
+			"country": 1
+		}
+	}
+]);
+
+
+-------------------------------------
+3. To lower case operator $toUpper :
+-------------------------------------
+db.customer.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"cus_id": 1,
+			"email": 1,
+			"name": {
+				$toLower: {
+					$concat: ["$first", " ", "$last"]
+				}
+			},
+			"company": 1,
+			"created_at": 1,
+			"country": 1
+		}
+	}
+]);

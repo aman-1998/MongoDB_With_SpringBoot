@@ -1,0 +1,60 @@
+----------------------------------------------------
+1. Regular expression match operator $regaxMatch :
+----------------------------------------------------
+
+Common Regex Anchors/Symbols:
+-----------------------------------------------------------------------------------------------------|
+Symbol	|	Meaning							|		Example		|	Matches                          |
+-----------------------------------------------------------------------------------------------------|
+^		|	Start of string					|		^Hello		|	"Hello world", not "Say Hello"   |
+$		|	End of string					|		end$		|	"The end", not "end is near"     |
+.		|	Any single character			|		a.c			|	"abc", "a-c", not "ac"           |
+*		|	Zero or more of previous token	|		lo*			|	"l", "lo", "loo", "looo"         |
++		|	One or more of previous token	|		go+			|	"go", "goo", "gooo"              |
+?		|	Zero or one of previous token	|		colou?r		|	"color", "colour"                |
+[]		|	Character class					|		[aeiou]		|	Any vowel                        |
+()		|	Grouping						|		(ab)+		|	"ab", "abab", "ababab"           |
+------------------------------------------------------------------------------------------------------
+
+Syntax:
+{
+	$regexMatch: {
+		input: <string-expression>,       // Field or string to evaluate
+		regex: <regex-pattern>,      // The regular expression to apply
+		options: <string>      // Optional (e.g., "i" for case-insensitive)
+	}
+}
+
+=> Find all diesel and non-diesel cars.
+db.car.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"maker": 1,
+			"model": 1,
+			"is_Diesel": {
+				$regexMatch: {
+					"input": "$fuel_type",
+					"regex": "^Die",
+					"options": "i"
+				}
+			},
+			"transmission": 1
+		}
+	}
+]);
+
+
+=> Find all diesel engine cars.
+db.car.aggregate([
+	{
+		$match: {
+			$expr: {
+				$regexMatch: {
+					"input": "$fuel_type",
+					"regex": "^Die"
+				}
+			}
+		}
+	}
+]);

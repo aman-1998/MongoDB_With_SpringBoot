@@ -1,0 +1,21 @@
+---------------------------
+1. Match operator $match :
+---------------------------
+
+Syntax: {$match: {<query>}}
+
+
+db.dummyCourse.aggregate([
+	{
+		$match: {"title": "Python using Django"}
+	}
+]);
+
+db.dummyCourse.aggregate([
+	{
+		$match: {
+			$or: [{"title": "Python using Django"}, {"hours": "20 hrs"}]
+		}
+	}
+]);
+

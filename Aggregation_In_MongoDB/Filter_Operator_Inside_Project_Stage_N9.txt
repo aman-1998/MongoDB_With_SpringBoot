@@ -1,0 +1,43 @@
+-----------------------------
+1. Filter operator $filter :
+-----------------------------
+
+The $filter operator in MongoDB aggregation is used inside the $project stage 
+to filter elements from an array based on a condition.
+
+Syntax:
+
+{
+	$project: {
+		<arrayField>: {
+			$filter: {
+				"input": <array>, // array expression to filter
+				"as": <variable>, // name for each element in the array
+				"cond": <expression> // condition to evalute
+			}
+		}
+	}
+}
+
+
+=> Filter the "comments" field in the documents in collection "dummyCourse".
+Only those comments should come in which age in greater than 25.
+
+use shop;
+
+db.dummyCourse.aggregate([
+	{
+		$project: {
+			"title": 1,
+			"author": 1,
+			"hours": 1,
+			"commentsFilter": {
+				$filter: {
+					"input": "$comments",
+					"as": "com",
+					"cond": {$gt: ["$$com.age", 25]}
+				}
+			}
+		}
+	}
+]);

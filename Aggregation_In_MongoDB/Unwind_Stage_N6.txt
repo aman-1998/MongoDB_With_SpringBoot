@@ -1,0 +1,26 @@
+-----------------------------
+1. Unwind Operator $unwind :
+-----------------------------
+=> Unwind based on varietyOfProducts
+db.sales.aggregate([
+	{
+		$unwind: "$varietyOfProducts"
+	}
+]);
+
+
+=> Find productwise sale for each Seller. And also show all the sellers
+db.sales.aggregate([
+	{
+		$unwind: "$varietyOfProducts"
+	},
+	{
+		$group: {
+			"_id": {"productCategory": "$productCategory"},
+			"totalSale": {$sum: {$multiply: ["$quantity", "$price"]}},
+			"seller": {$push: "$seller"},
+			"shopRating": {$push: "$shopRating"},
+			"varietyOfProducts": {$push: "$varietyOfProducts"} // Array of arrays will be created
+		}
+	}
+]);

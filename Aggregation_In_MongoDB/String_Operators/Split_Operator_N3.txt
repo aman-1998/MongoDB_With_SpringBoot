@@ -1,0 +1,25 @@
+---------------------------
+2. Split operator $split :
+---------------------------
+
+Syntax:
+{
+	$split: [<string-expression>, <Delimeter>]
+}
+
+db.customer.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"cus_id": 1,
+			"email": 1,
+			"first": 1,
+			"last": 1,
+			"company": 1,
+			"created_Date_Time": {
+				$split: ["$created_at", "T"]
+			},
+			"country": 1
+		}
+	}
+]);

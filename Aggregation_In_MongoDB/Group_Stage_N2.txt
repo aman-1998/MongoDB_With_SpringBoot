@@ -1,0 +1,163 @@
+Accumulators used : $sum, $avg, $max, $min, $push, $addToSet
+
+---------------------------
+1. Group operator $group :
+---------------------------
+
+Syntax: 
+
+{
+	$group: {
+		_id: <expression> //Group key
+		<newField1>: {<accumulator1: expression1>},
+		<newField2>: {<accumlator2: expression2>},
+		...
+	}
+}
+
+=> Find total sale across all shops
+db.sales.aggregate([
+	{
+		$group: {
+			_id: "All Products",
+			"totalSales": {$sum: {$multiply: ["$quantity", "$price"]}}
+		}
+	}
+]);
+
+
+=> Find total no. of documents
+db.sales.aggregate([
+	{
+		$group: {
+			_id: "All Products",
+			"total_no_of_documents": {$sum: 1}
+		}
+	}
+]);
+
+
+=> Find shop count of for all products
+db.sales.aggregate([
+	{
+		$group: {
+			_id: {"productCategory": "$productCategory"},
+			"no_of_shops_that_sell": {$sum: 1}
+		}
+	}
+]);
+
+
+=> Find shop wise total sale
+db.sales.aggregate([
+	{
+		$group: {
+			_id: {"store": "$seller"},
+			"total_sale": {$sum: {$multiply: ["$quantity", "$price"]}}
+		}
+	}
+]);
+
+
+=> Find shop wise total quantity of products sold.
+db.sales.aggregate([
+	{
+		$group: {
+			_id: {"seller": "$seller"},
+			"total_quantity_of_products_sold": {$sum: "$quantity"}
+		}
+	}
+]);
+
+
+=> Find total money earned by the stores by selling "Socks"
+db.sales.aggregate([
+	{
+		$match: {
+			"productCategory": "Socks"
+		}
+	},
+	{
+		$group: {
+			_id: {"productCategory": "$productCategory"},
+			"money_earned": {$sum: {$multiply: ["$quantity", "$price"]}}
+		}
+	}
+]);
+
+
+=> Find total money earned by the stores by selling Caps. Consider only those stores 
+who sell more than or equals to 20 quantities of any particular product.
+db.sales.aggregate([
+	{
+		$match: {
+			"productCategory": "Caps",
+			"quantity": {$gte: 20}
+		}
+	},
+	{
+		$group: {
+			_id: {"productCategory": "$productCategory"},
+			"money_earned": {$sum: {$multiply: ["$quantity", "$price"]}}
+		}
+	}
+]);
+
+
+=> Find total sale & average sale of "Gupta Fashion" by selling "T-Shirt" and "Caps".
+db.sales.aggregate([
+	{
+		$match: {
+			"seller": "Gupta Fashion",
+			$or: [{"productCategory": "T-Shirt"}, {"productCategory": "Caps"}]
+		}
+	},
+	{
+		$group: {
+			"_id": {"seller": "$seller"},
+			"total_sale": {$sum: {$multiply: ["$quantity", "$price"]}},
+			"average_sale": {$avg: {$multiply: ["$quantity", "$price"]}}
+		}
+	}
+]);
+
+
+=> Find product wise sale for each seller
+db.sales.aggregate([
+	{
+		$group: {
+			"_id": {"seller": "$seller", "roductCategory": "$productCategory"},
+			"sale": {$sum: {$multiply: ["$quantity", "$price"]}},
+		}
+	}
+]);
+
+
+=> Find minimum money earned by selling any product for each seller
+db.sales.aggregate([
+	{
+		$group: {
+			"_id": {"seller": "$seller"},
+			"sale": {$min: {$multiply: ["$quantity", "$price"]}},
+			"variety_of_products_sold": {$push: "$productCategory"}
+		}
+	}
+]);
+
+
+=> Find maximum money earned by selling any product for each seller
+db.sales.aggregate([
+	{
+		$group: {
+			"_id": {"seller": "$seller"},
+			"sale": {$max: {$multiply: ["$quantity", "$price"]}},
+			"variety_of_products_sold": {$push: "$productCategory"}
+		}
+	}
+]);
+
+
+
+
+
+

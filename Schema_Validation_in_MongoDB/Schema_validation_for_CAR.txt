@@ -1,0 +1,154 @@
+Key Fields in $jsonSchema :
+------------------------------------------------------------------------|
+Field				|	Description                                     |
+--------------------|---------------------------------------------------|
+bsonType			|	Valid MongoDB type (string, int, object, etc.)  |
+required			|	List of mandatory fields                        |
+properties			|	Field-specific validations                      |
+minimum / maximum	|	For numeric ranges                              |
+pattern				|	For regex (e.g., email validation)              |
+enum				|	Restrict values to a set                        |
+-------------------------------------------------------------------------
+
+
+validationLevel and validationAction :
+--------------------------------------------------------------------------------------------|
+| Option           			   | Meaning                                                    |            |
+|------------------------------|------------------------------------------------------------|
+| validationLevel: "strict"    | Validates all inserts and updates                          |
+| validationLevel: "moderate"  | Validates only inserts and updates with a validator match  |
+| validationAction: "error"    | Rejects invalid data                                       |
+| validationAction: "warn"     | Logs a warning, but allows invalid data                    |
+---------------------------------------------------------------------------------------------
+
+
+==============================================
+1. Schema validation for 'car' collection :
+==============================================
+
+db.createCollection("car", {
+	"validator": {
+		$jsonSchema: {
+			"bsonType": "object",
+			"required": ["maker", "model", "fuel_type", "transmission", "engine", "features", "price", "owners", "service_history"],
+			"properties": {
+				"maker": {"bsonType": "string"},
+				"model": {"bsonType": "string"},
+				"fuel_type": {"bsonType": "string"},
+				"transmission": {"bsonType": "string"},
+				"engine": {
+					"bsonType": "object",
+					"required": ["type", "cc", "torque"],
+					"properties": {
+						"type": {"bsonType": "string"},
+						"cc": {"bsonType": "int"},
+						"torque": {"bsonType": "string"}
+					}
+				},
+				"features": {
+					"bsonType": "array",
+					"items": {
+						"bsonType": "string"
+					}
+				},
+				"sunroof": {"bsonType": "boolean"},
+				"airbags": {"bsonType": "int"},
+				"price": {"bsonType": "int"},
+				"owners": {
+					"bsonType": "array",
+					"items": {
+						"bsonType": "object",
+						"required": ["name", "purchase_date", "location"],
+						"properties": {
+							"name": {"bsonType": "string"},
+							"purchase_date": {"bsonType": "string"},
+							"location": {"bsonType": "string"}
+						}
+					}
+				},
+				"service_history": {
+					"bsonType": "array",
+					"items": {
+						"bsonType": "object",
+						"required": ["date", "service_type", "cost"],
+						"properties": {
+							"date": {"bsonType": "string"},
+							"service_type": {"bsonType": "string"},
+							"cost": {"bsonType": "int"}
+						}
+					}
+				}
+			}
+		}
+	},
+	validationLevel: "strict",
+    validationAction: "error"
+});
+
+
+======================================================
+2. Modify the validation-rule of a collection 'car':
+======================================================
+
+db.runcommand({
+	"collMod": "car",
+	"validator": {
+		$jsonSchema: {
+			"bsonType": "object",
+			"required": ["maker", "model", "fuel_type", "transmission", "engine", "features", "price", "owners", "service_history"],
+			"properties": {
+				"maker": {"bsonType": "string"},
+				"model": {"bsonType": "string"},
+				"fuel_type": {"bsonType": "string"},
+				"transmission": {"bsonType": "string"},
+				"engine": {
+					"bsonType": "object",
+					"required": ["type", "cc", "torque"],
+					"properties": {
+						"type": {"bsonType": "string"},
+						"cc": {"bsonType": "int"},
+						"torque": {"bsonType": "string"}
+					}
+				},
+				"features": {
+					"bsonType": "array",
+					"items": {
+						"bsonType": "string"
+					}
+				},
+				"sunroof": {"bsonType": "boolean"},
+				"airbags": {"bsonType": "int"},
+				"price": {"bsonType": "int"},
+				"owners": {
+					"bsonType": "array",
+					"items": {
+						"bsonType": "object",
+						"required": ["name", "purchase_date", "location"],
+						"properties": {
+							"name": {"bsonType": "string"},
+							"purchase_date": {"bsonType": "string"},
+							"location": {"bsonType": "string"}
+						}
+					}
+				},
+				"service_history": {
+					"bsonType": "array",
+					"items": {
+						"bsonType": "object",
+						"required": ["date", "service_type", "cost"],
+						"properties": {
+							"date": {"bsonType": "string"},
+							"service_type": {"bsonType": "string"},
+							"cost": {"bsonType": "int"}
+						}
+					}
+				}
+			}
+		}
+	},
+	validationLevel: "strict",
+    validationAction: "error"
+});
+
+
+Previous validation-rule is completely replaced by the new validation-rule.

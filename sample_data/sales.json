@@ -1,15 +1,15 @@
-{"quantity": 34, "price": 250, "targetPrice": 8500}
-{"quantity": 56, "price": 250, "targetPrice": 14000}
-{"quantity": 4, "price": 250, "targetPrice": 1000}
-{"quantity": 12, "price": 250, "targetPrice": 2500}
-{"quantity": 10, "price": 250, "targetPrice": 1200}
-{"quantity": 18, "price": 120, "targetPrice": 2153}
-{"quantity": 27, "price": 300, "targetPrice": 9000}
-{"quantity": 38, "price": 140, "targetPrice": 6050}
-{"quantity": 20, "price": 167, "targetPrice": 3340}
-{"quantity": 21, "price": 100, "targetPrice": 1900}
-{"quantity": 19, "price": 500, "targetPrice": 10000}
-{"quantity": 14, "price": 130, "targetPrice": 2000}
-{"quantity": 22, "price": 350, "targetPrice": 8000}
-{"quantity": 40, "price": 140, "targetPrice": 5500}
-{"quantity": 42, "price": 412, "targetPrice": 454}
+{"seller":"Ravi Electronics", "varietyOfProducts": ["Electronics"], "shopRating": 4.7, "productCategory": "Headphones", "quantity": 34, "price": 250, "targetPrice": 8500}
+{"seller":"Gupta Fashion", "varietyOfProducts": ["Clothes", "Perfumes", "Footwears"], "shopRating": 4.2, "productCategory": "T-Shirt", "quantity": 56, "price": 250, "targetPrice": 14000}
+{"seller":"Shankar Essentials", "varietyOfProducts": ["Footwears", "Sportswear"], "shopRating": 4.1, "productCategory": "Socks", "quantity": 4, "price": 250, "targetPrice": 1000}
+{"seller":"Style Bazar", "varietyOfProducts": ["Clothes"], "shopRating": 4.0, "productCategory": "Caps", "quantity": 12, "price": 250, "targetPrice": 2500}
+{"seller":"M Bazar", "varietyOfProducts": ["Clothes"], "shopRating": 4.5, "productCategory": "Hair gel", "quantity": 10, "price": 250, "targetPrice": 1200}
+{"seller":"Gupta Fashion", "varietyOfProducts": ["Clothes", "Perfumes", "Footwears"], "shopRating": 4.2, "productCategory": "Caps", "quantity": 18, "price": 120, "targetPrice": 2153}
+{"seller":"Gupta Fashion", "varietyOfProducts": ["Clothes", "Perfumes", "Footwears"], "shopRating": 4.2, "productCategory": "Belts", "quantity": 27, "price": 300, "targetPrice": 9000}
+{"seller":"M Bazar", "varietyOfProducts": ["Clothes"], "shopRating": 4.5, "productCategory": "Underwear", "quantity": 38, "price": 140, "targetPrice": 6050}
+{"seller":"Kunal Store", "varietyOfProducts": ["Headgears", "Cycles"], "shopRating": 4.7, "productCategory": "Caps", "quantity": 20, "price": 167, "targetPrice": 3340}
+{"seller":"Pyne Brothers", "varietyOfProducts": ["Clothes", "Footwears"], "shopRating": 4.7, "productCategory": "Caps", "quantity": 21, "price": 100, "targetPrice": 1900}
+{"seller":"Gupta Fashion", "varietyOfProducts": ["Clothes", "Perfumes", "Footwears"], "shopRating": 4.2, "productCategory": "Perfume", "quantity": 19, "price": 500, "targetPrice": 10000}
+{"seller":"Style Bazar", "varietyOfProducts": ["Clothes"], "shopRating": 4.0, "productCategory": "Socks", "quantity": 14, "price": 130, "targetPrice": 2000}
+{"seller":"Trends", "varietyOfProducts": ["Clothes", "Perfumes", "Footwears"], "shopRating": 3.8, "productCategory": "T-Shirt", "quantity": 22, "price": 350, "targetPrice": 8000}
+{"seller":"Trends", "varietyOfProducts": ["Clothes", "Perfumes", "Footwears"], "shopRating": 3.8, "productCategory": "Belts", "quantity": 40, "price": 140, "targetPrice": 5500}
+{"seller":"Trends", "varietyOfProducts": ["Clothes", "Perfumes", "Footwears"], "shopRating": 3.8, "productCategory": "T-Shirt", "quantity": 42, "price": 412, "targetPrice": 454}

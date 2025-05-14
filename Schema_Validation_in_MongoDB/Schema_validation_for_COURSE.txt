@@ -1,0 +1,107 @@
+Key Fields in $jsonSchema :
+------------------------------------------------------------------------|
+Field				|	Description                                     |
+--------------------|---------------------------------------------------|
+bsonType			|	Valid MongoDB type (string, int, object, etc.)  |
+required			|	List of mandatory fields                        |
+properties			|	Field-specific validations                      |
+minimum / maximum	|	For numeric ranges                              |
+pattern				|	For regex (e.g., email validation)              |
+enum				|	Restrict values to a set                        |
+-------------------------------------------------------------------------
+
+
+validationLevel and validationAction :
+--------------------------------------------------------------------------------------------|
+| Option           			   | Meaning                                                    |            |
+|------------------------------|------------------------------------------------------------|
+| validationLevel: "strict"    | Validates all inserts and updates                          |
+| validationLevel: "moderate"  | Validates only inserts and updates with a validator match  |
+| validationAction: "error"    | Rejects invalid data                                       |
+| validationAction: "warn"     | Logs a warning, but allows invalid data                    |
+---------------------------------------------------------------------------------------------
+
+
+================================================
+1. Schema validation for 'course' collection :
+================================================
+
+db.createCollection("course", {
+	"validator": {
+		$jsonSchema: {
+			"bsonType": "object",
+			"required": ["title", "author", "hours"],
+			"properties": {
+				"title" {"bsonType": "string"},
+				"author": {"bsonType": "string"},
+				"hours": {"bsonType": "string"}.
+				"comments": {
+					"bsonType": "array",
+					"items": {
+						"bsonType": "object",
+						"required": ["user", "age", "text"],
+						"properties": {
+							"user": {"bsonType": "string"},
+							"age": {
+								"bsonType": "int",
+								"minimum": 10,
+								"maximum": 100
+							},
+							"text": {"bsonType": "string"},
+							"email": {
+								"bsonType": "string",
+								"pattern": "^.+@.+$"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	validationLevel: "strict",
+    validationAction: "error"
+});
+
+
+=========================================================
+2. Modify the validation-rule of a collection "course":
+=========================================================
+
+db.runCommand({
+	collMod: "course",
+	"validator": {
+		$jsonSchema: {
+			"bsonType": "object",
+			"required": ["title", "author", "hours"],
+			"properties": {
+				"title" {"bsonType": "string"},
+				"author": {"bsonType": "string"},
+				"hours": {"bsonType": "string"}.
+				"comments": {
+					"bsonType": "array",
+					"items": {
+						"bsonType": "object",
+						"required": ["user", "age", "text"],
+						"properties": {
+							"user": {"bsonType": "string"},
+							"age": {
+								"bsonType": "int",
+								"minimum": 10,
+								"maximum": 100
+							},
+							"text": {"bsonType": "string"},
+							"email": {
+								"bsonType": "string",
+								"pattern": "^.+@.+$"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	validationLevel: "strict",
+    validationAction: "error"
+});
+
+Previous validation-rule is completely replaced by the new validation-rule.
