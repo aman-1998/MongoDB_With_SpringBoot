@@ -1,0 +1,55 @@
+---------------------------
+1. Facet operator $facet :
+---------------------------
+The $facet operator in MongoDB allows you to run multiple aggregation pipelines 
+in parallel on the same input documents and return their results in a single document.
+
+Syntax:
+{
+	$facet: {
+		<outputField1>: [stage1, stage2, ...],
+		<outputField2>: [stage1, stage2, ...],
+		...
+	}
+}
+
+
+=> Find product wise sale for each seller. And also list down all sellers and their shop rating.
+db.sales.aggregate([
+	{
+		$facet: {
+			"product_wise_sale_for_each_seller": [
+				{
+					$group: {
+						"_id": {"seller": "$seller", "productCategory": "$productCategory"},
+						"sale": {$sum: {$multiply: ["$quantity", "$price"]}},
+						"seller": {$addToSet: "$seller"}
+					}
+				},
+				{
+					$sort: {
+						"sale": 1
+					}
+				}
+			],
+			"seller_details": [
+				{
+					$group: {
+						"_id": {"seller": "$seller"},
+						"rating": {$addToSet: "$shopRating"}
+					}
+				},
+				{
+					$project: {
+						"seller": 1,
+						"rating": 1
+					}
+				}
+			]
+		}
+	}
+]);
+
+
+
+

@@ -107,6 +107,19 @@ db.sales.aggregate([
 ]);
 
 
+=> Price of any product can't be lesser than 250.
+db.products.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"vendor_id": 1,
+			"name": 1,
+			"maxPrice": {$max: ["$price", 1300]}
+		}
+	}
+]);
+
+
 Note:
 In projection, either all the fields mentioned should be 1 or all all should be 0. 
 It can't be a combination.

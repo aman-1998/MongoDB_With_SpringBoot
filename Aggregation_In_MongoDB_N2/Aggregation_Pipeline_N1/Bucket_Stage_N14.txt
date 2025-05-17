@@ -1,0 +1,42 @@
+----------------------
+1. $bucket operator:
+----------------------
+
+Syntax:
+
+{
+	$bucket: {
+		"groupBy": <group-expression>,
+		"boundaries": [boundary1, boundary2, boundary2, ...],
+		"default": <default-boundary-expression>,
+		"output": {
+			<outputField>: {<accumulator>: <expression>}
+		}
+	}
+}
+
+
+db.products.aggregate([
+	{
+		$bucket: {
+			"groupBy": "$price",
+			"boundaries": [800, 900, 1000, 1100, 1200, 1300, 1400],
+			"default": "Greater than or equals to 1400",
+			"output": {
+				"count_of_vendors": {$sum: 1}
+			}
+		}
+	}
+]);
+
+
+==========================================|
+Note:                                     |
+1st group: price >= 800 to price < 900    |
+2nd group: price >= 900 to price < 1000   |
+3rd group: price >= 1000 to price < 1100  |
+4th group: price >= 1200 to price < 1300  |
+5th group: price >= 1300 to price < 1400  |
+6th group: >= 1400                        |
+-------------------------------------------
+

@@ -37,6 +37,18 @@ db.sales.aggregate([
 ]);
 
 
+=> Maximum and Minimum price across the documents
+db.products.aggregate([
+	{
+		$group: {
+			"_id": "All products",
+			"maxPrice": {$max: "$price"},
+			"minPrice": {$min: "$price"}
+		}
+	}
+]);
+
+
 => Find shop count of for all products
 db.sales.aggregate([
 	{

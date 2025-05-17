@@ -1,0 +1,41 @@
+-------------------
+1. $out operator :
+-------------------
+
+Syntax:
+{
+	$out: {
+		"db": <databaseName>,
+		"coll": <collectionName>
+	}
+}
+
+or,
+
+{
+	$out: <target-collection-name>
+}
+
+db.car.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"maker": 1,
+			"model": 1,
+			"type": {
+				$switch: {
+					"branches": [
+						{"case": {$lt: ["$price", 600000]}, "then": "Budget"},
+						{"case": {$and: [{$gte: ["$price", 600000]}, {$lt: ["$price", 1500000]}]}, "then": "Midrange"},
+						{"case": {$and: [{$gte: ["$price", 1500000]}, {$lte: ["$price", 3500000]}]}, "then": "Premium"},
+						{"case": {$gt: ["$price", 3500000]}, "then": "Luxary"}
+					],
+					"default": "Unknown"
+				}
+			}
+		}
+	},
+	{
+		$out: "CarTypes"
+	}
+]);

@@ -1,0 +1,125 @@
+----------------------
+1. $lookup operator :
+----------------------
+
+$lookup is similar to left outer join in SQL.
+
+Customer:
+-----------------               
+id   |   Name   |
+-----|----------|
+130  |   Aman   |
+131  |   Shyam  |
+132  |   Ram    |
+-----------------
+
+Order:
+-----------------------------
+id  |  Product   |  cus_id  |    /* cus_id is foreign key pointing id of Customer table */
+----|------------|----------|
+1   |  Ball      |  130     |
+2   |  Football  |  132     |
+3   |  Bat       |  150     |
+-----------------------------
+
+SELECT cus.id, cus.name, ord.ord_id, ord.product
+FROM cuustomer cus left outer jon order ord
+on cus.id = ord.cus_id
+
+Result:
+-----------------------------------------
+id   |  name   |   ord_id  |  product   |
+-----|---------|-----------|------------|
+130  |  Aman   |   1       |  Ball      |
+131  |  Shyam  |   null    |  null      |
+132  |  Ram    |   2       |  Football  |
+-----------------------------------------
+
+Now, consider customer and order as collections in MongoDB
+
+customer:
+db.customer.insertMany([
+	{
+		"id": 130,
+		"name": "Aman",
+	},
+	{
+		"id": 131,
+		"name": "Shyam"
+	},
+	{
+		"id": 132,
+		"name": "Ram"
+	}
+]);
+
+order:
+db.order.insertMany([
+	{
+		"ord_id": 1,
+		"product": "Ball",
+		"cus_id": 130
+	},
+	{
+		"ord_id": 2,
+		"product": "Football",
+		"cus_id": 132
+	},
+	{
+		"ord_id": 3,
+		"product": "Bat",
+		"cus_id": 150
+	}
+]);
+
+
+db.customer.aggregate([
+	{
+		$lookup: {
+			"from": "order",
+			"localField": "id",
+			"foreignField": "cus_id",
+			"as": "orderDetail"
+		}
+	}
+]);
+
+Result:
+[
+  {
+    _id: ObjectId('6829015f328de19a73b5f899'),
+    id: 130,
+    name: 'Aman',
+    orderDetail: [
+      {
+        _id: ObjectId('68290193328de19a73b5f89c'),
+        ord_id: 1,
+        product: 'Ball',
+        cus_id: 130
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6829015f328de19a73b5f89a'),
+    id: 131,
+    name: 'Shyam',
+    orderDetail: []
+  },
+  {
+    _id: ObjectId('6829015f328de19a73b5f89b'),
+    id: 132,
+    name: 'Ram',
+    orderDetail: [
+      {
+        _id: ObjectId('68290193328de19a73b5f89d'),
+        ord_id: 2,
+        product: 'Football',
+        cus_id: 132
+      }
+    ]
+  }
+]
+
+
+
+

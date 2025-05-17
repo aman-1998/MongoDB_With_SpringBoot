@@ -1,0 +1,39 @@
+-------------------------
+1. $unionWith operator :
+-------------------------
+
+Syntax:
+{
+	$unionWith: {
+		"coll": <collection-name>,
+		"pipeline": [ /* optional additional stages for the second collection */ ]
+	}
+}
+
+or,
+
+{
+	$unionWith: <collection-name>
+}
+
+
+db.course.aggregate([
+	{
+		$unionWith: "dummyCourse"
+	}
+]);
+
+db.course.aggregate([
+	{
+		$unionWith: {
+			"coll": "dummyCourse",
+			"pipeline": [
+				{
+					$match: {
+						"title": {$regex: "^Python"}
+					}
+				}
+			]
+		}
+	}
+]);

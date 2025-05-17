@@ -31,6 +31,22 @@ db.sales.find({$expr: {
 });
 
 
+=> Just example
+db.sales.find({
+	$expr: {
+		$gt: ["$targetPrice", {$max: ["$price", 250]}]
+	}
+});
+
+
+=> Just example
+db.sales.find({
+	$expr: {
+		$gt: ["$targetPrice", {$min: ["$price", 250]}]
+	}
+});
+
+
 ==================================================
 Operators that can be used inside $expr operator:
 ==================================================

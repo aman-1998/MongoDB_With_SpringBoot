@@ -1,0 +1,32 @@
+----------------------
+1. $first operator :
+----------------------
+=> Find the total money earned by the sellers and also show the rating of the sellers.
+
+db.sales.aggregate([
+	{
+		$group: {
+			"_id": {"seller": "$seller"},
+			"sale": {$sum: {$multiply: ["$price", "$quantity"]}},
+			"rating": {$first: "$shopRating"},
+			"products_sold": {$addToSet: "$productCategory"}
+		}
+	}
+]);
+
+
+----------------------
+2. $last operator :
+----------------------
+=> Find the total money earned by the sellers and also show the rating of the sellers.
+
+db.sales.aggregate([
+	{
+		$group: {
+			"_id": {"seller": "$seller"},
+			"sale": {$sum: {$multiply: ["$price", "$quantity"]}},
+			"rating": {$last: "$shopRating"},
+			"products_sold": {$addToSet: "$productCategory"}
+		}
+	}
+]);

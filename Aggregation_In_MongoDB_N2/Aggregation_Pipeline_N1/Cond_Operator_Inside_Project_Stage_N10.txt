@@ -1,0 +1,28 @@
+-------------------------------
+1. Condition operator $cond :
+-------------------------------
+Syntax:
+{
+	$cond: {
+		"if": <condition-expression>,
+		"then": <true-case>,
+		"else": <false-case>
+	}
+}
+
+db.car.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"maker": 1,
+			"model": 1,
+			"type": {
+				$cond: {
+					"if": {$gt: ["$price", 1500000]},
+					"then": "Luxary",
+					"else": "Economy"
+				}
+			}
+		}
+	}
+]);
