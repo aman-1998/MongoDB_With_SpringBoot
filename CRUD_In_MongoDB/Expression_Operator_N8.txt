@@ -1,0 +1,135 @@
+Preparation:
+============
+use shop;
+
+
+-------------------------------
+1. Expression Operator $expr :
+-------------------------------
+Note: $expr is used when u want to do some operation within the document.
+
+Syntax: db.sales.find({$expr: {<expression>});
+db.sales.find({$expr: {operator: [field, value]}});
+
+=> Find documents where quantity is greater than 20
+db.sales.find({$expr: {$gt: ["$quantity", 20]}});
+
+=> Find documents where total sales is greater than the target price.
+db.sales.find({$expr: {$gt: [{$multiply: ["$quantity", "$price"]}, "$targetPrice"]}});
+
+=> Find documents where total sales is equals to the target price.
+db.sales.find({$expr: {$eq: [{$multiply: ["$quantity", "$price"]}, "$targetPrice"]}});
+
+=> Find documents where total sales is greater than the target price and 
+   target price is not morethan 2000
+db.sales.find({$expr: {
+		$and: [
+			{$gt: [{$multiply: ["$quantity", "$price"]}, "$targetPrice"]}, 
+			{$lte: ["$targetPrice", 2000]}
+		]
+	}
+});
+
+
+==================================================
+Operators that can be used inside $expr operator:
+==================================================
+
+Comparison Operators:
+-------------------------------------------------------------------
+| Operator | Description        | Syntax Example                   |
+| -------- | ------------------ | -------------------------------- |
+| `$eq`    | Equals             | `{ $eq: ["$age", 25] }`          |
+| `$ne`    | Not equals         | `{ $ne: ["$status", "active"] }` |
+| `$gt`    | Greater than       | `{ $gt: ["$score", 50] }`        |
+| `$gte`   | Greater or equal   | `{ $gte: ["$salary", 30000] }`   |
+| `$lt`    | Less than          | `{ $lt: ["$price", 100] }`       |
+| `$lte`   | Less or equal      | `{ $lte: ["$rating", 4.5] }`     |
+| `$cmp`   | Compare (-1, 0, 1) | `{ $cmp: ["$a", "$b"] }`         |
+--------------------------------------------------------------------
+
+
+Arithmetic Operators:
+-------------------------------------------------------------------------------------------------
+| Operator    | Description                           | Example Usage 					         |
+| ------------|---------------------------------------|------------------------------------------| 
+| `$add`      | Adds numbers (or dates + numbers)     | `{ $add: ["$price", "$tax"] }`           |
+| `$subtract` | Subtracts second value from first     | `{ $subtract: ["$total", "$discount"] }` |
+| `$multiply` | Multiplies numbers                    | `{ $multiply: ["$price", "$quantity"] }` |
+| `$divide`   | Divides first value by second         | `{ $divide: ["$total", "$quantity"] }`   |
+| `$mod`      | Returns remainder of division         | `{ $mod: ["$score", 5] }`                |
+| `$abs`      | Absolute value                        | `{ $abs: "$balance" }`                   |
+| `$ceil`     | Round up to nearest integer           | `{ $ceil: "$rating" }`                   |
+| `$floor`    | Round down to nearest integer         | `{ $floor: "$rating" }`                  |
+| `$round`    | Round to specified decimal places     | `{ $round: ["$rating", 1] }`             |
+| `$sqrt`     | Square root                           | `{ $sqrt: "$area" }` |                   |
+| `$trunc`    | Truncate to specified decimal places  | `{ $trunc: ["$rating", 2] }`             |
+| `$exp`      | Raise *e* to the given power          | `{ $exp: "$growthRate" }`                |
+| `$ln`       | Natural log (ln)                      | `{ $ln: "$value" }` |                    |
+| `$log10`    | Base-10 log                           | `{ $log10: "$value" }`                   |
+| `$pow`      | Raise one number to power of another  | `{ $pow: ["$base", "$exponent"] }`       |
+| ------------------------------------------------------------------------------------------------
+
+
+Logical operator : 
+----------------------------------------------------------------------------------------------------
+| Operator | Description | Syntax Example                                                           |
+| -------- | ----------- | ------------------------------------------------------------------------ |
+| `$and`   | Logical AND | `{ $and: [ { $gt: ["$age", 18] }, { $lt: ["$age", 60] } ] }`             |
+| `$or`    | Logical OR  | `{ $or: [ { $eq: ["$role", "admin"] }, { $eq: ["$role", "editor"] } ] }` |
+| `$not`   | Logical NOT | `{ $not: { $eq: ["$status", "inactive"] } }`                             |
+-----------------------------------------------------------------------------------------------------
+
+
+Array Operators:
+--------------------------------------------------------------------------------------------
+| Operator           | Description         | Syntax Example                                 |
+| ------------------ | ------------------- | ---------------------------------------------- |
+| `$in`              | In array            | `{ $in: ["$category", ["A", "B", "C"]] }`      |
+| `$nin`             | Not in array        | `{ $nin: ["$status", ["closed", "pending"]] }` |
+| `$size`            | Array length        | `{ $eq: [ { $size: "$tags" }, 3 ] }`           |
+| `$allElementsTrue` | All elements truthy | `{ $allElementsTrue: [ "$flags" ] }`           |
+| `$anyElementTrue`  | Any element truthy  | `{ $anyElementTrue: [ "$statuses" ] }`         |
+---------------------------------------------------------------------------------------------
+
+
+String Operators:
+-------------------------------------------------------------------------------------------------------
+| Operator        | Description                      | Syntax Example                                  |
+| --------------- | -------------------------------- | ----------------------------------------------- |
+| `$concat`       | Concatenate strings              | `{ $concat: ["$firstName", " ", "$lastName"] }` |
+| `$substrBytes`  | Substring (bytes)                | `{ $substrBytes: ["$name", 0, 5] }`             |
+| `$substrCP`     | Substring (chars)                | `{ $substrCP: ["$name", 0, 5] }`                |
+| `$strcasecmp`   | Case-insensitive comparison      | `{ $strcasecmp: ["$a", "$b"] }`                 |
+| `$toLower`      | Convert to lowercase             | `{ $toLower: "$name" }`                         |
+| `$toUpper`      | Convert to uppercase             | `{ $toUpper: "$city" }`                         |
+| `$trim`         | Trim both sides                  | `{ $trim: { input: "$title" } }`                |
+| `$ltrim`        | Trim left side                   | `{ $ltrim: { input: "$title" } }`               |
+| `$rtrim`        | Trim right side                  | `{ $rtrim: { input: "$title" } }`               |
+| `$split`        | Split string                     | `{ $split: ["$fullname", " "] }`                |
+| `$indexOfBytes` | Index of substring (bytes)       | `{ $indexOfBytes: ["$desc", "error"] }`         |
+| `$indexOfCP`    | Index of substring (code points) | `{ $indexOfCP: ["$desc", "err"] }`              |
+--------------------------------------------------------------------------------------------------------
+
+
+Conditional Operators:
+----------------------------------------------------------------------------------------------------------------------------------------
+| Operator  | Description            | Syntax Example                                                                                  |
+| --------- | ---------------------- | ----------------------------------------------------------------------------------------------- |
+| `$cond`   | If-then-else logic     | `{ $cond: { if: { $gt: ["$age", 18] }, then: "adult", else: "minor" } }`                        |
+| `$ifNull` | First non-null value   | `{ $ifNull: ["$nickname", "$name"] }`                                                           |
+| `$switch` | Multi-condition branch | `{ $switch: { branches: [ { case: { $eq: ["$role", "admin"] }, then: "A" } ], default: "B" } }` |
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+Type Conversion Operators:
+-------------------------------------------------------------------
+| Operator     | Description         | Syntax Example             |
+| ------------ | ------------------- | -------------------------- |
+| `$toInt`     | Converts to integer | `{ $toInt: "$salary" }`    |
+| `$toString`  | Converts to string  | `{ $toString: "$userId" }` |
+| `$toDouble`  | Converts to double  | `{ $toDouble: "$rating" }` |
+| `$toBool`    | Converts to boolean | `{ $toBool: "$flag" }`     |
+| `$toDecimal` | Converts to decimal | `{ $toDecimal: "$price" }` |
+-------------------------------------------------------------------
+

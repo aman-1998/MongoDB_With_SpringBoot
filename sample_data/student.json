@@ -1,6 +1,182 @@
-{"_id":{"$oid":"68123b24d9fe7c018db5f89a"},"name":"Aman","age":28}
-{"_id":{"$oid":"68123bbfd9fe7c018db5f89b"},"name":"Alka","age":30,"roll":138}
-{"_id":{"$oid":"68123bbfd9fe7c018db5f89c"},"name":"Vishal","age":36}
-{"_id":{"$oid":"6812478dd9fe7c018db5f89d"},"name":"Avinit","subject":[{"name":"Math","marks":94},{"name":"Hindi","marks":73}],"class":"VIII"}
-{"_id":{"$oid":"681247e0d9fe7c018db5f89f"},"name":"Avinit","subject":[{"name":"Math","marks":94},{"name":"Hindi","marks":73}],"class":"VIII"}
-{"_id":{"$oid":"681247e0d9fe7c018db5f8a0"},"name":"Tania","age":25}
+[
+  {
+    "name": "John Doe",
+    "firstName": "John",
+    "lastName": "Doe",
+    "age": 22,
+    "roll": 137,
+    "department": "Computer Science",
+    "subject": ["DBMS", "Java", "Computer Organization", "TOC"]
+  },
+  {
+    "name": "Aman Sharma",
+    "firstName": "Aman",
+    "lastName": "Sharma",
+    "age": 21,
+    "roll": 138,
+    "department": "Electronics",
+    "subject": ["Microprocessor", "Digital Logic", "Signals", "Control Systems"]
+  },
+  {
+    "name": "Pooja Verma",
+    "firstName": "Pooja",
+    "lastName": "Verma",
+    "age": 20,
+    "roll": 139,
+    "department": "Electrical",
+    "subject": ["Circuit Theory", "Machines", "Power Systems", "Signals"]
+  },
+  {
+    "name": "Rahul Singh",
+    "firstName": "Rahul",
+    "lastName": "Singh",
+    "age": 23,
+    "roll": 140,
+    "department": "Mechanical",
+    "subject": ["Thermodynamics", "Fluid Mechanics", "Kinematics", "CAD"]
+  },
+  {
+    "name": "Sneha Patel",
+    "firstName": "Sneha",
+    "lastName": "Patel",
+    "age": 22,
+    "roll": 141,
+    "department": "Civil",
+    "subject": ["Structures", "Soil Mechanics", "Surveying", "Construction"]
+  },
+  {
+    "name": "Kunal Deshmukh",
+    "firstName": "Kunal",
+    "lastName": "Deshmukh",
+    "age": 21,
+    "roll": 142,
+    "department": "Information Technology",
+    "subject": ["DBMS", "Networking", "OS", "Java"]
+  },
+  {
+    "name": "Meera Joshi",
+    "firstName": "Meera",
+    "lastName": "Joshi",
+    "age": 22,
+    "roll": 143,
+    "department": "Biotechnology",
+    "subject": ["Genetics", "Biochemistry", "Cell Biology", "Microbiology"]
+  },
+  {
+    "name": "Ravi Gupta",
+    "firstName": "Ravi",
+    "lastName": "Gupta",
+    "age": 24,
+    "roll": 144,
+    "department": "Computer Science",
+    "subject": ["Python", "Machine Learning", "DBMS", "Java"]
+  },
+  {
+    "name": "Divya Mehta",
+    "firstName": "Divya",
+    "lastName": "Mehta",
+    "age": 20,
+    "roll": 145,
+    "department": "Computer Science",
+    "subject": ["TOC", "AI", "Java", "Cloud Computing"]
+  },
+  {
+    "name": "Sanjay Thakur",
+    "firstName": "Sanjay",
+    "lastName": "Thakur",
+    "age": 23,
+    "roll": 146,
+    "department": "Electronics",
+    "subject": ["Digital Electronics", "Embedded Systems", "VLSI", "Signals"]
+  },
+  {
+    "name": "Priya Chatterjee",
+    "firstName": "Priya",
+    "lastName": "Chatterjee",
+    "age": 22,
+    "roll": 147,
+    "department": "Physics",
+    "subject": ["Quantum Mechanics", "Electrodynamics", "Optics", "Mathematical Physics"]
+  },
+  {
+    "name": "Abhishek Ray",
+    "firstName": "Abhishek",
+    "lastName": "Ray",
+    "age": 21,
+    "roll": 148,
+    "department": "Mathematics",
+    "subject": ["Linear Algebra", "Calculus", "Statistics", "Differential Equations"]
+  },
+  {
+    "name": "Neha Rathi",
+    "firstName": "Neha",
+    "lastName": "Rathi",
+    "age": 22,
+    "roll": 149,
+    "department": "Information Technology",
+    "subject": ["Web Development", "Java", "DBMS", "AI"]
+  },
+  {
+    "name": "Ajay Bhatt",
+    "firstName": "Ajay",
+    "lastName": "Bhatt",
+    "age": 20,
+    "roll": 150,
+    "department": "Electrical",
+    "subject": ["Machines", "Circuits", "Power Systems", "Control Systems"]
+  },
+  {
+    "name": "Anjali Nair",
+    "firstName": "Anjali",
+    "lastName": "Nair",
+    "age": 21,
+    "roll": 151,
+    "department": "Computer Science",
+    "subject": ["DSA", "DBMS", "Java", "Python"]
+  },
+  {
+    "name": "Nikhil Banerjee",
+    "firstName": "Nikhil",
+    "lastName": "Banerjee",
+    "age": 23,
+    "roll": 152,
+    "department": "Mechanical",
+    "subject": ["Kinematics", "Manufacturing", "Thermodynamics", "Design"]
+  },
+  {
+    "name": "Shivani Kapoor",
+    "firstName": "Shivani",
+    "lastName": "Kapoor",
+    "age": 22,
+    "roll": 153,
+    "department": "Civil",
+    "subject": ["Surveying", "Concrete Tech", "Hydraulics", "Structures"]
+  },
+  {
+    "name": "Harshit Saxena",
+    "firstName": "Harshit",
+    "lastName": "Saxena",
+    "age": 20,
+    "roll": 154,
+    "department": "Electronics",
+    "subject": ["Signals", "Microprocessor", "Digital Circuits", "Embedded Systems"]
+  },
+  {
+    "name": "Ritika Ahuja",
+    "firstName": "Ritika",
+    "lastName": "Ahuja",
+    "age": 21,
+    "roll": 155,
+    "department": "Computer Science",
+    "subject": ["AI", "ML", "Cloud", "DBMS"]
+  },
+  {
+    "name": "Mohit Bansal",
+    "firstName": "Mohit",
+    "lastName": "Bansal",
+    "age": 22,
+    "roll": 156,
+    "department": "Information Technology",
+    "subject": ["Java", "OS", "Networks", "Cybersecurity"]
+  }
+]

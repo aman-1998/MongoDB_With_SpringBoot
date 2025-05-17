@@ -1,0 +1,139 @@
+---------------------------------------
+1. String length operator $strLenCP :
+---------------------------------------
+
+db.student.find({
+	$expr: {
+		$gt: [{$strLenCP: "$name"}, 15]
+	}
+});
+
+
+-------------------------------------
+2. Concatination operator $concat :
+-------------------------------------
+
+db.student.find({
+	$expr: {
+		$eq: [{$concat: ["$firstName", " ", "$lastname"]}, "Aman Mishra"]  
+	}
+});
+
+
+-------------------------------------
+3. Substring operator $substrCP :
+-------------------------------------
+
+db.student.find({
+	$expr: {
+		$eq: [{$substrCP: ["$name", 0, 2]}, "Mr"] 
+	}
+});
+
+
+-------------------------------------
+4. Index-of operator $indexOfCP :
+-------------------------------------
+
+db.student.find({
+	$expr: {
+		$eq: [{$indexOfCP: ["$name", "Mr"]}, 0]
+	}
+});
+
+
+-----------------------------------------
+5. Regular-Expression operator $regex :
+-----------------------------------------
+
+db.student.find({
+  name: {$regex: "^mr", $options: "i"}
+});
+
+
+---------------------------
+6. Split operator $split :
+---------------------------
+
+db.student.find({
+	$expr: {
+		$in: ["$lastName", {$split: ["$name", " "]}]
+	}
+});
+
+db.student.find({
+	$expr: {
+		$in: ["Sharma", {$split: ["$name", " "]}]
+	}
+});
+
+
+--------------------------------
+7. Right-trim operator $rtrim :
+--------------------------------
+db.student.find({
+	$expr: {
+		$eq: ["Computer Science", {$rtrim: {"input": "$department"}}]
+	}
+});
+
+
+--------------------------------
+8. Left-trim operator $rtrim :
+--------------------------------
+db.student.find({
+	$expr: {
+		$eq: ["Computer Science", {$ltrim: {"input": "$department"}}]
+	}
+});
+
+
+-------------------------
+9. Trim operator $trim :
+-------------------------
+db.student.find({
+	$expr: {
+		$eq: ["Computer Science", {$trim: {"input": "$department"}}]
+	}
+});
+
+
+
+==> Find all students whose last name is "Sharma"
+db.student.find({
+	$expr: {
+		$eq: [{$substrCP: ["$name", {$add: [{$indexOfCP: ["$name", " "]} ,1]}, {$strLenCP: "$name"}]}, "Sharma"]
+	}
+});
+
+
+or, 
+
+db.student.find({
+	$expr: {
+		$eq: [{$rtrim: {"input": {$substrCP: ["$name", {$add: [{$indexOfCP: ["$name", " "]} ,1]}, {$strLenCP: "$name"}]}}}, "Sharma"]
+	}
+});
+
+
+or,
+
+db.student.find({
+	$expr: {
+		$eq: [
+			{
+				$substrCP: [
+					"$name", 
+					{$add: [{$indexOfCP: ["$name", " "]} ,1]}, 
+					{
+						$subtract: [
+							{$strLenCP: "$name"}, 
+							{$add: [{$indexOfCP: ["$name", " "]} ,1]}
+						]
+					}
+				]
+			}, 
+			"Sharma"
+		]
+	}
+});

@@ -1,0 +1,18 @@
+---------------------------------------
+1. String Length operator $strLenCP :
+---------------------------------------
+db.student.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"name": 1,
+			"firstName": 1,
+			"lastName": 1,
+			"age": 1,
+			"roll": 1,
+			"department": 1,
+			"department_name_length": {$strLenCP: "$department"},
+			"no_of_subject": {$size: "$subject"}
+		}
+	}
+]);

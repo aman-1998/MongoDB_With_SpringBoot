@@ -1,0 +1,39 @@
+-----------------------
+1. Upsert in mongoDB :
+-----------------------
+
+db.student.updateOne({"name": "Rajiv Ghai"}, 
+{
+	$set: {
+		"age": 22,
+		"roll": 183
+	}
+});
+
+===========================================================================================
+Now, if age field does not exist in the docuemnt where name os "Rajiv Ghai" then 
+age will be added in that document. But if there is no document where name is "Rajiv Ghai"
+then in that case nothing will happen.
+===========================================================================================
+
+
+db.student.updateOne({"name": "Rajiv Ghai"}, 
+{
+	$set: {
+		"age": 22,
+		"roll": 183
+	}
+}, {"upsert": true});
+
+=============================================================================================
+Now, if there is no document where name is "Rajiv Ghai" then one document will be inserted
+like below:
+{
+  "_id": {
+    "$oid": "682865702c4e3c08a3590ed3"
+  },
+  "name": "Rajiv Ghai",
+  "age": 22,
+  "roll": 183
+}
+==============================================================================================

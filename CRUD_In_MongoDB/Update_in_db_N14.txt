@@ -104,74 +104,50 @@ db.dummyCourse.updateOne(
 }});
 
 
--------------------------------
-6. Update many documens $set :
--------------------------------
-
-use shop;
-
-db.customer.updateMany({"cus_id": {$lte: 4}}, {$set: {"company": "Amazon"}});
-
-use udemy;
-
-db.course.updateMany({filterCondition}, {$set: {field1: value1, field2: value2}});
-
-db.course.updateMany({"hours": "36 hrs"}, {$set: {"title": "Learn Java with SpringBoot"}});
-
-db.course.updateMany({"title": "Python using Django"}, {$set: {"hours": "45 hrs", "author": "Nimaai Venkateshwar"}});
-
-db.course.updateMany({"title": "MongoDB Zero to Hero"}, {$set: {"comments.1.user": "Naman", "comments.1.age": 21}});
-
-db.course.updateMany({"comments": {$elemMatch: {"user": "Aman", "age": 24}}}, 
-					{$set: {"hours": "15 hours", "comments.2.text": "Plz consider providing notes"}});
-					
-					
-db.dummyCourse.updateMany({"comments": {$elemMatch: {"user": "Aman", "age": 24}}}, 
-					{$set: {"hours": "15 hours", "comments.$.text": "Amazing course design"}});
-
-// This is wrong because value for positional operator($) can't be determined.					
-db.dummyCourse.updateMany({"title": "System Design Bootcamp"}, 
-					     {$set: {"hours": "25 hours", "comments.$.text": "Plz consider providing notes"}});
-					
-db.dummyCourse.updateMany({"title": "System Design Bootcamp"}, 
-					     {$set: {"hours": "18 hours", "comments.1.text": "Plz consider providing notes"}});
-						 
-Explanation on positional operator($) :
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Based on filter condition, main document is filtered. After we got main document, 
-when we use $ operator for array of embeded documents, the value of $ is determined 
-by match the filter condition against each document in the array.
-					
-					
-===============================================================================
-Note: If a field is not there then it will be created. This is called upsert.
-===============================================================================
-
----------------------------------
-7. Update many documens $unset :
----------------------------------
-
-use udemy;
-					
-db.dummyCourse.updateMany({"hours": "25 hrs"}, {$unset: {"title": 1}});
-
-db.dummyCourse.updateMany({"hours": "25 hrs"}, 
-				         {$unset: {"comments.0.text": 1, "comments.1.age": 1}});
-						 
-db.dummyCourse.updateMany({"comments.user": {$all: ["Aayushi", "Jaydeep"]}}, 
-					     {$unset: {"author": 1, "comments.0.age": 1}});
+-----------------------------
+6. Increment Operator $inc :
+-----------------------------
+db.student.updateOne({"firstName": "Aman"}, 
+{
+	$inc: {
+		"age": 46
+	}
+});
 
 
---------------------------------
-8. Renaming many document $rename :
------------------------------------
+-----------------------------
+7. Increment Operator $mul :
+-----------------------------
+db.student.updateOne({"firstName": "Aman"}, 
+{
+	$mul: {
+		"age": 2
+	}
+});
 
-use udemy;
 
-Syntax: db.dummyCourse.updateMany({filterCondition}, {$rename: {oldFieldName1: newFieldName1, oldFieldName2: newFieldName2}});
+------------------------------------------------------------------
+8. Increment Operator $max : (increase if existing value is less)
+------------------------------------------------------------------
+db.student.updateOne({"firstName": "Aman"}, 
+{
+	$max: {
+		"age": 46
+	}
+});
 
-db.dummyCourse.updateMany({"hours": "25 hrs"}, {$rename: {"author": "instructor", "hours": "time"}});
+
+------------------------------------------------------------------
+9. Increment Operator $min : (decrease if existing value is more)
+------------------------------------------------------------------
+db.student.updateOne({"firstName": "Aman"}, 
+{
+	$min: {
+		"age": 46
+	}
+});
 
 
-// This is wrong. It does not work like that
-db.dummyCourse.updateMany({"hours": "25 hrs"}, {$rename: {"comments.user": "comments.username"}});
+============================================================================================
+Note: If you want to update more that one documents then replace updateOne with updateMany
+============================================================================================

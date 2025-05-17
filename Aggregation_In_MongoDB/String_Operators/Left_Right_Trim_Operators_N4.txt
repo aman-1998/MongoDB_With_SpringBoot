@@ -94,3 +94,51 @@ db.sales.aggregate([
 		}
 	}
 ]);
+
+
+-------------------------------
+3. Trim operator $ltrim:
+-------------------------------
+
+Syntax:
+{
+	$trim: {
+		"input": <string-expression>,
+		"chars": <optional-string>
+	}
+}
+
+db.sales.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"seller": 1,
+			"varietyOfProducts": 1,
+			"shopRating": 1,
+			"productCategory": 1,
+			"open": {
+				$trim: {
+					"input": "---------Mon, Tue, Wed, Thu, Fri------",
+					"chars": "-"
+				}
+			}
+		}
+	}
+]);
+
+db.sales.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"seller": 1,
+			"varietyOfProducts": 1,
+			"shopRating": 1,
+			"productCategory": 1,
+			"open": {
+				$trim: {
+					"input": "    Mon, Tue, Wed, Thu, Fri           ",
+				}
+			}
+		}
+	}
+]);
