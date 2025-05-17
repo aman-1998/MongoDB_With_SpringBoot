@@ -1,0 +1,49 @@
+---------------------
+1. $ifNull operator:
+---------------------
+The $ifNull operator in MongoDB is used to check if a value is null or missing, 
+and return a default value if it is.
+
+Syntax: 
+{
+	$ifNull: [<expression>, <default>]
+}
+
+db.customer.aggregate([
+	{
+		$project: {
+			"_id": 0,
+			"cus_id": 1,
+			"email_id": {$ifNull: ["$email", "Email is not available"]},
+			"first": 1,
+			"last": 1,
+			"company": 1,
+			"created_at": 1,
+			"country": 1
+		}
+	}
+]);
+
+
+-----------------------
+2. $coalesce operator:
+-----------------------
+
+$coalesce takes multiple values and returns the first non-null one:
+
+Syntax:
+{
+	$coalesce: [<expression1>, <expression2>, ... <default>]
+}
+
+
+db.employees.aggregate([
+  {
+    $project: {
+      name: 1,
+      bestEmail: {
+        $coalesce: ["$workEmail", "$personalEmail", "no-email@example.com"]
+      }
+    }
+  }
+])
