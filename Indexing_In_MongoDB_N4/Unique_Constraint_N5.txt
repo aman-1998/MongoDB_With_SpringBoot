@@ -1,0 +1,28 @@
+====================
+Unique Constraint :
+====================
+
+-------------------------------------------------------
+db.student.createIndex({"roll": 1}, {"unique": true});
+-------------------------------------------------------
+The command creates a unique index on the roll field in the student collection.
+{ "roll": 1 }: creates an ascending index on the roll field.
+{ "unique": true }: ensures that no two documents in the collection can have the same roll value.
+
+
+--------------------------------
+db.student.dropIndex("roll_1");
+--------------------------------
+drops the index with name "roll_1"
+
+-----------------------------------------------------------------
+db.student.createIndex({"age": 1, "name": 1}, {"unique": true});
+-----------------------------------------------------------------
+The command creates a compound unique index on the age and name fields in the student collection.
+The combination of age and name must be unique across the documents.
+
+
+--------------------------------------
+db.student.dropIndex("age_1_name_1");
+--------------------------------------
+drops the index with name "age_1_name_1"

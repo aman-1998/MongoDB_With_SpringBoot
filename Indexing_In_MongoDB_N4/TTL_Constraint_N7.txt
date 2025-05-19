@@ -1,0 +1,13 @@
+======================================
+Expire after seconds (Time To Leave):
+======================================
+
+----------------------------------------------------------------
+db.student.createIndex({"age": 1}, {"expireAfterSeconds": 60});
+----------------------------------------------------------------
+The index with name "age_1" will be created and will expire after 60 seconds
+
+
+==================================================================================
+Note: "expireAfterSeconds" can't be used in combination. It has to be standalone
+==================================================================================

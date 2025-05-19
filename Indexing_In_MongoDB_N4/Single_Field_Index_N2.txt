@@ -1,0 +1,299 @@
+=====================
+Single Field Index :
+=====================
+When index is on only one field.
+
+
+db.student.find({"age": 22});
+
+----------------------------------------
+db.student.find({"age": 22}).explain();
+----------------------------------------
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'school.student',
+    parsedQuery: { age: { '$eq': 22 } },
+    indexFilterSet: false,
+    queryHash: '317D2EA6',
+    planCacheShapeHash: '317D2EA6',
+    planCacheKey: '3C21A956',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'COLLSCAN',
+      filter: { age: { '$eq': 22 } },
+      direction: 'forward'
+    },
+    rejectedPlans: []
+  },
+  queryShapeHash: 'C09020D6DA1206F561A09EF80C16E59638CD68993D5F39E360C89C8EEC2A8954',
+  command: { find: 'student', filter: { age: 22 }, '$db': 'school' },
+  serverInfo: {
+    host: 'DESKTOP-2NUH9IF',
+    port: 27017,
+    version: '8.0.8',
+    gitVersion: '7f52660c14217ed2c8d3240f823a2291a4fe6abd'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,
+    internalQueryFrameworkControl: 'trySbeRestricted',
+    internalQueryPlannerIgnoreIndexWithCollationForRegex: 1
+  },
+  ok: 1
+}
+
+=> We can see that stage is COLLSCAN. It means documents of the collection are scanned.
+   This is obvious as there is no index as of now.
+
+
+--------------------------------------------------------
+db.student.find({"age": 22}).explain("executionStats");
+--------------------------------------------------------
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'school.student',
+    parsedQuery: { age: { '$eq': 22 } },
+    indexFilterSet: false,
+    queryHash: '317D2EA6',
+    planCacheShapeHash: '317D2EA6',
+    planCacheKey: '3C21A956',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'COLLSCAN',
+      filter: { age: { '$eq': 22 } },
+      direction: 'forward'
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 8,
+    executionTimeMillis: 0,
+    totalKeysExamined: 0,
+    totalDocsExamined: 21,
+    executionStages: {
+      isCached: false,
+      stage: 'COLLSCAN',
+      filter: { age: { '$eq': 22 } },
+      nReturned: 8,
+      executionTimeMillisEstimate: 0,
+      works: 22,
+      advanced: 8,
+      needTime: 13,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      direction: 'forward',
+      docsExamined: 21
+    }
+  },
+  queryShapeHash: 'C09020D6DA1206F561A09EF80C16E59638CD68993D5F39E360C89C8EEC2A8954',
+  command: { find: 'student', filter: { age: 22 }, '$db': 'school' },
+  serverInfo: {
+    host: 'DESKTOP-2NUH9IF',
+    port: 27017,
+    version: '8.0.8',
+    gitVersion: '7f52660c14217ed2c8d3240f823a2291a4fe6abd'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,
+    internalQueryFrameworkControl: 'trySbeRestricted',
+    internalQueryPlannerIgnoreIndexWithCollationForRegex: 1
+  },
+  ok: 1
+}
+
+
+=> In executionStats, we can see some extra informations like docsExamined, nReturned, etc.
+   No. of docs examined (docsExamined) = 21
+   No. of docs returned (nReturned) = 8
+   This means all the documents are scanned in order to return the result.
+
+
+------------------------------------
+db.student.createIndex({"age": 1});
+------------------------------------
+
+-------------------------
+db.student.getIndexes();
+-------------------------
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { age: 1 }, name: 'age_1' }
+]
+
+
+--------------------------------------------------------
+db.student.find({"age": 22}).explain("executionStats");
+--------------------------------------------------------
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'school.student',
+    parsedQuery: {
+      age: {
+        '$eq': 22
+      }
+    },
+    indexFilterSet: false,
+    queryHash: '317D2EA6',
+    planCacheShapeHash: '317D2EA6',
+    planCacheKey: '40750CC4',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'FETCH',
+      inputStage: {
+        stage: 'IXSCAN',
+        keyPattern: {
+          age: 1
+        },
+        indexName: 'age_1',
+        isMultiKey: false,
+        multiKeyPaths: {
+          age: []
+        },
+        isUnique: false,
+        isSparse: false,
+        isPartial: false,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: {
+          age: [
+            '[22, 22]'
+          ]
+        }
+      }
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 8,
+    executionTimeMillis: 0,
+    totalKeysExamined: 8,
+    totalDocsExamined: 8,
+    executionStages: {
+      isCached: false,
+      stage: 'FETCH',
+      nReturned: 8,
+      executionTimeMillisEstimate: 0,
+      works: 9,
+      advanced: 8,
+      needTime: 0,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      docsExamined: 8,
+      alreadyHasObj: 0,
+      inputStage: {
+        stage: 'IXSCAN',
+        nReturned: 8,
+        executionTimeMillisEstimate: 0,
+        works: 9,
+        advanced: 8,
+        needTime: 0,
+        needYield: 0,
+        saveState: 0,
+        restoreState: 0,
+        isEOF: 1,
+        keyPattern: {
+          age: 1
+        },
+        indexName: 'age_1',
+        isMultiKey: false,
+        multiKeyPaths: {
+          age: []
+        },
+        isUnique: false,
+        isSparse: false,
+        isPartial: false,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: {
+          age: [
+            '[22, 22]'
+          ]
+        },
+        keysExamined: 8,
+        seeks: 1,
+        dupsTested: 0,
+        dupsDropped: 0
+      }
+    }
+  },
+  queryShapeHash: 'C09020D6DA1206F561A09EF80C16E59638CD68993D5F39E360C89C8EEC2A8954',
+  command: {
+    find: 'student',
+    filter: {
+      age: 22
+    },
+    '$db': 'school'
+  },
+  serverInfo: {
+    host: 'DESKTOP-2NUH9IF',
+    port: 27017,
+    version: '8.0.8',
+    gitVersion: '7f52660c14217ed2c8d3240f823a2291a4fe6abd'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,
+    internalQueryFrameworkControl: 'trySbeRestricted',
+    internalQueryPlannerIgnoreIndexWithCollationForRegex: 1
+  },
+  ok: 1
+}
+
+
+=> stage : FETCH -> It means MongoDB is retrieving the actual documents from disk 
+                    or memory after finding the matching index keys.
+   IXSCAN -> It means index is used and index-table is scaned.
+   totalKeysExamined: 8
+   totalDocsExamined: 8
+   docsExamined: 8
+   So, only 8 docs are examined. And hence performance is improved
+   
+
+---------------------------------   
+db.student.dropIndex("age_1");
+or,
+db.student.dropIndex({"age": 2})
+---------------------------------

@@ -1,0 +1,88 @@
+=================
+Compound Index :
+=================
+When index is based on multiple fields.
+
+-----------------------------------------------------------------------------
+db.student.find({"age": 22}).explain("executionStats");
+db.student.find({"age": 22, "gender": "Female"}).explain("executionStats");
+db.student.find({"gender": "Female"}).explain("executionStats");
+db.student.find({"gender": "Female", "age": 22}).explain("executionStats");
+-----------------------------------------------------------------------------
+stage is COLLSCAN which means documents of the collection are scanned.
+This is obvious as there is no index as of now.
+
+
+-------------------------------------------------
+db.student.createIndex({"age": 1, "gender": 1});
+-------------------------------------------------
+Indexes are sorted on the basis of age and when ages are equal then sort on the basis of gender.
+Here, order matters a lot. In compound Index, the fields which comes first has higher priority.
+That means if we search on the basis of age then IXSCAN will be used or even if we search on the 
+basis of age and gender then also IXSCAN will be used. But if we search on the basis of only 
+gender then COLLSCAN will be used and there is no use of indexing because genders are still
+unsorted.
+
+
+-------------------------
+db.student.getIndexes();
+-------------------------
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { age: 1, gender: 1 }, name: 'age_1_gender_1' }
+]
+
+
+--------------------------------------------------------
+db.student.find({"age": 22}).explain("executionStats");
+--------------------------------------------------------
+FETCH
+IXSCAN
+nReturned: 7
+totalKeysExamined: 7
+totalDocsExamined: 7
+docsExamined: 7
+
+
+----------------------------------------------------------------------------
+db.student.find({"age": 22, "gender": "Female"}).explain("executionStats");
+----------------------------------------------------------------------------
+FETCH
+IXSCAN
+nReturned: 5
+totalKeysExamined: 5
+totalDocsExamined: 5
+docsExamined: 5
+
+
+-----------------------------------------------------------------
+db.student.find({"gender": "Female"}).explain("executionStats");
+-----------------------------------------------------------------
+COLLSCAN
+nReturned: 9
+docsExamined: 20
+
+
+----------------------------------------------------------------------------
+db.student.find({"gender": "Female", "age": 22}).explain("executionStats");
+----------------------------------------------------------------------------
+FETCH
+IXSCAN
+nReturned: 5
+totalKeysExamined: 5
+totalDocsExamined: 5
+docsExamined: 5
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+db.student.find({ age: 22, gender: "Female" });
+db.student.find({"gender": "Female", "age": 22});
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Both will use IXSCAN because both fields match the index, and MongoDB is smart 
+enough to reorder the fields internally to match the index layout.
+
+
+=================================================================================
+Note: Index also helps in sorting. If index is based on age and we want to sort 
+the documents on the basis of age, it will be faster.
+==================================================================================

@@ -1,0 +1,57 @@
+==================
+Multi-Key Index :
+==================
+A multi-key index in MongoDB is automatically created when you index a field 
+that holds an array. A multi-key index indexes each element of an array field separately.
+
+Sample data:
+------------
+{
+  "_id": {
+    "$oid": "6829fbb3c60ad3a66d1eafa7"
+  },
+  "name": "John Doe",
+  "firstName": "John",
+  "lastName": "Doe",
+  "age": 22,
+  "roll": 137,
+  "gender": "Male",
+  "department": "Computer Science",
+  "subject": [
+    "DBMS",
+    "Java",
+    "Computer Organization",
+    "TOC"
+  ]
+}
+
+
+----------------------------------------------------------------
+db.student.find({"subject": "DBMS"}).explain("executionStats");
+----------------------------------------------------------------
+COLLSCAN
+nReturned: 6
+totalKeysExamined: 0
+totalDocsExamined: 20
+
+----------------------------------------
+db.student.createIndex({"subject": 1});
+----------------------------------------
+Internaly, index is created for each of the values in subject 
+array i.e, DBMS, Java, Computer Organization, TOC
+
+Note: Multi-Key index takes large space in the disc. So, always be careful and create
+multi-key index when there is no other option.
+
+
+----------------------------------------------------------------
+db.student.find({"subject": "DBMS"}).explain("executionStats");
+----------------------------------------------------------------
+FETCH
+IXSCAN
+nReturned: 6
+totalKeysExamined: 6
+totalDocsExamined: 6
+
+
+

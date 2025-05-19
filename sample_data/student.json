@@ -5,8 +5,10 @@
     "lastName": "Doe",
     "age": 22,
     "roll": 137,
+	"gender": "Male",
     "department": "Computer Science",
-    "subject": ["DBMS", "Java", "Computer Organization", "TOC"]
+    "subject": ["DBMS", "Java", "Computer Organization", "TOC"],
+	"bio": "I am an youtuber"
   },
   {
     "name": "Aman Sharma",
@@ -14,8 +16,10 @@
     "lastName": "Sharma",
     "age": 21,
     "roll": 138,
+	"gender": "Male",
     "department": "Electronics",
-    "subject": ["Microprocessor", "Digital Logic", "Signals", "Control Systems"]
+    "subject": ["Microprocessor", "Digital Logic", "Signals", "Control Systems"],
+	"bio": "I love acting"
   },
   {
     "name": "Pooja Verma",
@@ -23,8 +27,10 @@
     "lastName": "Verma",
     "age": 20,
     "roll": 139,
+	"gender": "Female",
     "department": "Electrical",
-    "subject": ["Circuit Theory", "Machines", "Power Systems", "Signals"]
+    "subject": ["Circuit Theory", "Machines", "Power Systems", "Signals"],
+	"bio": "I make reels on youtube and instagram"
   },
   {
     "name": "Rahul Singh",
@@ -32,8 +38,10 @@
     "lastName": "Singh",
     "age": 23,
     "roll": 140,
+	"gender": "Male",
     "department": "Mechanical",
-    "subject": ["Thermodynamics", "Fluid Mechanics", "Kinematics", "CAD"]
+    "subject": ["Thermodynamics", "Fluid Mechanics", "Kinematics", "CAD"],
+	"bio": "I like footall"
   },
   {
     "name": "Sneha Patel",
@@ -41,8 +49,10 @@
     "lastName": "Patel",
     "age": 22,
     "roll": 141,
+	"gender": "Female",
     "department": "Civil",
-    "subject": ["Structures", "Soil Mechanics", "Surveying", "Construction"]
+    "subject": ["Structures", "Soil Mechanics", "Surveying", "Construction"],
+	"bio": "I love playing cricket"
   },
   {
     "name": "Kunal Deshmukh",
@@ -50,8 +60,10 @@
     "lastName": "Deshmukh",
     "age": 21,
     "roll": 142,
+	"gender": "Male",
     "department": "Information Technology",
-    "subject": ["DBMS", "Networking", "OS", "Java"]
+    "subject": ["DBMS", "Networking", "OS", "Java"],
+	"bio": "I usually watch reels"
   },
   {
     "name": "Meera Joshi",
@@ -59,8 +71,10 @@
     "lastName": "Joshi",
     "age": 22,
     "roll": 143,
+	"gender": "Female",
     "department": "Biotechnology",
-    "subject": ["Genetics", "Biochemistry", "Cell Biology", "Microbiology"]
+    "subject": ["Genetics", "Biochemistry", "Cell Biology", "Microbiology"],
+	"bio": "I love coding"
   },
   {
     "name": "Ravi Gupta",
@@ -68,8 +82,10 @@
     "lastName": "Gupta",
     "age": 24,
     "roll": 144,
+	"gender": "Male",
     "department": "Computer Science",
-    "subject": ["Python", "Machine Learning", "DBMS", "Java"]
+    "subject": ["Python", "Machine Learning", "DBMS", "Java"],
+	"bio": "I don't like social media"
   },
   {
     "name": "Divya Mehta",
@@ -77,8 +93,10 @@
     "lastName": "Mehta",
     "age": 20,
     "roll": 145,
+	"gender": "Female",
     "department": "Computer Science",
-    "subject": ["TOC", "AI", "Java", "Cloud Computing"]
+    "subject": ["TOC", "AI", "Java", "Cloud Computing"],
+	"bio": "I make informative videos on youtube"
   },
   {
     "name": "Sanjay Thakur",
@@ -86,8 +104,10 @@
     "lastName": "Thakur",
     "age": 23,
     "roll": 146,
+	"gender": "Male",
     "department": "Electronics",
-    "subject": ["Digital Electronics", "Embedded Systems", "VLSI", "Signals"]
+    "subject": ["Digital Electronics", "Embedded Systems", "VLSI", "Signals"],
+	"bio": "I love reading books"
   },
   {
     "name": "Priya Chatterjee",
@@ -95,8 +115,10 @@
     "lastName": "Chatterjee",
     "age": 22,
     "roll": 147,
+	"gender": "Female",
     "department": "Physics",
-    "subject": ["Quantum Mechanics", "Electrodynamics", "Optics", "Mathematical Physics"]
+    "subject": ["Quantum Mechanics", "Electrodynamics", "Optics", "Mathematical Physics"],
+	"bio": "I am not a bookish insect. I love travelling"
   },
   {
     "name": "Abhishek Ray",
@@ -104,8 +126,10 @@
     "lastName": "Ray",
     "age": 21,
     "roll": 148,
+	"gender": "Male",
     "department": "Mathematics",
-    "subject": ["Linear Algebra", "Calculus", "Statistics", "Differential Equations"]
+    "subject": ["Linear Algebra", "Calculus", "Statistics", "Differential Equations"],
+	"bio": "I love making videos on Geo-politics"
   },
   {
     "name": "Neha Rathi",
@@ -113,8 +137,10 @@
     "lastName": "Rathi",
     "age": 22,
     "roll": 149,
+	"gender": "Female",
     "department": "Information Technology",
-    "subject": ["Web Development", "Java", "DBMS", "AI"]
+    "subject": ["Web Development", "Java", "DBMS", "AI"],
+	"bio": "I love dancing"
   },
   {
     "name": "Ajay Bhatt",
@@ -122,8 +148,10 @@
     "lastName": "Bhatt",
     "age": 20,
     "roll": 150,
+	"gender": "Male",
     "department": "Electrical",
-    "subject": ["Machines", "Circuits", "Power Systems", "Control Systems"]
+    "subject": ["Machines", "Circuits", "Power Systems", "Control Systems"],
+	"bio": "I love playing video game"
   },
   {
     "name": "Anjali Nair",
@@ -131,8 +159,10 @@
     "lastName": "Nair",
     "age": 21,
     "roll": 151,
+	"gender": "Female",
     "department": "Computer Science",
-    "subject": ["DSA", "DBMS", "Java", "Python"]
+    "subject": ["DSA", "DBMS", "Java", "Python"],
+	"bio": "I want to be a scientist"
   },
   {
     "name": "Nikhil Banerjee",
@@ -140,8 +170,10 @@
     "lastName": "Banerjee",
     "age": 23,
     "roll": 152,
+	"gender": "Male",
     "department": "Mechanical",
-    "subject": ["Kinematics", "Manufacturing", "Thermodynamics", "Design"]
+    "subject": ["Kinematics", "Manufacturing", "Thermodynamics", "Design"],
+	"bio": "I am a foodie"
   },
   {
     "name": "Shivani Kapoor",
@@ -149,8 +181,10 @@
     "lastName": "Kapoor",
     "age": 22,
     "roll": 153,
+	"gender": "Female",
     "department": "Civil",
-    "subject": ["Surveying", "Concrete Tech", "Hydraulics", "Structures"]
+    "subject": ["Surveying", "Concrete Tech", "Hydraulics", "Structures"],
+	"bio": "I like helping poors"
   },
   {
     "name": "Harshit Saxena",
@@ -158,8 +192,10 @@
     "lastName": "Saxena",
     "age": 20,
     "roll": 154,
+	"gender": "Male",
     "department": "Electronics",
-    "subject": ["Signals", "Microprocessor", "Digital Circuits", "Embedded Systems"]
+    "subject": ["Signals", "Microprocessor", "Digital Circuits", "Embedded Systems"],
+	"bio": "I am an animal lover"
   },
   {
     "name": "Ritika Ahuja",
@@ -167,8 +203,10 @@
     "lastName": "Ahuja",
     "age": 21,
     "roll": 155,
+	"gender": "Female",
     "department": "Computer Science",
-    "subject": ["AI", "ML", "Cloud", "DBMS"]
+    "subject": ["AI", "ML", "Cloud", "DBMS"],
+	"bio": "I am a content creator"
   },
   {
     "name": "Mohit Bansal",
@@ -176,7 +214,9 @@
     "lastName": "Bansal",
     "age": 22,
     "roll": 156,
+	"gender": "Male",
     "department": "Information Technology",
-    "subject": ["Java", "OS", "Networks", "Cybersecurity"]
+    "subject": ["Java", "OS", "Networks", "Cybersecurity"],
+	"bio": "I do vloging on youtube"
   }
 ]

@@ -1,0 +1,44 @@
+==========
+Indexing:
+==========
+
+-> Indexes are created to speed up the search/query across the documents.
+-> We can select one or more field for indexing.
+-> Indexes are stored separately in sorted order that we can apply binary search on data.
+-> Along with data, the poiter to the corresponding document also exist with it using 
+   which the required document is located in the collection.
+   
+   
+-------------------------------------------------------
+How to select field on which index has to be created ? 
+-------------------------------------------------------
+1. The field which is used frequently for querying.
+
+
+--------------------------
+When not to use Indexing:
+--------------------------
+1. When the collection is small, there is no use of indexing. Because search is anyway going 
+   to take less time. So, creating index is just waste of storage.
+
+2. When a lots of write operation is going on. Whenever a document is inserted, one entry
+   in index-table is also required and again the entire B-TREE has to be rebalanced which is 
+   time taking. Updates are costly when the field used for indexing is updated using 
+   update command.
+   
+3. When most of the queries are based on n number of fields. So, we have to make indexes
+   on many fields and most of the time entire document will be searched. So, indexig is
+   of very little use here.
+   
+4. When the collection is humgous. Then the index-table created will also be huge and ultimately
+   searching in huge index-table is going to take time.
+   
+   
+--------------------
+Types of indexing :
+--------------------
+1. Single Field Indexes - When index is on only one field.
+2. Compound Index - When index is based on multiple fields.
+3. Multi-Key index - When index is on an a field that hold an array.
+4. Text Index - When we index on or more field as "text" index.
+   

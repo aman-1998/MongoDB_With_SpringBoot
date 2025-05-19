@@ -1,0 +1,39 @@
+============================
+Partial Filter Expression :
+============================
+
+--------------------------------------------------------------------------------------
+db.student.createIndex({"age": 1}, {"partialFilterExpression": {"age": {$gt: 22}}});
+--------------------------------------------------------------------------------------
+Creates index-table and the table contains ages which are greater than 22.
+This is useful when most of the queries are for students with age greater than 22.
+
+
+--------------------------------------------------------
+db.student.find({"age": 20}).explain("executionStats");
+--------------------------------------------------------
+COLLSCAN
+nReturned: 4
+totalDocsExamined: 20
+
+
+--------------------------------------------------------
+db.student.find({"age": 24}).explain("executionStats");
+--------------------------------------------------------
+FETCH
+IXSCAN
+totalKeysExamined: 1
+totalDocsExamined: 1
+
+
+=============================================================================================
+Note: We can even have a combination of unique and partialFilterExpression
+
+db.student.createIndex(
+{"age": 1}, 
+{"unique": true, "partialFilterExpression": {"age": {$gt: 22}}});
+
+This will create an index-table on age and the table will contain values greater than 22.
+And all the ages which are greater than 22 must be unique in the collection. The ages 
+which are smaller than or equals to 22 may not be unique.
+==============================================================================================

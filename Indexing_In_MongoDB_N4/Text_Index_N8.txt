@@ -1,0 +1,128 @@
+==============
+Text Index :
+==============
+
+-----------------------------------------
+db.student.createIndex({"bio": "text"});
+-----------------------------------------
+Text index is created on bio field.
+
+-----------------------------------
+Text Index has following features:
+-----------------------------------
+1. Single text index per collection:
+-------------------------------------
+Only one index of type "TEXT" can be created for a collection.
+
+
+2. Tokenization and stemming:
+------------------------------
+If a text is "I am love playing cricket" then after tokenization the 
+result is ["I", "am", "love", "playing", "cricket"]. After stemming the
+result is ["I", "am", "love", "play", "cricket"].
+
+Stemming uses basic NLP techniques internally to remove ing, s, ed, es, etc from the 
+end of a word.
+
+
+3. Relevance score:
+---------------------
+When we search on google, we get multiple results. The result which has higher 
+relevance score comes first in the result
+
+
+--------------------------------------
+db.student.find(
+{
+	$text: {
+		$search: "youtuber acting"
+	}
+}).explain("executionStats");
+---------------------------------------
+TEXT_MATCH – where the actual text search happens using the text index.
+IXSCAN
+nReturned: 5
+totalKeysExamined: 5
+totalDocsExamined: 5
+
+db.student.dropIndex("bio_text");
+
+
+----------------------------------------------------------
+db.student.createIndex({"name": "text", "bio": "text"});
+----------------------------------------------------------
+Searching will happen in both name and bio.
+
+
+---------------------------------------------
+db.student.find(
+{
+	$text: {
+		$search: "youtuber acting"
+	}
+})explain("executionStats");
+---------------------------------------------
+TEXT_MATCH – where the actual text search happens using the text index.
+IXSCAN
+nReturned: 5
+totalKeysExamined: 5
+totalDocsExamined: 5
+
+
+------------------------
+Print Relevance Score :
+------------------------
+db.student.find(
+{
+	$text: {
+		$search: "youtuber acting"
+	}
+}, 
+{
+	"relevance_score": {
+		$meta: "textScore"
+	}
+});
+
+
+------------------------------------
+Manual weight setting for fields :
+------------------------------------
+db.student.createIndex(
+{
+	"name": "text",
+	"bio": "text"
+},
+{
+	"weights": {
+		"name": 10,
+		"bio": 1
+	}
+});
+
+
+--------------------------------------------------------
+db.student.find(
+{
+	$text: {
+		$search: "youtuber John"
+	}
+}, 
+{
+	"relevance_score": {
+		$meta: "textScore"
+	}
+}).sort({"relevance_score": {$meta: "textScore"}});
+---------------------------------------------------------
+Since, name has higher weight so, the document with name "John" has higher weight.
+
+
+
+
+
+
+
+
+
+
+
