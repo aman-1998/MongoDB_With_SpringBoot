@@ -1,0 +1,80 @@
+=============
+Replica Set:
+=============
+A replica set in MongoDB is a group of MongoDB servers (nodes) that 
+maintain the same data through automatic replication. It is the foundation 
+of high availability in MongoDB.
+
+
+A replica set consists of:
+---------------------------
+-> Primary node – handles all write operations and by default all reads.
+-> Secondary node(s) – replicate data from the primary, and can handle reads (if configured).
+-> Arbiter (optional) – participates in elections but doesn't store data.
+
+
+Features of Replica set:
+----------------------------------------------------------------------------------------
+| Feature                     | Description                                            |
+|---------------------------- | -------------------------------------------------------|
+| High availability           | If the primary goes down, a secondary becomes primary. |
+| Automatic failover          | MongoDB auto-elects a new primary if needed.           |
+| Redundancy                  | All data is replicated to secondaries.                 |
+| Read scalability (optional) | Reads can be distributed to secondaries.               |
+| Backup and analytics        | Secondaries can be used for backup/reporting safely.   |
+----------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+Example1: node1(PRIMARY), node2(SECONDARY), node3(SECONDARY)
+Atleast 2 votes are required for a node to become primary. Now when node1 goes down,
+election will take place among available nodes i.e, node2 & node3. Now, if node2
+votes for itself and node3 also votes for node2, in that case node2 will become primary
+as node2 will have 2 votes which is required to become primary. 
+
+Now if node2 votes for itself and node3 votes for itself. In that case no node has 2 votes
+which is required to become primary. So, MongoDB after a delay will again conduct election
+and eventually the replica set will have a primary node.
+
+But if node2 also goes down, only node3 will be available and even if it votes for itself 
+it can't become primary because atleast 2 votes are required to become primary.
+
+Conclusion: With 3 nodes upto 1 node failure can be tolerated.
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+Example2: node1(PRIMARY), node2(SECONDARY), node3(SECONDARY), node4(SECONDARY)
+Atleast 3 votes are required for a node to become primary. Now when node1 goes down,
+election will take place among available nodes i.e., node2, node3 & node4. Now we can
+have a primary node if all the available members vote for one node for eg., node2 votes
+for itself and node3 and node4 also votes for node2. But if node2 also goes down, then 
+available nodes will be node3 and node4 (only 2 in number). In this case, we can never 
+have a primary node because maximum of 2 vote can be achieved by any node which is less
+than 3. 
+
+So, with 4 nodes we can tolerate upto 1 node failure.
+---------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+Conclusion:
+Either with 3 or 4 nodes, only upto 1 node-failure can be tolerated. So, we should always 
+go for 3 nodes if we want to tolerate upto 1 node-failure. Similarly, if we want to tolerate
+upto 2 node-failure, then we should go for 5 nodes and not 6. Spending money on one extra node
+is of no use.
+------------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+Note: If we have money constraint and we can't afford for 3 nodes but want to tolerate
+upto 1 node failure. In that case, we can have two nodes and an arbiter. 
+Example: 
+node1(Primary), node2(Secondary), node3(Arbiter)
+If node1 fails, then 2 nodes will be avilable and an election will take place.
+In this case, node2 votes for itself and node3(arbiter) also votes for node2. So, node2
+becomes primary.
+-------------------------------------------------------------------------------------------
+
+
+
+
+

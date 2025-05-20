@@ -1,0 +1,42 @@
+==========
+Sharding:
+==========
+Sharding is a method of horizontal scaling in MongoDB where data is split across 
+multiple servers, called shards. Each shard holds a portion of the dataset. 
+MongoDB automatically distributes and balances data and queries across shards.
+
+
+Sharding is required when:
+---------------------------
+1. The data size exceeds the capacity of a single server.
+2. The read/write load is too high for a single node.
+3. You want to scale out (add more servers) to handle large datasets or high throughput.
+
+
+Core Components of a Sharded Cluster:
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Component         | Role                                                                                                                                        |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| Shard             | A MongoDB instance (or replica set) that holds a subset of the data. Each shard is like a **mini database**.                                |
+| mongos            | A routing service that **acts as a query router**. The client connects to `mongos`, which knows how to route queries to the right shard(s). |
+| Config Server     | Stores the metadata and cluster configuration (e.g., what data is on which shard). Usually a **replica set of 3 nodes**.                    |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Scenario:
+----------
+You have 2 shards: shard1 and shard2
+
+shard1 has 2 databases: db1, db2
+
+Now, Will both databases be partitioned across shard1 and shard2 ?
+
+Answer: Only if the collections inside those databases are sharded.
+MongoDB does not automatically partition a database across shards. Instead, 
+sharding happens at the collection level — not at the database level.
+
+-> If you shard a collection, MongoDB will distribute its data (as chunks) 
+   across shard1 and shard2.
+
+-> If a collection is not sharded, it lives entirely on one shard (called the 
+   primary shard for that database).

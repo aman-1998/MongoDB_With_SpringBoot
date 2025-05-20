@@ -1,0 +1,84 @@
+===========================================
+Add one or more server in the replica set:
+===========================================
+You already have a replica set initialized (e.g., rsTest) with at least 
+one primary node running.
+
+
+Steps to add new mongod server to an existing replica set:
+-----------------------------------------------------------
+
+1. Make directory:
+-------------------
+C:\Softwares\mongoDB\rsdata\db\mongodServer4
+
+
+1. Start the new mongod instance:
+----------------------------------
+Make sure the new server uses the same replica set name (rsTest) and has its own dbPath
+
+mongod --replSet rsTest --port 28044 --dbpath /Softwares/mongoDB/rsdata/db/mongodServer4 --bind_ip localhost
+
+This node is now ready but not yet a member of the replica set.
+
+
+2. Connect to the primary node:
+--------------------------------
+mongosh --host localhost --port 28041
+or,
+mongosh --port 28041
+(Assuming 28041 is your current primary node)
+
+
+3. Add the new member:
+-----------------------
+rs.add("localhost:28044");
+
+Add a mongod server with priority:
+rs.add({ host: "localhost:28044", priority: 0 });
+------------------------------------------------------------------------------
+| Priority Value | Meaning                                                   |
+|----------------|-----------------------------------------------------------|
+| `> 0`          | Node **can become primary**. Higher value → higher chance |
+| `= 1`          | Default. Normal eligibility to become primary             |
+| `< 1`          | Less likely to become primary                             |
+| `= 0`          | Node **cannot become primary** (secondary only)           |
+------------------------------------------------------------------------------
+
+Add an arbiter:
+rs.addArb("localhost:28044");
+
+
+4. Reconfig new member along with older one:
+---------------------------------------------
+rs.reconfig({
+  _id: "rsTest",
+  members: [
+    { _id: 0, host: "localhost:28041" },
+    { _id: 1, host: "localhost:28042" },
+    { _id: 2, host: "localhost:28043" },
+	{ _id: 2, host: "localhost:28044" }
+  ]
+}, {"force": true});
+
+
+======================================
+Note: Perform either 3rd or 4th step
+======================================
+
+
+5. Check the replica set configuration:
+----------------------------------------
+rs.conf();
+
+
+6. Check the replica set status:
+---------------------------------
+rs.status();
+
+
+Conclusion:
+------------
+The primary node updates the replica set config to include the new member.
+The new node pulls all oplog entries to sync itself.
+Once synced, it becomes a secondary.

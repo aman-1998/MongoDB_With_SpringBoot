@@ -1,0 +1,114 @@
+================================================
+Setup to create 3 replicas of a MongoDB server:
+================================================
+
+1. Make directories:
+---------------------
+C:\Softwares\mongoDB\rsdata\db\mongodServer1
+C:\Softwares\mongoDB\rsdata\db\mongodServer2
+C:\Softwares\mongoDB\rsdata\db\mongodServer3
+
+
+2. Run the following commands in three separate terminals:
+-----------------------------------------------------------------
+mongod --replSet rsTest --port 28041 --dbpath /Softwares/mongoDB/rsdata/db/mongodServer1 --bind_ip localhost
+
+mongod --replSet rsTest --port 28042 --dbpath /Softwares/mongoDB/rsdata/db/mongodServer2 --bind_ip localhost
+
+mongod --replSet rsTest --port 28043 --dbpath /Softwares/mongoDB/rsdata/db/mongodServer3 --bind_ip localhost
+
+
+3. Connect to one of the nodes using a new terminal:
+-----------------------------------------------------
+mongosh --host localhost --port 28041
+or,
+mongosh --port 28041
+
+
+4. Then initiate the replica set:
+----------------------------------
+rs.initiate({
+  _id: "rsTest",
+  members: [
+    { _id: 0, host: "localhost:28041" },
+    { _id: 1, host: "localhost:28042" },
+    { _id: 2, host: "localhost:28043" }
+  ]
+});
+
+
+5. Check the replica set configuration:
+----------------------------------------
+rs.conf();
+
+
+6. Check the replica set status:
+---------------------------------
+rs.status();
+
+
+7. Connect to primary mongod server:
+-----------------------------------------
+use school;
+db.student.find();
+
+
+8. Connect to one of the secondary mongod server:
+--------------------------------------------------
+>> mongosh --host localhost --port 28042
+
+use school;
+
+db.student.find(); 
+==> This will give error because by default, we can't read/write in secondary server.
+
+
+9. Set read preference:
+------------------------
+
+1. db.getMongo().setReadPref("secondary");
+-------------------------------------------
+-> Only read from secondary nodes.
+-> If no secondary is available, the read will fail.
+-> Never falls back to primary.
+-> It is used when you want to strictly offload reads from the primary.
+-> It is used when you’re okay with reads failing if secondaries are down (e.g., for 
+   read-only analytics).Or when you want to force traffic away from the primary.
+
+
+2. db.getMongo().setReadPref("secondaryPreferred");
+-----------------------------------------------------
+-> Try to read from secondary. Fall back to primary if needed.
+-> If secondaries are available → reads go to them.
+-> If no secondaries are available → reads fall back to the primary.
+-> More resilient in case of node failure.
+-> It is used when you prefer secondaries but need availability guarantees.
+-> Reads will be successful eve if a secondary isn’t reachable (e.g., in user-facing apps).
+
+
+3. db.getMongo().setReadPref("primary");
+------------------------------------------
+-> Default (always read from primary)
+
+
+4. db.getMongo().setReadPref("primaryPreferred");
+---------------------------------------------------
+-> Read from primary if available, fallback to secondary
+
+
+5. db.getMongo().setReadPref("nearest");
+------------------------------------------
+-> Read from the lowest-latency node (can be primary or secondary)
+
+
+All the commands mentioned in step 9 will last till current mongosh session last.
+If mongosh session restarts, ReadPref will be reset to default.
+
+
+
+
+
+
+
+
+

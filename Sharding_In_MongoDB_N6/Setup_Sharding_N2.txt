@@ -1,0 +1,167 @@
+==========================
+Setup to create sharding:
+==========================
+
+1. Create directories:
+-----------------------
+C:\Softwares\mongoDB\shdata\db\configServer1
+C:\Softwares\mongoDB\shdata\db\configServer2
+C:\Softwares\mongoDB\shdata\db\configServer3
+C:\Softwares\mongoDB\shdata\db\shard1aServer
+C:\Softwares\mongoDB\shdata\db\shard1bServer
+C:\Softwares\mongoDB\shdata\db\shard1cServer
+C:\Softwares\mongoDB\shdata\db\shard2aServer
+C:\Softwares\mongoDB\shdata\db\shard2bServer
+C:\Softwares\mongoDB\shdata\db\shard2cServer
+
+
+2. Start Config Server Replica Set (in three different terminals):
+-------------------------------------------------------------------
+mongod --configsvr --replSet configReplSet --port 26001 --dbpath C:\Softwares\mongoDB\shdata\db\configServer1 --bind_ip localhost
+
+mongod --configsvr --replSet configReplSet --port 26002 --dbpath C:\Softwares\mongoDB\shdata\db\configServer2 --bind_ip localhost
+
+mongod --configsvr --replSet configReplSet --port 26003 --dbpath C:\Softwares\mongoDB\shdata\db\configServer3 --bind_ip localhost
+
+
+3. Connect to one of the nodes using a new terminal:
+-----------------------------------------------------
+mongosh --host localhost --port 26001
+or,
+mongosh --port 26001
+
+
+4. Then initiate the replica set for config server:
+----------------------------------------------------
+rs.initiate({
+  _id: "configReplSet",
+  configsvr: true,
+  members: [
+    { _id: 0, host: "localhost:26001" },
+    { _id: 1, host: "localhost:26002" },
+    { _id: 2, host: "localhost:26003" }
+  ]
+});
+
+
+5. Start Replica Set for shard1:
+---------------------------------
+
+mongod --shardsvr --replSet shard1ReplSet --port 27001 --dbpath C:\Softwares\mongoDB\shdata\db\shard1aServer --bind_ip localhost
+																											 
+mongod --shardsvr --replSet shard1ReplSet --port 27002 --dbpath C:\Softwares\mongoDB\shdata\db\shard1bServer --bind_ip localhost
+																											 
+mongod --shardsvr --replSet shard1ReplSet --port 27003 --dbpath C:\Softwares\mongoDB\shdata\db\shard1cServer --bind_ip localhost
+
+
+6. Connect to one of the nodes using a new terminal:
+-----------------------------------------------------
+mongosh --host localhost --port 27001
+or,
+mongosh --port 27001
+
+
+7. Then initiate the replica set for shard1 server:
+----------------------------------------------------
+rs.initiate({
+  _id: "shard1ReplSet",
+  members: [
+    { _id: 0, host: "localhost:27001" },
+    { _id: 1, host: "localhost:27002" },
+	{ _id: 1, host: "localhost:27003" }
+  ]
+});
+
+
+8. Check the replica set configuration:
+----------------------------------------
+rs.conf();
+
+
+9. Check the replica set status:
+---------------------------------
+rs.status();
+
+
+10. Start Replica Set for shard2:
+----------------------------------
+mongod --shardsvr --replSet shard2ReplSet --port 27004 --dbpath C:\Softwares\mongoDB\shdata\db\shard2aServer --bind_ip localhost
+																											 
+mongod --shardsvr --replSet shard2ReplSet --port 27005 --dbpath C:\Softwares\mongoDB\shdata\db\shard2bServer --bind_ip localhost
+																											 
+mongod --shardsvr --replSet shard2ReplSet --port 27006 --dbpath C:\Softwares\mongoDB\shdata\db\shard2cServer --bind_ip localhost
+
+
+11. Connect to one of the nodes using a new terminal:
+------------------------------------------------------
+mongosh --host localhost --port 27004
+or,
+mongosh --port 27004
+
+
+12. Then initiate the replica set for shard2 server:
+-----------------------------------------------------
+rs.initiate({
+  _id: "shard2ReplSet",
+  members: [
+    { _id: 0, host: "localhost:27004" },
+    { _id: 1, host: "localhost:27005" },
+	{ _id: 1, host: "localhost:27006" }
+  ]
+});
+
+
+13. Check the replica set configuration:
+----------------------------------------
+rs.conf();
+
+
+14. Check the replica set status:
+---------------------------------
+rs.status();
+
+
+15. Start mongos (mongo-router) server:
+----------------------------------------
+mongos --configdb configReplSet/localhost:26001,localhost:26002,localhost:26003 --port 27010 --bind_ip localhost
+
+mongos --configdb configReplSet/localhost:26001,localhost:26002,localhost:26003 --port 27011 --bind_ip localhost
+
+We can add more than one mongos router which will act as load balancer.
+
+
+16. Connect to one of the mongos server:
+-----------------------------------------
+mongosh --host localhost --port 27010
+or,
+mongosh --port 27010
+
+
+17. Add shards after connecting to on of the mongos server:
+------------------------------------------------------------
+sh.addShard("shard1ReplSet/localhost:27001,localhost:27002,localhost:27003");
+sh.addShard("shard2ReplSet/localhost:27004,localhost:27005,localhost:27006");
+
+
+=========================================================================================|
+Note:                                                                                    |
+-----                                                                                    |
+This command needs to be run in only one mongos server because:                          |
+-> All mongos routers connect to the same config servers.                                |
+-> The config servers store the cluster’s metadata, including information about shards.  |
+-> Once a shard is added via one mongos, all other mongos will automatically see it.     |
+=========================================================================================|
+
+
+Conclusion:
+------------
+Now we have:
+Shard1 -> [replica1(27001), replica2(27002), replica3(27003)] -> shard1ReplSet
+Shard2 -> [replica1(27004), replica2(27005), replica3(27006)] -> shard2ReplSet
+Config Replica Set -> [26001, 26002, 26003] -> configReplSet
+mongos -> [27010]
+
+
+
+
+
