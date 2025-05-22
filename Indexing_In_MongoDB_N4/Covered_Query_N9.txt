@@ -1,0 +1,75 @@
+=================
+# Covered Query:
+=================
+A covered query is a query which satisfies 2 conditions:
+1. All the fields in the query are part of index.
+2. All the fields returned in the query are in the same index.
+
+In case of covered queries, MongoDBdon't even look in the actual collection. It will look
+in the index and return the result. So, covered queries  very very fast.
+
+Example:
+db.student.createIndex({"age": 1, "name": 1});
+
+-------------------------------------------------------------
+db.student.find({"age": {$gte: 21}, "name": "Aman Sharma"}, 
+{"_id": 0, "age": 1, "name": 1}).explain("executionStats");
+-------------------------------------------------------------
+PROJECTION_COVERED
+IXSCAN
+nReturned: 1
+totalKeysExamined: 5
+totalDocsExamined: 0
+
+PROJECTION_COVERED: This means index is scanned and the result is returned. Since, the 
+data to be returned is already present in the index so, there is no need to fetch 
+documents from actual collection.
+
+FETCH: This means index is scanned and the result is fetch from the actual collection.
+So, it is slightly slower than PROJECTION_COVERED stage.
+
+# Winning Plan vs Rejected Plan :
+----------------------------------
+If we have two indexes age_1 and age_1_name_1, then if we execute a query say:
+db.student.find({"age": {$gt: 21}});
+Now, which index will be used ????
+
+If there are multiple indexes for a collection, then MongoDB extracts sample data from
+the collection and tries particular query with all available indexes one by one.
+MongoDB will compare their explain plan. Whichever index will provide better result on
+sample data that index will win. And then MongoDB stores the winning-plan in cache so
+that when next time a similar query is being executed, mongoDB knows which index to be
+used.
+
+So, if there are multiple indexes, first time the quey will take time because of the above
+process but from next time the time taken will be very less as the winning-plan is already
+cached.
+
+The explain-plans which are rejected are called Rejected-plan.
+
+The cache containing winning-plan is reset:
+1. After 1000 writes
+2. If index itself is reset
+3. Mongo server is restarted
+4. Other indexes are manipulated.
+
+
+# explain() or explain("queryPlanner")
+------------------------------------------
+
+
+# explain("executionStats")
+----------------------------
+It returns info on the execution of the query or aggregation such as total no. of 
+documents scanned, total no. of key examined, the time in milliseconds, etc
+
+
+# explain("allPlansExecution")
+-------------------------------
+Provides a list of query plans that the MongoDB query optimizer considered along with 
+the execution statics for each plan. This can be useful for understanding why a particular
+query plan was chosen and why others are rejected . This also helps in identifying
+petential performance improvements.
+
+
+

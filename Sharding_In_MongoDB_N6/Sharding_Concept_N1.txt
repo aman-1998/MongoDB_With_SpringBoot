@@ -6,14 +6,14 @@ multiple servers, called shards. Each shard holds a portion of the dataset.
 MongoDB automatically distributes and balances data and queries across shards.
 
 
-Sharding is required when:
----------------------------
+# Sharding is required when:
+-----------------------------
 1. The data size exceeds the capacity of a single server.
 2. The read/write load is too high for a single node.
 3. You want to scale out (add more servers) to handle large datasets or high throughput.
 
 
-Core Components of a Sharded Cluster:
+# Core Components of a Sharded Cluster:
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Component         | Role                                                                                                                                        |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
@@ -23,7 +23,7 @@ Core Components of a Sharded Cluster:
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Scenario:
+# Scenario:
 ----------
 You have 2 shards: shard1 and shard2
 
@@ -40,3 +40,104 @@ sharding happens at the collection level — not at the database level.
 
 -> If a collection is not sharded, it lives entirely on one shard (called the 
    primary shard for that database).
+   
+   
+# Shard-Key:
+-------------
+Field or fields based on which data is divided into multiple shards/parts.
+Within a shard, there can be multiple chunks. Each chunk contains data.
+
+# Balancer:
+------------
+Balancer is a background process that ensures even distribution of data (chunks) 
+across all shards in a sharded cluster.
+
+
+# Shard-Key selection strategies:
+----------------------------------
+1. High cardinality:
+~~~~~~~~~~~~~~~~~~~~~
+-> Choose a field with high cardinality (many unique values).
+-> High cardinality means there can be many split points. So, many shards can be 
+   created if we choose such shard-key.
+
+
+2. Avoid monotonically increasing keys:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-> Fields which has monotonically increasing values (timestamps, auto-increments)
+   should be avoided. If we select such field as shard-key, then subsequent writes 
+   will go the same chunk in the same shard. This is called "Hot-Chunk".
+   So, one shard will get overloaded which is called "Hot-Spot".
+-> If there is no other option other than selecting such a field as shard-key,
+   then consider Hashed-Sharding. Hashed-Sharding can also be used for a field with
+   low cardinality.
+ 
+ 
+3. Query Pattern:
+~~~~~~~~~~~~~~~~~~
+-> The shard-key should match most common query patterns.
+-> Queries that include shard key are routed efficiently.
+-> if a query does not include the shard key, MongoDB broadcasts the query to all shards. 
+   This is known as a scatter-gather operation. In this case, MongoDB doesn't know which 
+   shard might hold the matching documents, so it must:
+   * Send the query to all shards
+   * Each shard executes the query on its local data
+   * The results are merged and returned via mongos
+   
+   
+# Types of sharding:
+---------------------
+1. Ranged Sharding:
+~~~~~~~~~~~~~~~~~~~~
+db.shardCollection("school.student", {"age": 1});
+
+MongoDB expects the shard key document to follow the same format as an index 
+specification. That means:
+1 = ascending
+-1 = descending
+
+Even though MongoDB doesn’t sort data across shards based on this, the value is 
+required to comply with index definition syntax.
+
+
+Here, collection is partitioned based on range of shard-key values.
+Each shard has contiguous chunk of data.
+ShardA (age 0-30)
+ShardB (age 31-60)
+ShardC (age 61+)
+
+
+Pros:
+~~~~~
+-> Good for range queries
+-> Efficient if data is uniformly distributed
+
+Cons:
+~~~~~
+-> Risk of hotspot due to hot-chunk. When most of the students belong to one particular
+   range of age, say 20 to 30. In such case all writes will be directed on particular chunk.
+   So, ranged hashing may lead to hotspot sometimes.
+   
+   
+2. Hashed Sharding:
+~~~~~~~~~~~~~~~~~~~~
+sh.shardCollection("school.student", {"roll": "hashed"});
+
+Here, the key is hashed because of which result becomes random. So, there is a random
+and equal distribution of data across the shards.
+
+Pros:
+~~~~~
+-> Avoid hotspot
+-> Equal and even distribution
+
+Cons:
+~~~~~
+Inefficient range queries.
+
+
+3. Zone based (Tag Aware) Sharding:
+------------------------------------
+Here, shards are present in different regions.
+
+
