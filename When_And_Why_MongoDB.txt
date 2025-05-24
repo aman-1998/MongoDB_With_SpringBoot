@@ -1,0 +1,81 @@
+# MongoDB introduction:
+------------------------
+
+MongoDB is best suited for scenarios where flexibility, scalability, 
+and speed are more critical than rigid schema constraints or strict ACID compliance.
+
+# Here are the key scenarios where MongoDB is the right choice:
+--------------------------------------------------------------
+1. Flexible Schema Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+When data structure can vary from document to document.
+Ideal for rapidly changing or evolving data models.
+
+Example: Product catalogs where different products have different attributes.
+
+2. Storing Nested or Hierarchical Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MongoDB supports embedded documents and arrays.
+Great for storing related data without complex joins.
+
+Example: Blog posts with nested comments, user profiles with preferences.
+
+3. Big Data & High-Volume Write Use Cases
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Handles high insert/update loads efficiently.
+Good for logging, metrics, clickstreams, IoT, etc.
+
+Example: Real-time analytics, log aggregation.
+
+4. Horizontal Scalability
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Built-in sharding support to scale across multiple machines.
+Suitable for systems expected to grow beyond a single server.
+
+Example: Global applications serving millions of users.
+
+5. High Availability Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MongoDB supports replica sets for automatic failover.
+Ensures data is available even if a node fails.
+
+6. Agile Development & Rapid Prototyping
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Developers can build quickly without spending time defining strict schemas.
+Helps in MVPs or startups needing quick iterations.
+
+7. JSON-Centric Applications / APIs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MongoDB stores data in a JSON-like format (BSON).
+Ideal for systems exchanging data in JSON (e.g., RESTful APIs).
+
+8. Content Management Systems (CMS) or Catalogs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Where each document (e.g., article, product) may have different fields.
+
+Example: E-commerce platforms, news websites.
+
+9. Real-Time Data & Caching
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MongoDB’s in-memory storage engine can support fast reads.
+
+Can be used like a NoSQL cache or session store.
+
+Conclusion:
+------------ 
+Use MongoDB when:-
+-> No fixed schema
+-> Non structured data
+-> Huge data
+-> Fast read writes
+-> Horizontal sacling
+
+
+# Scenarios Where MongoDB May NOT Be Ideal:
+----------------------------------------------------------------------------------------------------
+| Case                                    | Why Not MongoDB?                                       |
+|---------------------------------------- | -------------------------------------------------------|
+| **Complex multi-table joins**           | Relational DBs like MySQL/PostgreSQL are better.       |
+| **Strict transactions and consistency** | RDBMS offers stronger ACID guarantees.                 |
+| **Financial or banking applications**   | Need for strong consistency and referential integrity. |
+----------------------------------------------------------------------------------------------------

@@ -56,12 +56,14 @@ The cache containing winning-plan is reset:
 
 # explain() or explain("queryPlanner")
 ------------------------------------------
+It returns basic informations of the query or aggregation like 
+stage (COLLSCAN, FETCH, PROJECTION_COVERED) and index.
 
 
 # explain("executionStats")
 ----------------------------
 It returns info on the execution of the query or aggregation such as total no. of 
-documents scanned, total no. of key examined, the time in milliseconds, etc
+documents scanned, total no. of keys examined, the time in milliseconds, etc
 
 
 # explain("allPlansExecution")
