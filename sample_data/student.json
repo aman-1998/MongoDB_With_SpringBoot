@@ -8,7 +8,14 @@
 	"gender": "Male",
     "department": "Computer Science",
     "subject": ["DBMS", "Java", "Computer Organization", "TOC"],
-	"bio": "I am an youtuber"
+	"bio": "I am an youtuber",
+	"contactinfo": {
+		"city": "Kolkata",
+		"phone": "9442737354",
+		"emailAddress": "johndoe123@google.com",
+		"state": "West Bengal",
+		"zipcode": "754145"
+	}
   },
   {
     "name": "Aman Sharma",
@@ -19,7 +26,14 @@
 	"gender": "Male",
     "department": "Electronics",
     "subject": ["Microprocessor", "Digital Logic", "Signals", "Control Systems"],
-	"bio": "I love acting"
+	"bio": "I love acting",
+	"contactinfo": {
+		"city": "Kolkata",
+		"phone": "9635523444",
+		"emailAddress": "amansharma@google.com",
+		"state": "West Bengal",
+		"zipcode": "94635"
+	}
   },
   {
     "name": "Pooja Verma",
@@ -30,7 +44,14 @@
 	"gender": "Female",
     "department": "Electrical",
     "subject": ["Circuit Theory", "Machines", "Power Systems", "Signals"],
-	"bio": "I make reels on youtube and instagram"
+	"bio": "I make reels on youtube and instagram",
+	"contactinfo": {
+		"city": "Nagpur",
+		"phone": "9936355252",
+		"emailAddress": "poojaverma@google.com",
+		"state": "Maharashtra",
+		"zipcode": "272753"
+	}
   },
   {
     "name": "Rahul Singh",
@@ -41,7 +62,14 @@
 	"gender": "Male",
     "department": "Mechanical",
     "subject": ["Thermodynamics", "Fluid Mechanics", "Kinematics", "CAD"],
-	"bio": "I like footall"
+	"bio": "I like footall",
+	"contactinfo": {
+		"city": "Howrah",
+		"phone": "3883772663",
+		"emailAddress": "rahulsingh@google.com",
+		"state": "West Bengal",
+		"zipcode": "3773644"
+	}
   },
   {
     "name": "Sneha Patel",
@@ -52,7 +80,14 @@
 	"gender": "Female",
     "department": "Civil",
     "subject": ["Structures", "Soil Mechanics", "Surveying", "Construction"],
-	"bio": "I love playing cricket"
+	"bio": "I love playing cricket",
+	"contactinfo": {
+		"city": "Howrah",
+		"phone": "377344566",
+		"emailAddress": "johndoe123@google.com",
+		"state": "West Bengal",
+		"zipcode": "2993663"
+	}
   },
   {
     "name": "Kunal Deshmukh",
@@ -63,7 +98,14 @@
 	"gender": "Male",
     "department": "Information Technology",
     "subject": ["DBMS", "Networking", "OS", "Java"],
-	"bio": "I usually watch reels"
+	"bio": "I usually watch reels",
+	"contactinfo": {
+		"city": "Nagpur",
+		"phone": "8836635445",
+		"emailAddress": "kunaldeshmukh@google.com",
+		"state": "Maharashtra",
+		"zipcode": "772345"
+	}
   },
   {
     "name": "Meera Joshi",
@@ -74,7 +116,14 @@
 	"gender": "Female",
     "department": "Biotechnology",
     "subject": ["Genetics", "Biochemistry", "Cell Biology", "Microbiology"],
-	"bio": "I love coding"
+	"bio": "I love coding",
+	"contactinfo": {
+		"city": "Nagpur",
+		"phone": "93736363772",
+		"emailAddress": "meerajoshi@google.com",
+		"state": "Maharashtra",
+		"zipcode": "273663"
+	}
   },
   {
     "name": "Ravi Gupta",
@@ -85,7 +134,14 @@
 	"gender": "Male",
     "department": "Computer Science",
     "subject": ["Python", "Machine Learning", "DBMS", "Java"],
-	"bio": "I don't like social media"
+	"bio": "I don't like social media",
+	"contactinfo": {
+		"city": "Nagpur",
+		"phone": "9927253443",
+		"emailAddress": "ravigupta@google.com",
+		"state": "Maharashtra",
+		"zipcode": "273663"
+	}
   },
   {
     "name": "Divya Mehta",
@@ -96,7 +152,14 @@
 	"gender": "Female",
     "department": "Computer Science",
     "subject": ["TOC", "AI", "Java", "Cloud Computing"],
-	"bio": "I make informative videos on youtube"
+	"bio": "I make informative videos on youtube",
+	"contactinfo": {
+		"city": "Nagpur",
+		"phone": "3994433734",
+		"emailAddress": "divyamehta@google.com",
+		"state": "Maharashtra",
+		"zipcode": "399467"
+	}
   },
   {
     "name": "Sanjay Thakur",
@@ -107,7 +170,14 @@
 	"gender": "Male",
     "department": "Electronics",
     "subject": ["Digital Electronics", "Embedded Systems", "VLSI", "Signals"],
-	"bio": "I love reading books"
+	"bio": "I love reading books",
+	"contactinfo": {
+		"city": "Kolkata",
+		"phone": "9926355344",
+		"emailAddress": "sanjay@google.com",
+		"state": "West Bengal",
+		"zipcode": "388334"
+	}
   },
   {
     "name": "Priya Chatterjee",
@@ -118,7 +188,14 @@
 	"gender": "Female",
     "department": "Physics",
     "subject": ["Quantum Mechanics", "Electrodynamics", "Optics", "Mathematical Physics"],
-	"bio": "I am not a bookish insect. I love travelling"
+	"bio": "I am not a bookish insect. I love travelling",
+	"contactinfo": {
+		"city": "Kolkata",
+		"phone": "287363434",
+		"emailAddress": "priyachatterjee@google.com",
+		"state": "West Bengal",
+		"zipcode": "882633"
+	}
   },
   {
     "name": "Abhishek Ray",
@@ -129,7 +206,14 @@
 	"gender": "Male",
     "department": "Mathematics",
     "subject": ["Linear Algebra", "Calculus", "Statistics", "Differential Equations"],
-	"bio": "I love making videos on Geo-politics"
+	"bio": "I love making videos on Geo-politics",
+	"contactinfo": {
+		"city": "Kolkata",
+		"phone": "2882662335",
+		"emailAddress": "abhishekray@google.com",
+		"state": "West Bengal",
+		"zipcode": "754145"
+	}
   },
   {
     "name": "Neha Rathi",
@@ -140,7 +224,14 @@
 	"gender": "Female",
     "department": "Information Technology",
     "subject": ["Web Development", "Java", "DBMS", "AI"],
-	"bio": "I love dancing"
+	"bio": "I love dancing",
+	"contactinfo": {
+		"city": "Kolkata",
+		"phone": "3873773",
+		"emailAddress": "neharathi@google.com",
+		"state": "West Bengal",
+		"zipcode": "754145"
+	}
   },
   {
     "name": "Ajay Bhatt",
@@ -151,7 +242,14 @@
 	"gender": "Male",
     "department": "Electrical",
     "subject": ["Machines", "Circuits", "Power Systems", "Control Systems"],
-	"bio": "I love playing video game"
+	"bio": "I love playing video game",
+	"contactinfo": {
+		"city": "Nagpur",
+		"phone": "277266335",
+		"emailAddress": "ajaybhatt@google.com",
+		"state": "Maharashtra",
+		"zipcode": "273663"
+	}
   },
   {
     "name": "Anjali Nair",
@@ -162,7 +260,14 @@
 	"gender": "Female",
     "department": "Computer Science",
     "subject": ["DSA", "DBMS", "Java", "Python"],
-	"bio": "I want to be a scientist"
+	"bio": "I want to be a scientist",
+	"contactinfo": {
+		"city": "Nagpur",
+		"phone": "9912662334",
+		"emailAddress": "anjalinayar@google.com",
+		"state": "Maharashtra",
+		"zipcode": "273663"
+	}
   },
   {
     "name": "Nikhil Banerjee",
@@ -173,7 +278,14 @@
 	"gender": "Male",
     "department": "Mechanical",
     "subject": ["Kinematics", "Manufacturing", "Thermodynamics", "Design"],
-	"bio": "I am a foodie"
+	"bio": "I am a foodie",
+	"contactinfo": {
+		"city": "Kalyani",
+		"phone": "377372234",
+		"emailAddress": "nikhilbanerjee@google.com",
+		"state": "West Bengal",
+		"zipcode": "883633"
+	}
   },
   {
     "name": "Shivani Kapoor",
@@ -184,7 +296,14 @@
 	"gender": "Female",
     "department": "Civil",
     "subject": ["Surveying", "Concrete Tech", "Hydraulics", "Structures"],
-	"bio": "I like helping poors"
+	"bio": "I like helping poors",
+	"contactinfo": {
+		"city": "Bangalore",
+		"phone": "3773764644",
+		"emailAddress": "shivanikpoor@google.com",
+		"state": "Karnataka",
+		"zipcode": "377377"
+	}
   },
   {
     "name": "Harshit Saxena",
@@ -195,7 +314,14 @@
 	"gender": "Male",
     "department": "Electronics",
     "subject": ["Signals", "Microprocessor", "Digital Circuits", "Embedded Systems"],
-	"bio": "I am an animal lover"
+	"bio": "I am an animal lover",
+	"contactinfo": {
+		"city": "Bangalore",
+		"phone": "8377625523",
+		"emailAddress": "harshitsaxena@google.com",
+		"state": "Karnataka",
+		"zipcode": "277262"
+	}
   },
   {
     "name": "Ritika Ahuja",
@@ -206,7 +332,14 @@
 	"gender": "Female",
     "department": "Computer Science",
     "subject": ["AI", "ML", "Cloud", "DBMS"],
-	"bio": "I am a content creator"
+	"bio": "I am a content creator",
+	"contactinfo": {
+		"city": "Kolkata",
+		"phone": "3883726636",
+		"emailAddress": "ritikaahuja@google.com",
+		"state": "West Bengal",
+		"zipcode": "754145"
+	}
   },
   {
     "name": "Mohit Bansal",
@@ -217,6 +350,2313 @@
 	"gender": "Male",
     "department": "Information Technology",
     "subject": ["Java", "OS", "Networks", "Cybersecurity"],
-	"bio": "I do vloging on youtube"
+	"bio": "I do vloging on youtube",
+	"contactinfo": {
+		"city": "Kolkata",
+		"phone": "9373636863",
+		"emailAddress": "mohitbansal@google.com",
+		"state": "West Bengal",
+		"zipcode": "754145"
+	}
+  },
+  {
+    "name": "Darshit Hora",
+    "firstName": "Darshit",
+    "lastName": "Hora",
+    "age": 29,
+    "roll": 101,
+    "gender": "Male",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Rem officiis adipisci aut excepturi dolor odio velit veritatis laboriosam autem.",
+    "contactinfo": {
+      "city": "Vijayanagaram",
+      "state": "Tamil Nadu",
+      "zipcode": "144284",
+      "phone": "5162983780",
+      "emailAddress": "bhandaridivij@hotmail.com"
+    }
+  },
+  {
+    "name": "Kimaya Sekhon",
+    "firstName": "Kimaya",
+    "lastName": "Sekhon",
+    "age": 26,
+    "roll": 102,
+    "gender": "Female",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Eveniet id assumenda doloribus occaecati dolore.",
+    "contactinfo": {
+      "city": "Solapur",
+      "state": "Himachal Pradesh",
+      "zipcode": "401852",
+      "phone": "+917217535348",
+      "emailAddress": "mirayakhalsa@srinivasan.com"
+    }
+  },
+  {
+    "name": "Tushar Wali",
+    "firstName": "Tushar",
+    "lastName": "Wali",
+    "age": 20,
+    "roll": 103,
+    "gender": "Male",
+    "department": "Chemical Engineering",
+    "subject": [
+      "Process Calculations",
+      "Chemical Reaction Engineering",
+      "Thermodynamics",
+      "Fluid Mechanics"
+    ],
+    "bio": "Magni maxime id tempore quidem illo saepe nobis minus error adipisci in perspiciatis.",
+    "contactinfo": {
+      "city": "Dehradun",
+      "state": "Andhra Pradesh",
+      "zipcode": "809468",
+      "phone": "+918376429485",
+      "emailAddress": "ladira@yahoo.com"
+    }
+  },
+  {
+    "name": "Piya Verma",
+    "firstName": "Piya",
+    "lastName": "Verma",
+    "age": 26,
+    "roll": 104,
+    "gender": "Female",
+    "department": "Electronics Engineering",
+    "subject": [
+      "Digital Electronics",
+      "Microprocessors",
+      "VLSI Design",
+      "Embedded Systems"
+    ],
+    "bio": "Blanditiis dolores quidem molestiae porro provident id quibusdam ad consectetur sit.",
+    "contactinfo": {
+      "city": "Raebareli",
+      "state": "Meghalaya",
+      "zipcode": "740764",
+      "phone": "0086339696",
+      "emailAddress": "mshukla@yahoo.com"
+    }
+  },
+  {
+    "name": "Indrans Dewan",
+    "firstName": "Indrans",
+    "lastName": "Dewan",
+    "age": 19,
+    "roll": 105,
+    "gender": "Female",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Occaecati rem ratione odit quam doloremque architecto natus velit quibusdam.",
+    "contactinfo": {
+      "city": "Deoghar",
+      "state": "Punjab",
+      "zipcode": "383491",
+      "phone": "1543039759",
+      "emailAddress": "emir04@gmail.com"
+    }
+  },
+  {
+    "name": "Charvi Dhar",
+    "firstName": "Charvi",
+    "lastName": "Dhar",
+    "age": 26,
+    "roll": 106,
+    "gender": "Male",
+    "department": "Electrical Engineering",
+    "subject": [
+      "Circuit Analysis",
+      "Electromagnetics",
+      "Power Systems",
+      "Control Systems"
+    ],
+    "bio": "Quod quisquam eveniet quasi tempora occaecati voluptate.",
+    "contactinfo": {
+      "city": "Muzaffarnagar",
+      "state": "Andhra Pradesh",
+      "zipcode": "661792",
+      "phone": "+919112782167",
+      "emailAddress": "xtata@dhar.com"
+    }
+  },
+  {
+    "name": "Ishaan Iyengar",
+    "firstName": "Ishaan",
+    "lastName": "Iyengar",
+    "age": 19,
+    "roll": 107,
+    "gender": "Male",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Ad perferendis omnis rem eos provident cupiditate dolor.",
+    "contactinfo": {
+      "city": "Thiruvananthapuram",
+      "state": "Nagaland",
+      "zipcode": "053165",
+      "phone": "05950271960",
+      "emailAddress": "advikadhillon@yahoo.com"
+    }
+  },
+  {
+    "name": "Eshani Varma",
+    "firstName": "Eshani",
+    "lastName": "Varma",
+    "age": 23,
+    "roll": 108,
+    "gender": "Male",
+    "department": "Physics",
+    "subject": [
+      "Quantum Mechanics",
+      "Electrodynamics",
+      "Statistical Mechanics",
+      "Classical Mechanics"
+    ],
+    "bio": "Rem ullam neque hic enim reiciendis veniam repellat non minima dolore consectetur aperiam.",
+    "contactinfo": {
+      "city": "Arrah",
+      "state": "Kerala",
+      "zipcode": "966800",
+      "phone": "04857691854",
+      "emailAddress": "graju@amble.net"
+    }
+  },
+  {
+    "name": "Eshani Chad",
+    "firstName": "Eshani",
+    "lastName": "Chad",
+    "age": 30,
+    "roll": 109,
+    "gender": "Male",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Quo inventore sunt voluptates aspernatur reprehenderit molestiae numquam mollitia quisquam quaerat aspernatur animi ut.",
+    "contactinfo": {
+      "city": "Bhatpara",
+      "state": "Assam",
+      "zipcode": "732086",
+      "phone": "03983189753",
+      "emailAddress": "hridaan90@bala.info"
+    }
+  },
+  {
+    "name": "Rati Khurana",
+    "firstName": "Rati",
+    "lastName": "Khurana",
+    "age": 25,
+    "roll": 110,
+    "gender": "Female",
+    "department": "Computer Science",
+    "subject": [
+      "Data Structures",
+      "Algorithms",
+      "Operating Systems",
+      "Computer Networks"
+    ],
+    "bio": "Voluptatibus cumque a earum expedita sed saepe quibusdam.",
+    "contactinfo": {
+      "city": "Bikaner",
+      "state": "Uttar Pradesh",
+      "zipcode": "032723",
+      "phone": "+919035487968",
+      "emailAddress": "deonakul@hotmail.com"
+    }
+  },
+  {
+    "name": "Heer Bhavsar",
+    "firstName": "Heer",
+    "lastName": "Bhavsar",
+    "age": 28,
+    "roll": 111,
+    "gender": "Male",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Quaerat assumenda ipsum maxime sunt delectus eos.",
+    "contactinfo": {
+      "city": "Kurnool",
+      "state": "Sikkim",
+      "zipcode": "892659",
+      "phone": "+918759922523",
+      "emailAddress": "jayanbaral@chakrabarti-chaudhry.com"
+    }
+  },
+  {
+    "name": "Divij Raval",
+    "firstName": "Divij",
+    "lastName": "Raval",
+    "age": 25,
+    "roll": 112,
+    "gender": "Female",
+    "department": "Electronics Engineering",
+    "subject": [
+      "Digital Electronics",
+      "Microprocessors",
+      "VLSI Design",
+      "Embedded Systems"
+    ],
+    "bio": "Voluptatum id consequatur culpa quod eaque cumque qui.",
+    "contactinfo": {
+      "city": "Gurgaon",
+      "state": "Uttar Pradesh",
+      "zipcode": "310472",
+      "phone": "5566320038",
+      "emailAddress": "pranay63@deshmukh.com"
+    }
+  },
+  {
+    "name": "Aradhya Soman",
+    "firstName": "Aradhya",
+    "lastName": "Soman",
+    "age": 26,
+    "roll": 113,
+    "gender": "Female",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Laborum minima reprehenderit saepe sint sint in laudantium iure distinctio dolor debitis.",
+    "contactinfo": {
+      "city": "Guna",
+      "state": "Nagaland",
+      "zipcode": "175597",
+      "phone": "+912534744314",
+      "emailAddress": "samihakata@brahmbhatt.info"
+    }
+  },
+  {
+    "name": "Adah Jayaraman",
+    "firstName": "Adah",
+    "lastName": "Jayaraman",
+    "age": 25,
+    "roll": 114,
+    "gender": "Male",
+    "department": "Information Technology",
+    "subject": [
+      "Database Management",
+      "Web Technologies",
+      "Software Engineering",
+      "Cloud Computing"
+    ],
+    "bio": "Incidunt consequatur vitae suscipit quasi sit adipisci vero quisquam sed nisi minima.",
+    "contactinfo": {
+      "city": "Purnia",
+      "state": "Haryana",
+      "zipcode": "070758",
+      "phone": "0692314532",
+      "emailAddress": "indranil01@tiwari.net"
+    }
+  },
+  {
+    "name": "Mishti Saxena",
+    "firstName": "Mishti",
+    "lastName": "Saxena",
+    "age": 21,
+    "roll": 115,
+    "gender": "Male",
+    "department": "Physics",
+    "subject": [
+      "Quantum Mechanics",
+      "Electrodynamics",
+      "Statistical Mechanics",
+      "Classical Mechanics"
+    ],
+    "bio": "Reprehenderit quod quisquam necessitatibus nesciunt iusto tempore nobis quae ducimus rem repellat facilis.",
+    "contactinfo": {
+      "city": "Bongaigaon",
+      "state": "Haryana",
+      "zipcode": "968424",
+      "phone": "06603793159",
+      "emailAddress": "preraksaxena@vig.net"
+    }
+  },
+  {
+    "name": "Ehsaan Kala",
+    "firstName": "Ehsaan",
+    "lastName": "Kala",
+    "age": 21,
+    "roll": 116,
+    "gender": "Female",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Quaerat distinctio labore reprehenderit earum ipsa quam cupiditate facere cupiditate ipsa excepturi distinctio.",
+    "contactinfo": {
+      "city": "Phagwara",
+      "state": "Telangana",
+      "zipcode": "667578",
+      "phone": "7328463518",
+      "emailAddress": "odevi@gmail.com"
+    }
+  },
+  {
+    "name": "Farhan Suri",
+    "firstName": "Farhan",
+    "lastName": "Suri",
+    "age": 29,
+    "roll": 117,
+    "gender": "Male",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Numquam quod nulla provident inventore quibusdam magni inventore.",
+    "contactinfo": {
+      "city": "New Delhi",
+      "state": "West Bengal",
+      "zipcode": "050101",
+      "phone": "+919522225147",
+      "emailAddress": "kashyaprohan@baral.info"
+    }
+  },
+  {
+    "name": "Miraan Walla",
+    "firstName": "Miraan",
+    "lastName": "Walla",
+    "age": 18,
+    "roll": 118,
+    "gender": "Male",
+    "department": "Civil Engineering",
+    "subject": [
+      "Structural Analysis",
+      "Geotechnical Engineering",
+      "Transportation Engineering",
+      "Surveying"
+    ],
+    "bio": "Modi placeat fuga eligendi nulla tempora alias sed perspiciatis cumque.",
+    "contactinfo": {
+      "city": "Agra",
+      "state": "Nagaland",
+      "zipcode": "741456",
+      "phone": "5153897083",
+      "emailAddress": "myra51@gmail.com"
+    }
+  },
+  {
+    "name": "Kanav Hari",
+    "firstName": "Kanav",
+    "lastName": "Hari",
+    "age": 27,
+    "roll": 119,
+    "gender": "Female",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Modi tempora ipsa nisi unde architecto.",
+    "contactinfo": {
+      "city": "Gurgaon",
+      "state": "Manipur",
+      "zipcode": "676505",
+      "phone": "09671502914",
+      "emailAddress": "raunakkoshy@gill.org"
+    }
+  },
+  {
+    "name": "Charvi Mangat",
+    "firstName": "Charvi",
+    "lastName": "Mangat",
+    "age": 23,
+    "roll": 120,
+    "gender": "Female",
+    "department": "Chemical Engineering",
+    "subject": [
+      "Process Calculations",
+      "Chemical Reaction Engineering",
+      "Thermodynamics",
+      "Fluid Mechanics"
+    ],
+    "bio": "Aut voluptatem ad ut dolores est reiciendis.",
+    "contactinfo": {
+      "city": "Noida",
+      "state": "Sikkim",
+      "zipcode": "813711",
+      "phone": "+914225973147",
+      "emailAddress": "jranganathan@gmail.com"
+    }
+  },
+  {
+    "name": "Samiha Goswami",
+    "firstName": "Samiha",
+    "lastName": "Goswami",
+    "age": 28,
+    "roll": 121,
+    "gender": "Female",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Ducimus libero quibusdam suscipit rem eaque libero amet quasi mollitia ex assumenda.",
+    "contactinfo": {
+      "city": "Nellore",
+      "state": "Nagaland",
+      "zipcode": "561946",
+      "phone": "+910433347331",
+      "emailAddress": "divyanshshroff@yahoo.com"
+    }
+  },
+  {
+    "name": "Alisha Goyal",
+    "firstName": "Alisha",
+    "lastName": "Goyal",
+    "age": 25,
+    "roll": 122,
+    "gender": "Female",
+    "department": "Biotechnology",
+    "subject": [
+      "Genetics",
+      "Molecular Biology",
+      "Bioprocess Engineering",
+      "Immunology"
+    ],
+    "bio": "Quia molestias consequatur quia optio commodi.",
+    "contactinfo": {
+      "city": "Jalna",
+      "state": "Odisha",
+      "zipcode": "671776",
+      "phone": "9064108362",
+      "emailAddress": "mmadan@agrawal.com"
+    }
+  },
+  {
+    "name": "Lakshay Gole",
+    "firstName": "Lakshay",
+    "lastName": "Gole",
+    "age": 24,
+    "roll": 123,
+    "gender": "Male",
+    "department": "Chemical Engineering",
+    "subject": [
+      "Process Calculations",
+      "Chemical Reaction Engineering",
+      "Thermodynamics",
+      "Fluid Mechanics"
+    ],
+    "bio": "Cupiditate aut unde eius nemo cupiditate.",
+    "contactinfo": {
+      "city": "Panihati",
+      "state": "Rajasthan",
+      "zipcode": "254608",
+      "phone": "6459628157",
+      "emailAddress": "ishaan45@hotmail.com"
+    }
+  },
+  {
+    "name": "Siya Gara",
+    "firstName": "Siya",
+    "lastName": "Gara",
+    "age": 18,
+    "roll": 124,
+    "gender": "Female",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Sequi quisquam possimus impedit quis laborum tempore nam cupiditate.",
+    "contactinfo": {
+      "city": "Muzaffarnagar",
+      "state": "Tamil Nadu",
+      "zipcode": "993392",
+      "phone": "+915256536550",
+      "emailAddress": "kismatgoda@das.com"
+    }
+  },
+  {
+    "name": "Diya Talwar",
+    "firstName": "Diya",
+    "lastName": "Talwar",
+    "age": 19,
+    "roll": 125,
+    "gender": "Male",
+    "department": "Electrical Engineering",
+    "subject": [
+      "Circuit Analysis",
+      "Electromagnetics",
+      "Power Systems",
+      "Control Systems"
+    ],
+    "bio": "Nulla sapiente cum est atque nobis veniam aut.",
+    "contactinfo": {
+      "city": "Ozhukarai",
+      "state": "Uttarakhand",
+      "zipcode": "222624",
+      "phone": "7106611847",
+      "emailAddress": "romilsalvi@hayer-rout.net"
+    }
+  },
+  {
+    "name": "Divyansh Bera",
+    "firstName": "Divyansh",
+    "lastName": "Bera",
+    "age": 18,
+    "roll": 126,
+    "gender": "Male",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Necessitatibus similique tenetur voluptatibus dolorem esse dolorem doloribus porro quam modi dicta.",
+    "contactinfo": {
+      "city": "Aligarh",
+      "state": "Uttar Pradesh",
+      "zipcode": "084049",
+      "phone": "+919471359189",
+      "emailAddress": "damini41@hotmail.com"
+    }
+  },
+  {
+    "name": "Akarsh Grover",
+    "firstName": "Akarsh",
+    "lastName": "Grover",
+    "age": 25,
+    "roll": 127,
+    "gender": "Male",
+    "department": "Civil Engineering",
+    "subject": [
+      "Structural Analysis",
+      "Geotechnical Engineering",
+      "Transportation Engineering",
+      "Surveying"
+    ],
+    "bio": "Voluptatum delectus velit rem harum delectus occaecati voluptate sunt occaecati quaerat quia ea.",
+    "contactinfo": {
+      "city": "Davanagere",
+      "state": "Jharkhand",
+      "zipcode": "784938",
+      "phone": "+918457773497",
+      "emailAddress": "ramakrishnanhiran@raj.com"
+    }
+  },
+  {
+    "name": "Mohanlal Shenoy",
+    "firstName": "Mohanlal",
+    "lastName": "Shenoy",
+    "age": 29,
+    "roll": 128,
+    "gender": "Female",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Ad minima hic quisquam maxime quam facere facere.",
+    "contactinfo": {
+      "city": "Patiala",
+      "state": "Sikkim",
+      "zipcode": "059940",
+      "phone": "5421490476",
+      "emailAddress": "riyakala@baral.com"
+    }
+  },
+  {
+    "name": "Lakshay Karnik",
+    "firstName": "Lakshay",
+    "lastName": "Karnik",
+    "age": 25,
+    "roll": 129,
+    "gender": "Female",
+    "department": "Chemical Engineering",
+    "subject": [
+      "Process Calculations",
+      "Chemical Reaction Engineering",
+      "Thermodynamics",
+      "Fluid Mechanics"
+    ],
+    "bio": "Aperiam reiciendis praesentium omnis molestias dolores omnis nobis vitae unde aspernatur blanditiis.",
+    "contactinfo": {
+      "city": "Baranagar",
+      "state": "Meghalaya",
+      "zipcode": "191644",
+      "phone": "5504921037",
+      "emailAddress": "upadhyaytejas@yahoo.com"
+    }
+  },
+  {
+    "name": "Adira Basu",
+    "firstName": "Adira",
+    "lastName": "Basu",
+    "age": 21,
+    "roll": 130,
+    "gender": "Male",
+    "department": "Chemical Engineering",
+    "subject": [
+      "Process Calculations",
+      "Chemical Reaction Engineering",
+      "Thermodynamics",
+      "Fluid Mechanics"
+    ],
+    "bio": "Atque id veniam delectus consectetur voluptatum culpa illum.",
+    "contactinfo": {
+      "city": "New Delhi",
+      "state": "Uttarakhand",
+      "zipcode": "132858",
+      "phone": "0203788521",
+      "emailAddress": "upadhyayshanaya@balan.com"
+    }
+  },
+  {
+    "name": "Madhav Jain",
+    "firstName": "Madhav",
+    "lastName": "Jain",
+    "age": 28,
+    "roll": 131,
+    "gender": "Male",
+    "department": "Biotechnology",
+    "subject": [
+      "Genetics",
+      "Molecular Biology",
+      "Bioprocess Engineering",
+      "Immunology"
+    ],
+    "bio": "Nemo dolores nesciunt reprehenderit velit omnis ex ipsum dicta eum.",
+    "contactinfo": {
+      "city": "Bhubaneswar",
+      "state": "Chhattisgarh",
+      "zipcode": "190178",
+      "phone": "07792841575",
+      "emailAddress": "tatamadhup@yahoo.com"
+    }
+  },
+  {
+    "name": "Arnav Srinivas",
+    "firstName": "Arnav",
+    "lastName": "Srinivas",
+    "age": 28,
+    "roll": 132,
+    "gender": "Male",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Blanditiis ipsa necessitatibus maxime reiciendis facere magni consequatur sunt odit commodi quo perspiciatis a.",
+    "contactinfo": {
+      "city": "Kalyan-Dombivli",
+      "state": "Arunachal Pradesh",
+      "zipcode": "764545",
+      "phone": "05575856436",
+      "emailAddress": "ehsaandua@ahluwalia.com"
+    }
+  },
+  {
+    "name": "Keya Gole",
+    "firstName": "Keya",
+    "lastName": "Gole",
+    "age": 23,
+    "roll": 133,
+    "gender": "Female",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Accusantium aperiam minus aspernatur nesciunt rem nostrum et amet vero sint.",
+    "contactinfo": {
+      "city": "Haridwar",
+      "state": "Madhya Pradesh",
+      "zipcode": "052460",
+      "phone": "09115582238",
+      "emailAddress": "devanshbhatnagar@yahoo.com"
+    }
+  },
+  {
+    "name": "Zain Ramakrishnan",
+    "firstName": "Zain",
+    "lastName": "Ramakrishnan",
+    "age": 25,
+    "roll": 134,
+    "gender": "Female",
+    "department": "Information Technology",
+    "subject": [
+      "Database Management",
+      "Web Technologies",
+      "Software Engineering",
+      "Cloud Computing"
+    ],
+    "bio": "Temporibus architecto ex sequi aperiam voluptate quos facilis eius pariatur voluptas unde.",
+    "contactinfo": {
+      "city": "Malda",
+      "state": "Goa",
+      "zipcode": "835429",
+      "phone": "06360019812",
+      "emailAddress": "suhanabhavsar@ramachandran-ravel.org"
+    }
+  },
+  {
+    "name": "Hansh Goswami",
+    "firstName": "Hansh",
+    "lastName": "Goswami",
+    "age": 25,
+    "roll": 135,
+    "gender": "Female",
+    "department": "Biotechnology",
+    "subject": [
+      "Genetics",
+      "Molecular Biology",
+      "Bioprocess Engineering",
+      "Immunology"
+    ],
+    "bio": "Voluptates aliquam incidunt quam ad delectus.",
+    "contactinfo": {
+      "city": "Motihari",
+      "state": "Uttar Pradesh",
+      "zipcode": "400676",
+      "phone": "+917994662895",
+      "emailAddress": "ramaswamylavanya@yahoo.com"
+    }
+  },
+  {
+    "name": "Adira Bose",
+    "firstName": "Adira",
+    "lastName": "Bose",
+    "age": 30,
+    "roll": 136,
+    "gender": "Female",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Aliquam quaerat omnis quae recusandae quis.",
+    "contactinfo": {
+      "city": "North Dumdum",
+      "state": "Chhattisgarh",
+      "zipcode": "457054",
+      "phone": "1502150385",
+      "emailAddress": "fkonda@hotmail.com"
+    }
+  },
+  {
+    "name": "Samar Kamdar",
+    "firstName": "Samar",
+    "lastName": "Kamdar",
+    "age": 19,
+    "roll": 137,
+    "gender": "Female",
+    "department": "Electrical Engineering",
+    "subject": [
+      "Circuit Analysis",
+      "Electromagnetics",
+      "Power Systems",
+      "Control Systems"
+    ],
+    "bio": "Nulla illum officia earum natus magnam veniam iste dolor esse blanditiis nobis beatae.",
+    "contactinfo": {
+      "city": "Morena",
+      "state": "Gujarat",
+      "zipcode": "960100",
+      "phone": "0890380082",
+      "emailAddress": "ahana-sodhi@sarin-batra.biz"
+    }
+  },
+  {
+    "name": "Hunar Bali",
+    "firstName": "Hunar",
+    "lastName": "Bali",
+    "age": 25,
+    "roll": 138,
+    "gender": "Female",
+    "department": "Civil Engineering",
+    "subject": [
+      "Structural Analysis",
+      "Geotechnical Engineering",
+      "Transportation Engineering",
+      "Surveying"
+    ],
+    "bio": "Blanditiis nihil dolorem quaerat provident architecto.",
+    "contactinfo": {
+      "city": "Rajkot",
+      "state": "Tripura",
+      "zipcode": "451900",
+      "phone": "6279435409",
+      "emailAddress": "sedwin@hotmail.com"
+    }
+  },
+  {
+    "name": "Aniruddh Gill",
+    "firstName": "Aniruddh",
+    "lastName": "Gill",
+    "age": 27,
+    "roll": 139,
+    "gender": "Male",
+    "department": "Chemical Engineering",
+    "subject": [
+      "Process Calculations",
+      "Chemical Reaction Engineering",
+      "Thermodynamics",
+      "Fluid Mechanics"
+    ],
+    "bio": "Accusantium ullam porro explicabo nostrum accusamus iure tenetur eum.",
+    "contactinfo": {
+      "city": "Dhanbad",
+      "state": "Telangana",
+      "zipcode": "101021",
+      "phone": "01691865953",
+      "emailAddress": "aayushdate@sama-balan.org"
+    }
+  },
+  {
+    "name": "Baiju Deol",
+    "firstName": "Baiju",
+    "lastName": "Deol",
+    "age": 30,
+    "roll": 140,
+    "gender": "Female",
+    "department": "Civil Engineering",
+    "subject": [
+      "Structural Analysis",
+      "Geotechnical Engineering",
+      "Transportation Engineering",
+      "Surveying"
+    ],
+    "bio": "Harum nobis maxime perferendis excepturi rerum nisi.",
+    "contactinfo": {
+      "city": "Jamalpur",
+      "state": "Andhra Pradesh",
+      "zipcode": "081997",
+      "phone": "01916040612",
+      "emailAddress": "zeeshanrama@hotmail.com"
+    }
+  },
+  {
+    "name": "Diya Chadha",
+    "firstName": "Diya",
+    "lastName": "Chadha",
+    "age": 24,
+    "roll": 141,
+    "gender": "Male",
+    "department": "Physics",
+    "subject": [
+      "Quantum Mechanics",
+      "Electrodynamics",
+      "Statistical Mechanics",
+      "Classical Mechanics"
+    ],
+    "bio": "Veritatis repellat explicabo dignissimos ullam neque suscipit temporibus esse quo excepturi.",
+    "contactinfo": {
+      "city": "Panvel",
+      "state": "West Bengal",
+      "zipcode": "119985",
+      "phone": "+917857182168",
+      "emailAddress": "aainavenkatesh@hotmail.com"
+    }
+  },
+  {
+    "name": "Manikya Dash",
+    "firstName": "Manikya",
+    "lastName": "Dash",
+    "age": 30,
+    "roll": 142,
+    "gender": "Male",
+    "department": "Physics",
+    "subject": [
+      "Quantum Mechanics",
+      "Electrodynamics",
+      "Statistical Mechanics",
+      "Classical Mechanics"
+    ],
+    "bio": "Maxime explicabo dolorum quas voluptatem explicabo minus.",
+    "contactinfo": {
+      "city": "Raebareli",
+      "state": "Gujarat",
+      "zipcode": "653570",
+      "phone": "+918007172715",
+      "emailAddress": "dkuruvilla@hora-kashyap.com"
+    }
+  },
+  {
+    "name": "Miraan Kala",
+    "firstName": "Miraan",
+    "lastName": "Kala",
+    "age": 29,
+    "roll": 143,
+    "gender": "Male",
+    "department": "Biotechnology",
+    "subject": [
+      "Genetics",
+      "Molecular Biology",
+      "Bioprocess Engineering",
+      "Immunology"
+    ],
+    "bio": "Cumque blanditiis eum labore minus exercitationem recusandae minima pariatur recusandae.",
+    "contactinfo": {
+      "city": "Amroha",
+      "state": "Andhra Pradesh",
+      "zipcode": "356482",
+      "phone": "+910822572912",
+      "emailAddress": "tanyabhalla@vaidya-saha.com"
+    }
+  },
+  {
+    "name": "Himmat Dugal",
+    "firstName": "Himmat",
+    "lastName": "Dugal",
+    "age": 27,
+    "roll": 144,
+    "gender": "Male",
+    "department": "Chemical Engineering",
+    "subject": [
+      "Process Calculations",
+      "Chemical Reaction Engineering",
+      "Thermodynamics",
+      "Fluid Mechanics"
+    ],
+    "bio": "Consectetur officiis repellendus beatae ab sapiente vel aliquid ad voluptatem sint excepturi delectus.",
+    "contactinfo": {
+      "city": "Bhusawal",
+      "state": "Haryana",
+      "zipcode": "257591",
+      "phone": "6833561099",
+      "emailAddress": "ryanchaudhry@hotmail.com"
+    }
+  },
+  {
+    "name": "Pranay Dugal",
+    "firstName": "Pranay",
+    "lastName": "Dugal",
+    "age": 21,
+    "roll": 145,
+    "gender": "Female",
+    "department": "Chemical Engineering",
+    "subject": [
+      "Process Calculations",
+      "Chemical Reaction Engineering",
+      "Thermodynamics",
+      "Fluid Mechanics"
+    ],
+    "bio": "Quidem illum aliquam magni consectetur nihil nesciunt veniam similique eius asperiores consequuntur illo.",
+    "contactinfo": {
+      "city": "Ambattur",
+      "state": "Arunachal Pradesh",
+      "zipcode": "617298",
+      "phone": "05689792274",
+      "emailAddress": "amanimanda@bir.biz"
+    }
+  },
+  {
+    "name": "Yasmin Gade",
+    "firstName": "Yasmin",
+    "lastName": "Gade",
+    "age": 22,
+    "roll": 146,
+    "gender": "Female",
+    "department": "Physics",
+    "subject": [
+      "Quantum Mechanics",
+      "Electrodynamics",
+      "Statistical Mechanics",
+      "Classical Mechanics"
+    ],
+    "bio": "Explicabo fuga explicabo iusto incidunt ea et eius vitae ut.",
+    "contactinfo": {
+      "city": "Amritsar",
+      "state": "Manipur",
+      "zipcode": "123814",
+      "phone": "2552114120",
+      "emailAddress": "azad59@yahoo.com"
+    }
+  },
+  {
+    "name": "Khushi Sahni",
+    "firstName": "Khushi",
+    "lastName": "Sahni",
+    "age": 28,
+    "roll": 147,
+    "gender": "Male",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Autem facere reprehenderit consequatur dolores quis corrupti omnis in distinctio.",
+    "contactinfo": {
+      "city": "Ozhukarai",
+      "state": "Gujarat",
+      "zipcode": "677234",
+      "phone": "04210354727",
+      "emailAddress": "kismatbal@hotmail.com"
+    }
+  },
+  {
+    "name": "Navya Shetty",
+    "firstName": "Navya",
+    "lastName": "Shetty",
+    "age": 19,
+    "roll": 148,
+    "gender": "Male",
+    "department": "Computer Science",
+    "subject": [
+      "Data Structures",
+      "Algorithms",
+      "Operating Systems",
+      "Computer Networks"
+    ],
+    "bio": "Odit explicabo amet deleniti quidem provident soluta.",
+    "contactinfo": {
+      "city": "Siliguri",
+      "state": "Kerala",
+      "zipcode": "988029",
+      "phone": "08844631033",
+      "emailAddress": "samarth92@gmail.com"
+    }
+  },
+  {
+    "name": "Shayak Sampath",
+    "firstName": "Shayak",
+    "lastName": "Sampath",
+    "age": 29,
+    "roll": 149,
+    "gender": "Male",
+    "department": "Civil Engineering",
+    "subject": [
+      "Structural Analysis",
+      "Geotechnical Engineering",
+      "Transportation Engineering",
+      "Surveying"
+    ],
+    "bio": "Repudiandae omnis placeat impedit quae ipsam suscipit.",
+    "contactinfo": {
+      "city": "Patna",
+      "state": "Uttar Pradesh",
+      "zipcode": "591920",
+      "phone": "02311680294",
+      "emailAddress": "tarinitaneja@gmail.com"
+    }
+  },
+  {
+    "name": "Shayak Aurora",
+    "firstName": "Shayak",
+    "lastName": "Aurora",
+    "age": 29,
+    "roll": 150,
+    "gender": "Male",
+    "department": "Electronics Engineering",
+    "subject": [
+      "Digital Electronics",
+      "Microprocessors",
+      "VLSI Design",
+      "Embedded Systems"
+    ],
+    "bio": "Quaerat eligendi aliquam sit qui explicabo quas reiciendis dignissimos ipsam perferendis facere.",
+    "contactinfo": {
+      "city": "Khandwa",
+      "state": "Madhya Pradesh",
+      "zipcode": "077725",
+      "phone": "+919570301928",
+      "emailAddress": "aarnaben@hotmail.com"
+    }
+  },
+  {
+    "name": "Vihaan Shanker",
+    "firstName": "Vihaan",
+    "lastName": "Shanker",
+    "age": 30,
+    "roll": 151,
+    "gender": "Male",
+    "department": "Biotechnology",
+    "subject": [
+      "Genetics",
+      "Molecular Biology",
+      "Bioprocess Engineering",
+      "Immunology"
+    ],
+    "bio": "Sapiente porro totam cum culpa ipsa nihil iusto quaerat quaerat.",
+    "contactinfo": {
+      "city": "Avadi",
+      "state": "Haryana",
+      "zipcode": "039854",
+      "phone": "2143876584",
+      "emailAddress": "jvaidya@wali.com"
+    }
+  },
+  {
+    "name": "Myra Wali",
+    "firstName": "Myra",
+    "lastName": "Wali",
+    "age": 29,
+    "roll": 152,
+    "gender": "Male",
+    "department": "Electronics Engineering",
+    "subject": [
+      "Digital Electronics",
+      "Microprocessors",
+      "VLSI Design",
+      "Embedded Systems"
+    ],
+    "bio": "Praesentium doloremque soluta eveniet suscipit culpa eius.",
+    "contactinfo": {
+      "city": "Malda",
+      "state": "Kerala",
+      "zipcode": "690749",
+      "phone": "8699021921",
+      "emailAddress": "alisha53@lala.com"
+    }
+  },
+  {
+    "name": "Kiaan Kant",
+    "firstName": "Kiaan",
+    "lastName": "Kant",
+    "age": 18,
+    "roll": 153,
+    "gender": "Male",
+    "department": "Computer Science",
+    "subject": [
+      "Data Structures",
+      "Algorithms",
+      "Operating Systems",
+      "Computer Networks"
+    ],
+    "bio": "Labore aspernatur eveniet exercitationem modi a.",
+    "contactinfo": {
+      "city": "Alwar",
+      "state": "Tamil Nadu",
+      "zipcode": "637132",
+      "phone": "1185631171",
+      "emailAddress": "yuvaanbalay@chaudry-hari.info"
+    }
+  },
+  {
+    "name": "Sara Divan",
+    "firstName": "Sara",
+    "lastName": "Divan",
+    "age": 22,
+    "roll": 154,
+    "gender": "Female",
+    "department": "Chemical Engineering",
+    "subject": [
+      "Process Calculations",
+      "Chemical Reaction Engineering",
+      "Thermodynamics",
+      "Fluid Mechanics"
+    ],
+    "bio": "Dolor quibusdam a quis placeat voluptates inventore voluptatibus.",
+    "contactinfo": {
+      "city": "Agartala",
+      "state": "Arunachal Pradesh",
+      "zipcode": "520571",
+      "phone": "+910027402350",
+      "emailAddress": "psrivastava@apte.org"
+    }
+  },
+  {
+    "name": "Manikya Sengupta",
+    "firstName": "Manikya",
+    "lastName": "Sengupta",
+    "age": 27,
+    "roll": 155,
+    "gender": "Female",
+    "department": "Biotechnology",
+    "subject": [
+      "Genetics",
+      "Molecular Biology",
+      "Bioprocess Engineering",
+      "Immunology"
+    ],
+    "bio": "Nemo beatae asperiores asperiores totam pariatur voluptatem et.",
+    "contactinfo": {
+      "city": "Rajkot",
+      "state": "Himachal Pradesh",
+      "zipcode": "806652",
+      "phone": "0629878015",
+      "emailAddress": "balafateh@yahoo.com"
+    }
+  },
+  {
+    "name": "Lagan Rama",
+    "firstName": "Lagan",
+    "lastName": "Rama",
+    "age": 29,
+    "roll": 156,
+    "gender": "Male",
+    "department": "Chemical Engineering",
+    "subject": [
+      "Process Calculations",
+      "Chemical Reaction Engineering",
+      "Thermodynamics",
+      "Fluid Mechanics"
+    ],
+    "bio": "Sit eum quae id sequi cupiditate possimus perferendis odio repudiandae ipsa quibusdam.",
+    "contactinfo": {
+      "city": "Nellore",
+      "state": "Tamil Nadu",
+      "zipcode": "641435",
+      "phone": "+916651514797",
+      "emailAddress": "chaudharialisha@gupta.com"
+    }
+  },
+  {
+    "name": "Anahita Sachdeva",
+    "firstName": "Anahita",
+    "lastName": "Sachdeva",
+    "age": 19,
+    "roll": 157,
+    "gender": "Female",
+    "department": "Physics",
+    "subject": [
+      "Quantum Mechanics",
+      "Electrodynamics",
+      "Statistical Mechanics",
+      "Classical Mechanics"
+    ],
+    "bio": "Ab temporibus doloribus consequatur a voluptatem ducimus laborum doloribus maiores praesentium commodi itaque.",
+    "contactinfo": {
+      "city": "Ratlam",
+      "state": "Mizoram",
+      "zipcode": "416198",
+      "phone": "5272168434",
+      "emailAddress": "nirvaanvasa@gmail.com"
+    }
+  },
+  {
+    "name": "Rati Master",
+    "firstName": "Rati",
+    "lastName": "Master",
+    "age": 23,
+    "roll": 158,
+    "gender": "Male",
+    "department": "Electrical Engineering",
+    "subject": [
+      "Circuit Analysis",
+      "Electromagnetics",
+      "Power Systems",
+      "Control Systems"
+    ],
+    "bio": "Amet possimus adipisci delectus eaque saepe sapiente.",
+    "contactinfo": {
+      "city": "Panipat",
+      "state": "Sikkim",
+      "zipcode": "567947",
+      "phone": "5831227161",
+      "emailAddress": "upadhyaylakshit@hotmail.com"
+    }
+  },
+  {
+    "name": "Abram Dube",
+    "firstName": "Abram",
+    "lastName": "Dube",
+    "age": 25,
+    "roll": 159,
+    "gender": "Female",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Tenetur dolorem consequatur doloribus delectus perspiciatis beatae similique fugit quae.",
+    "contactinfo": {
+      "city": "Dehradun",
+      "state": "Bihar",
+      "zipcode": "175155",
+      "phone": "06985744876",
+      "emailAddress": "hayreamira@gmail.com"
+    }
+  },
+  {
+    "name": "Riya Babu",
+    "firstName": "Riya",
+    "lastName": "Babu",
+    "age": 25,
+    "roll": 160,
+    "gender": "Male",
+    "department": "Civil Engineering",
+    "subject": [
+      "Structural Analysis",
+      "Geotechnical Engineering",
+      "Transportation Engineering",
+      "Surveying"
+    ],
+    "bio": "Error voluptate doloremque minus deleniti a illo porro a unde nisi expedita.",
+    "contactinfo": {
+      "city": "Khandwa",
+      "state": "Jharkhand",
+      "zipcode": "945150",
+      "phone": "+915805774635",
+      "emailAddress": "erana@balasubramanian.com"
+    }
+  },
+  {
+    "name": "Uthkarsh Dey",
+    "firstName": "Uthkarsh",
+    "lastName": "Dey",
+    "age": 22,
+    "roll": 161,
+    "gender": "Female",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Sed aperiam earum pariatur eius maxime.",
+    "contactinfo": {
+      "city": "Indore",
+      "state": "Mizoram",
+      "zipcode": "231940",
+      "phone": "9550358051",
+      "emailAddress": "achawla@gmail.com"
+    }
+  },
+  {
+    "name": "Nitara Ranganathan",
+    "firstName": "Nitara",
+    "lastName": "Ranganathan",
+    "age": 30,
+    "roll": 162,
+    "gender": "Female",
+    "department": "Physics",
+    "subject": [
+      "Quantum Mechanics",
+      "Electrodynamics",
+      "Statistical Mechanics",
+      "Classical Mechanics"
+    ],
+    "bio": "Nemo enim saepe repellat iusto distinctio inventore repellat labore distinctio.",
+    "contactinfo": {
+      "city": "Bathinda",
+      "state": "Arunachal Pradesh",
+      "zipcode": "984648",
+      "phone": "7095095314",
+      "emailAddress": "shanaya27@yahoo.com"
+    }
+  },
+  {
+    "name": "Tiya Swaminathan",
+    "firstName": "Tiya",
+    "lastName": "Swaminathan",
+    "age": 19,
+    "roll": 163,
+    "gender": "Male",
+    "department": "Electrical Engineering",
+    "subject": [
+      "Circuit Analysis",
+      "Electromagnetics",
+      "Power Systems",
+      "Control Systems"
+    ],
+    "bio": "Dolor recusandae reiciendis fugiat pariatur sit perspiciatis neque magni.",
+    "contactinfo": {
+      "city": "Sasaram",
+      "state": "Nagaland",
+      "zipcode": "259685",
+      "phone": "0098274750",
+      "emailAddress": "wthakkar@hotmail.com"
+    }
+  },
+  {
+    "name": "Divyansh Salvi",
+    "firstName": "Divyansh",
+    "lastName": "Salvi",
+    "age": 27,
+    "roll": 164,
+    "gender": "Male",
+    "department": "Electronics Engineering",
+    "subject": [
+      "Digital Electronics",
+      "Microprocessors",
+      "VLSI Design",
+      "Embedded Systems"
+    ],
+    "bio": "Tempora ipsam reiciendis natus repudiandae minima et.",
+    "contactinfo": {
+      "city": "Udupi",
+      "state": "Kerala",
+      "zipcode": "375830",
+      "phone": "9924387459",
+      "emailAddress": "hraman@gmail.com"
+    }
+  },
+  {
+    "name": "Ryan Dar",
+    "firstName": "Ryan",
+    "lastName": "Dar",
+    "age": 19,
+    "roll": 165,
+    "gender": "Male",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Officia illo tempora aliquid aut enim repudiandae explicabo nihil facere aliquam aperiam.",
+    "contactinfo": {
+      "city": "Kishanganj",
+      "state": "Karnataka",
+      "zipcode": "608947",
+      "phone": "0779767656",
+      "emailAddress": "carora@gmail.com"
+    }
+  },
+  {
+    "name": "Baiju Bal",
+    "firstName": "Baiju",
+    "lastName": "Bal",
+    "age": 29,
+    "roll": 166,
+    "gender": "Male",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Et minus harum voluptatem dicta ipsa officia atque ipsa.",
+    "contactinfo": {
+      "city": "Avadi",
+      "state": "Goa",
+      "zipcode": "750159",
+      "phone": "0200459274",
+      "emailAddress": "kismatdutt@gmail.com"
+    }
+  },
+  {
+    "name": "Nitara Kapoor",
+    "firstName": "Nitara",
+    "lastName": "Kapoor",
+    "age": 25,
+    "roll": 167,
+    "gender": "Male",
+    "department": "Biotechnology",
+    "subject": [
+      "Genetics",
+      "Molecular Biology",
+      "Bioprocess Engineering",
+      "Immunology"
+    ],
+    "bio": "Esse voluptate id sed error qui incidunt dignissimos neque ea praesentium ducimus corporis.",
+    "contactinfo": {
+      "city": "Dehradun",
+      "state": "Andhra Pradesh",
+      "zipcode": "039215",
+      "phone": "09962868601",
+      "emailAddress": "umang15@yahoo.com"
+    }
+  },
+  {
+    "name": "Baiju Dada",
+    "firstName": "Baiju",
+    "lastName": "Dada",
+    "age": 23,
+    "roll": 168,
+    "gender": "Female",
+    "department": "Electronics Engineering",
+    "subject": [
+      "Digital Electronics",
+      "Microprocessors",
+      "VLSI Design",
+      "Embedded Systems"
+    ],
+    "bio": "Reiciendis in laboriosam repellat officia dolor at.",
+    "contactinfo": {
+      "city": "Gopalpur",
+      "state": "Meghalaya",
+      "zipcode": "590194",
+      "phone": "+911234659643",
+      "emailAddress": "sarkarneelofar@yahoo.com"
+    }
+  },
+  {
+    "name": "Amani Gandhi",
+    "firstName": "Amani",
+    "lastName": "Gandhi",
+    "age": 22,
+    "roll": 169,
+    "gender": "Male",
+    "department": "Civil Engineering",
+    "subject": [
+      "Structural Analysis",
+      "Geotechnical Engineering",
+      "Transportation Engineering",
+      "Surveying"
+    ],
+    "bio": "In mollitia provident delectus deleniti consequatur nemo reprehenderit.",
+    "contactinfo": {
+      "city": "Vasai-Virar",
+      "state": "Rajasthan",
+      "zipcode": "024052",
+      "phone": "06529220399",
+      "emailAddress": "sethidevansh@sahni.com"
+    }
+  },
+  {
+    "name": "Himmat Khanna",
+    "firstName": "Himmat",
+    "lastName": "Khanna",
+    "age": 21,
+    "roll": 170,
+    "gender": "Male",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Quaerat numquam cupiditate ullam maiores dolorum.",
+    "contactinfo": {
+      "city": "Tirunelveli",
+      "state": "Jharkhand",
+      "zipcode": "206137",
+      "phone": "+911334043172",
+      "emailAddress": "manjari67@chanda.com"
+    }
+  },
+  {
+    "name": "Adah Chana",
+    "firstName": "Adah",
+    "lastName": "Chana",
+    "age": 21,
+    "roll": 171,
+    "gender": "Female",
+    "department": "Information Technology",
+    "subject": [
+      "Database Management",
+      "Web Technologies",
+      "Software Engineering",
+      "Cloud Computing"
+    ],
+    "bio": "Nulla nam eos libero vero commodi sapiente beatae dolore consequatur sit.",
+    "contactinfo": {
+      "city": "Rajpur Sonarpur",
+      "state": "Karnataka",
+      "zipcode": "342116",
+      "phone": "5198641023",
+      "emailAddress": "manikyaraju@gmail.com"
+    }
+  },
+  {
+    "name": "Kartik Krishnamurthy",
+    "firstName": "Kartik",
+    "lastName": "Krishnamurthy",
+    "age": 26,
+    "roll": 172,
+    "gender": "Male",
+    "department": "Chemical Engineering",
+    "subject": [
+      "Process Calculations",
+      "Chemical Reaction Engineering",
+      "Thermodynamics",
+      "Fluid Mechanics"
+    ],
+    "bio": "Odit quis maiores magnam animi facilis vel.",
+    "contactinfo": {
+      "city": "Ambattur",
+      "state": "Uttar Pradesh",
+      "zipcode": "287904",
+      "phone": "+916368323791",
+      "emailAddress": "subramaniamzara@hotmail.com"
+    }
+  },
+  {
+    "name": "Azad Halder",
+    "firstName": "Azad",
+    "lastName": "Halder",
+    "age": 23,
+    "roll": 173,
+    "gender": "Male",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Minima excepturi eum totam repudiandae expedita quibusdam mollitia cupiditate amet ipsam possimus.",
+    "contactinfo": {
+      "city": "Fatehpur",
+      "state": "Maharashtra",
+      "zipcode": "586626",
+      "phone": "4490636682",
+      "emailAddress": "srinivasanjiya@gmail.com"
+    }
+  },
+  {
+    "name": "Darshit Chaudhuri",
+    "firstName": "Darshit",
+    "lastName": "Chaudhuri",
+    "age": 26,
+    "roll": 174,
+    "gender": "Male",
+    "department": "Electrical Engineering",
+    "subject": [
+      "Circuit Analysis",
+      "Electromagnetics",
+      "Power Systems",
+      "Control Systems"
+    ],
+    "bio": "Tenetur labore aperiam nobis dolor consectetur mollitia tempora ipsam fugit non.",
+    "contactinfo": {
+      "city": "Vijayanagaram",
+      "state": "Maharashtra",
+      "zipcode": "158694",
+      "phone": "+918544624505",
+      "emailAddress": "ravalshanaya@aggarwal.com"
+    }
+  },
+  {
+    "name": "Aarav Bhargava",
+    "firstName": "Aarav",
+    "lastName": "Bhargava",
+    "age": 28,
+    "roll": 175,
+    "gender": "Female",
+    "department": "Information Technology",
+    "subject": [
+      "Database Management",
+      "Web Technologies",
+      "Software Engineering",
+      "Cloud Computing"
+    ],
+    "bio": "Maiores saepe eum facere quam occaecati cupiditate error natus.",
+    "contactinfo": {
+      "city": "Uluberia",
+      "state": "Uttar Pradesh",
+      "zipcode": "869109",
+      "phone": "00293045338",
+      "emailAddress": "vaibhav27@chaudhari.com"
+    }
+  },
+  {
+    "name": "Trisha Agarwal",
+    "firstName": "Trisha",
+    "lastName": "Agarwal",
+    "age": 29,
+    "roll": 176,
+    "gender": "Male",
+    "department": "Civil Engineering",
+    "subject": [
+      "Structural Analysis",
+      "Geotechnical Engineering",
+      "Transportation Engineering",
+      "Surveying"
+    ],
+    "bio": "Ut voluptas repudiandae ex voluptas est.",
+    "contactinfo": {
+      "city": "Tiruppur",
+      "state": "Assam",
+      "zipcode": "759064",
+      "phone": "07159542451",
+      "emailAddress": "toorurvi@kunda.com"
+    }
+  },
+  {
+    "name": "Kartik Keer",
+    "firstName": "Kartik",
+    "lastName": "Keer",
+    "age": 20,
+    "roll": 177,
+    "gender": "Female",
+    "department": "Physics",
+    "subject": [
+      "Quantum Mechanics",
+      "Electrodynamics",
+      "Statistical Mechanics",
+      "Classical Mechanics"
+    ],
+    "bio": "Odio non debitis et unde facere natus minus eaque.",
+    "contactinfo": {
+      "city": "Anantapur",
+      "state": "Goa",
+      "zipcode": "079152",
+      "phone": "+910549494439",
+      "emailAddress": "iagarwal@hotmail.com"
+    }
+  },
+  {
+    "name": "Onkar Gade",
+    "firstName": "Onkar",
+    "lastName": "Gade",
+    "age": 18,
+    "roll": 178,
+    "gender": "Male",
+    "department": "Electronics Engineering",
+    "subject": [
+      "Digital Electronics",
+      "Microprocessors",
+      "VLSI Design",
+      "Embedded Systems"
+    ],
+    "bio": "Fuga quo ut a soluta asperiores.",
+    "contactinfo": {
+      "city": "Chapra",
+      "state": "Himachal Pradesh",
+      "zipcode": "410216",
+      "phone": "+911288031524",
+      "emailAddress": "banerjeeprerak@gmail.com"
+    }
+  },
+  {
+    "name": "Prerak Dash",
+    "firstName": "Prerak",
+    "lastName": "Dash",
+    "age": 23,
+    "roll": 179,
+    "gender": "Female",
+    "department": "Electrical Engineering",
+    "subject": [
+      "Circuit Analysis",
+      "Electromagnetics",
+      "Power Systems",
+      "Control Systems"
+    ],
+    "bio": "Eum quas cumque ut dolore excepturi expedita laborum eum aspernatur.",
+    "contactinfo": {
+      "city": "Raebareli",
+      "state": "Kerala",
+      "zipcode": "972139",
+      "phone": "04686419662",
+      "emailAddress": "baiju31@yahoo.com"
+    }
+  },
+  {
+    "name": "Gatik Gour",
+    "firstName": "Gatik",
+    "lastName": "Gour",
+    "age": 29,
+    "roll": 180,
+    "gender": "Male",
+    "department": "Physics",
+    "subject": [
+      "Quantum Mechanics",
+      "Electrodynamics",
+      "Statistical Mechanics",
+      "Classical Mechanics"
+    ],
+    "bio": "Alias explicabo omnis quam at ad quis nobis neque iusto.",
+    "contactinfo": {
+      "city": "Alappuzha",
+      "state": "Telangana",
+      "zipcode": "648018",
+      "phone": "09350934552",
+      "emailAddress": "ritvik08@hotmail.com"
+    }
+  },
+  {
+    "name": "Aarav Cherian",
+    "firstName": "Aarav",
+    "lastName": "Cherian",
+    "age": 19,
+    "roll": 181,
+    "gender": "Male",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Vitae exercitationem quasi non unde minus eaque.",
+    "contactinfo": {
+      "city": "Raipur",
+      "state": "Madhya Pradesh",
+      "zipcode": "548734",
+      "phone": "01766520576",
+      "emailAddress": "onkarvala@doctor.org"
+    }
+  },
+  {
+    "name": "Shanaya Dara",
+    "firstName": "Shanaya",
+    "lastName": "Dara",
+    "age": 22,
+    "roll": 182,
+    "gender": "Male",
+    "department": "Mechanical Engineering",
+    "subject": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design",
+      "Heat Transfer"
+    ],
+    "bio": "Aliquid iusto modi vel dolorum suscipit minima laboriosam at vel dolore.",
+    "contactinfo": {
+      "city": "Indore",
+      "state": "Mizoram",
+      "zipcode": "821040",
+      "phone": "5429383622",
+      "emailAddress": "rajanrati@saini.com"
+    }
+  },
+  {
+    "name": "Ahana  Datta",
+    "firstName": "Ahana ",
+    "lastName": "Datta",
+    "age": 19,
+    "roll": 183,
+    "gender": "Female",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Ab sint cum aliquam est aspernatur voluptatibus vel sapiente veniam laudantium ab fugiat.",
+    "contactinfo": {
+      "city": "Erode",
+      "state": "Madhya Pradesh",
+      "zipcode": "401595",
+      "phone": "1100489732",
+      "emailAddress": "waglesaanvi@varty.com"
+    }
+  },
+  {
+    "name": "Khushi Solanki",
+    "firstName": "Khushi",
+    "lastName": "Solanki",
+    "age": 24,
+    "roll": 184,
+    "gender": "Female",
+    "department": "Electronics Engineering",
+    "subject": [
+      "Digital Electronics",
+      "Microprocessors",
+      "VLSI Design",
+      "Embedded Systems"
+    ],
+    "bio": "Iste quidem vero blanditiis fugiat assumenda soluta enim accusamus.",
+    "contactinfo": {
+      "city": "Ambarnath",
+      "state": "Madhya Pradesh",
+      "zipcode": "636862",
+      "phone": "00919933927",
+      "emailAddress": "anahita81@das-sama.net"
+    }
+  },
+  {
+    "name": "Gokul Bhakta",
+    "firstName": "Gokul",
+    "lastName": "Bhakta",
+    "age": 24,
+    "roll": 185,
+    "gender": "Female",
+    "department": "Physics",
+    "subject": [
+      "Quantum Mechanics",
+      "Electrodynamics",
+      "Statistical Mechanics",
+      "Classical Mechanics"
+    ],
+    "bio": "Itaque sint laudantium sed sint distinctio officia autem eum.",
+    "contactinfo": {
+      "city": "Raipur",
+      "state": "Maharashtra",
+      "zipcode": "799086",
+      "phone": "+912741313045",
+      "emailAddress": "chatterjeenirvaan@bhattacharyya.org"
+    }
+  },
+  {
+    "name": "Eshani Aurora",
+    "firstName": "Eshani",
+    "lastName": "Aurora",
+    "age": 29,
+    "roll": 186,
+    "gender": "Female",
+    "department": "Electrical Engineering",
+    "subject": [
+      "Circuit Analysis",
+      "Electromagnetics",
+      "Power Systems",
+      "Control Systems"
+    ],
+    "bio": "Alias veritatis nostrum ab ipsa qui molestias ut omnis quasi sunt sunt.",
+    "contactinfo": {
+      "city": "Kishanganj",
+      "state": "Jharkhand",
+      "zipcode": "692597",
+      "phone": "01069062382",
+      "emailAddress": "vanyaloyal@jayaraman.biz"
+    }
+  },
+  {
+    "name": "Lakshay Magar",
+    "firstName": "Lakshay",
+    "lastName": "Magar",
+    "age": 18,
+    "roll": 187,
+    "gender": "Female",
+    "department": "Civil Engineering",
+    "subject": [
+      "Structural Analysis",
+      "Geotechnical Engineering",
+      "Transportation Engineering",
+      "Surveying"
+    ],
+    "bio": "Necessitatibus id nemo aperiam similique ut.",
+    "contactinfo": {
+      "city": "Navi Mumbai",
+      "state": "Meghalaya",
+      "zipcode": "593811",
+      "phone": "8209629942",
+      "emailAddress": "dchhabra@hotmail.com"
+    }
+  },
+  {
+    "name": "Azad Basak",
+    "firstName": "Azad",
+    "lastName": "Basak",
+    "age": 18,
+    "roll": 188,
+    "gender": "Female",
+    "department": "Physics",
+    "subject": [
+      "Quantum Mechanics",
+      "Electrodynamics",
+      "Statistical Mechanics",
+      "Classical Mechanics"
+    ],
+    "bio": "Explicabo et quam esse ducimus deleniti expedita sed ipsum.",
+    "contactinfo": {
+      "city": "Bhubaneswar",
+      "state": "Meghalaya",
+      "zipcode": "346112",
+      "phone": "5528767612",
+      "emailAddress": "pari73@hotmail.com"
+    }
+  },
+  {
+    "name": "Renee Issac",
+    "firstName": "Renee",
+    "lastName": "Issac",
+    "age": 22,
+    "roll": 189,
+    "gender": "Male",
+    "department": "Physics",
+    "subject": [
+      "Quantum Mechanics",
+      "Electrodynamics",
+      "Statistical Mechanics",
+      "Classical Mechanics"
+    ],
+    "bio": "Assumenda culpa vel esse quaerat fugiat illum quaerat maiores deleniti occaecati.",
+    "contactinfo": {
+      "city": "Shimoga",
+      "state": "Manipur",
+      "zipcode": "111513",
+      "phone": "01711045292",
+      "emailAddress": "gvora@yahoo.com"
+    }
+  },
+  {
+    "name": "Darshit Bawa",
+    "firstName": "Darshit",
+    "lastName": "Bawa",
+    "age": 27,
+    "roll": 190,
+    "gender": "Female",
+    "department": "Physics",
+    "subject": [
+      "Quantum Mechanics",
+      "Electrodynamics",
+      "Statistical Mechanics",
+      "Classical Mechanics"
+    ],
+    "bio": "Officiis adipisci sint delectus nisi sequi.",
+    "contactinfo": {
+      "city": "Panvel",
+      "state": "Madhya Pradesh",
+      "zipcode": "508018",
+      "phone": "6348507370",
+      "emailAddress": "irasahni@gmail.com"
+    }
+  },
+  {
+    "name": "Devansh Rajagopalan",
+    "firstName": "Devansh",
+    "lastName": "Rajagopalan",
+    "age": 30,
+    "roll": 191,
+    "gender": "Female",
+    "department": "Computer Science",
+    "subject": [
+      "Data Structures",
+      "Algorithms",
+      "Operating Systems",
+      "Computer Networks"
+    ],
+    "bio": "Nesciunt reiciendis vero iure labore dolores facere dolores quia.",
+    "contactinfo": {
+      "city": "Sambhal",
+      "state": "West Bengal",
+      "zipcode": "463095",
+      "phone": "04759444649",
+      "emailAddress": "saanviraja@hotmail.com"
+    }
+  },
+  {
+    "name": "Pari Saini",
+    "firstName": "Pari",
+    "lastName": "Saini",
+    "age": 26,
+    "roll": 192,
+    "gender": "Female",
+    "department": "Civil Engineering",
+    "subject": [
+      "Structural Analysis",
+      "Geotechnical Engineering",
+      "Transportation Engineering",
+      "Surveying"
+    ],
+    "bio": "Soluta consectetur mollitia necessitatibus facilis nisi cum temporibus aperiam laboriosam deleniti provident inventore.",
+    "contactinfo": {
+      "city": "Pune",
+      "state": "Punjab",
+      "zipcode": "446713",
+      "phone": "5576652257",
+      "emailAddress": "ztara@gmail.com"
+    }
+  },
+  {
+    "name": "Faiyaz Sunder",
+    "firstName": "Faiyaz",
+    "lastName": "Sunder",
+    "age": 20,
+    "roll": 193,
+    "gender": "Male",
+    "department": "Information Technology",
+    "subject": [
+      "Database Management",
+      "Web Technologies",
+      "Software Engineering",
+      "Cloud Computing"
+    ],
+    "bio": "Neque blanditiis eius ea voluptatem iste culpa nihil mollitia illo a laudantium.",
+    "contactinfo": {
+      "city": "Gudivada",
+      "state": "West Bengal",
+      "zipcode": "743192",
+      "phone": "+919992372609",
+      "emailAddress": "neelofar44@ratti.com"
+    }
+  },
+  {
+    "name": "Ayesha Dutta",
+    "firstName": "Ayesha",
+    "lastName": "Dutta",
+    "age": 22,
+    "roll": 194,
+    "gender": "Female",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Laborum dignissimos facere omnis harum sequi.",
+    "contactinfo": {
+      "city": "Mehsana",
+      "state": "Chhattisgarh",
+      "zipcode": "342732",
+      "phone": "+913415715999",
+      "emailAddress": "abasu@ganguly.com"
+    }
+  },
+  {
+    "name": "Yakshit Guha",
+    "firstName": "Yakshit",
+    "lastName": "Guha",
+    "age": 22,
+    "roll": 195,
+    "gender": "Male",
+    "department": "Electronics Engineering",
+    "subject": [
+      "Digital Electronics",
+      "Microprocessors",
+      "VLSI Design",
+      "Embedded Systems"
+    ],
+    "bio": "Harum minima aspernatur eum quibusdam earum quod.",
+    "contactinfo": {
+      "city": "Amaravati",
+      "state": "Uttarakhand",
+      "zipcode": "972692",
+      "phone": "4940157904",
+      "emailAddress": "indrajit92@balasubramanian.com"
+    }
+  },
+  {
+    "name": "Ira Dasgupta",
+    "firstName": "Ira",
+    "lastName": "Dasgupta",
+    "age": 24,
+    "roll": 196,
+    "gender": "Female",
+    "department": "Electronics Engineering",
+    "subject": [
+      "Digital Electronics",
+      "Microprocessors",
+      "VLSI Design",
+      "Embedded Systems"
+    ],
+    "bio": "Sapiente eligendi accusantium deserunt maiores explicabo mollitia quibusdam velit provident nulla.",
+    "contactinfo": {
+      "city": "Kavali",
+      "state": "Telangana",
+      "zipcode": "435950",
+      "phone": "1256810277",
+      "emailAddress": "sherejayan@yahoo.com"
+    }
+  },
+  {
+    "name": "Zaina Kurian",
+    "firstName": "Zaina",
+    "lastName": "Kurian",
+    "age": 24,
+    "roll": 197,
+    "gender": "Male",
+    "department": "Information Technology",
+    "subject": [
+      "Database Management",
+      "Web Technologies",
+      "Software Engineering",
+      "Cloud Computing"
+    ],
+    "bio": "Aliquid totam repellat atque atque commodi nisi libero nihil voluptatibus cupiditate provident.",
+    "contactinfo": {
+      "city": "Bulandshahr",
+      "state": "Goa",
+      "zipcode": "747967",
+      "phone": "+918801826048",
+      "emailAddress": "gkrishnan@yahoo.com"
+    }
+  },
+  {
+    "name": "Ela Saxena",
+    "firstName": "Ela",
+    "lastName": "Saxena",
+    "age": 21,
+    "roll": 198,
+    "gender": "Female",
+    "department": "Civil Engineering",
+    "subject": [
+      "Structural Analysis",
+      "Geotechnical Engineering",
+      "Transportation Engineering",
+      "Surveying"
+    ],
+    "bio": "Dolores odit sed voluptatibus culpa ratione totam odio doloremque mollitia occaecati.",
+    "contactinfo": {
+      "city": "Jalandhar",
+      "state": "Manipur",
+      "zipcode": "868781",
+      "phone": "6565854698",
+      "emailAddress": "aryaojas@gandhi.biz"
+    }
+  },
+  {
+    "name": "Taimur Khare",
+    "firstName": "Taimur",
+    "lastName": "Khare",
+    "age": 20,
+    "roll": 199,
+    "gender": "Female",
+    "department": "Civil Engineering",
+    "subject": [
+      "Structural Analysis",
+      "Geotechnical Engineering",
+      "Transportation Engineering",
+      "Surveying"
+    ],
+    "bio": "Nihil hic porro quia magnam quo neque provident minus.",
+    "contactinfo": {
+      "city": "Kumbakonam",
+      "state": "Madhya Pradesh",
+      "zipcode": "516356",
+      "phone": "07880197968",
+      "emailAddress": "bajajanvi@yahoo.com"
+    }
+  },
+  {
+    "name": "Anya Deshpande",
+    "firstName": "Anya",
+    "lastName": "Deshpande",
+    "age": 29,
+    "roll": 200,
+    "gender": "Female",
+    "department": "Architecture",
+    "subject": [
+      "Design Studio",
+      "Building Construction",
+      "History of Architecture",
+      "Urban Planning"
+    ],
+    "bio": "Sunt nemo voluptas magnam vitae vel exercitationem molestiae.",
+    "contactinfo": {
+      "city": "Tadipatri",
+      "state": "Nagaland",
+      "zipcode": "573611",
+      "phone": "06784741979",
+      "emailAddress": "dhartushar@hotmail.com"
+    }
   }
 ]

@@ -1,0 +1,850 @@
+[
+  {
+    "userId": "88-052-8576",
+    "jobTitleName": "Social Worker",
+    "firstName": "Mavis",
+    "lastName": "Hilldrop",
+    "dataofjoining": "20/09/2020",
+    "contactinfo": {
+      "city": "Dallas",
+      "phone": "972-454-9822",
+      "emailAddress": "mhilldrop0@google.ca",
+      "state": "TX",
+      "zipcode": "75241"
+    },
+    "Children": ["Evaleen", "Coletta", "Leonelle"],
+    "salary": 203000
+  },
+  {
+    "userId": "45-678-9012",
+    "jobTitleName": "Software Engineer",
+    "firstName": "John",
+    "lastName": "Smith",
+    "dataofjoining": "15/01/2019",
+    "contactinfo": {
+      "city": "Seattle",
+      "phone": "206-555-1234",
+      "emailAddress": "jsmith@example.com",
+      "state": "WA",
+      "zipcode": "98101"
+    },
+    "Children": ["Emma", "Liam"],
+    "salary": 185000
+  },
+  {
+    "userId": "34-567-8901",
+    "jobTitleName": "Marketing Manager",
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "dataofjoining": "10/05/2018",
+    "contactinfo": {
+      "city": "Chicago",
+      "phone": "312-555-5678",
+      "emailAddress": "sjohnson@example.com",
+      "state": "IL",
+      "zipcode": "60601"
+    },
+    "Children": ["Olivia"],
+    "salary": 120000
+  },
+  {
+    "userId": "23-456-7890",
+    "jobTitleName": "Social Worker",
+    "firstName": "Mavis",
+    "lastName": "Thompson",
+    "dataofjoining": "20/09/2020",
+    "contactinfo": {
+      "city": "Dallas",
+      "phone": "214-555-9012",
+      "emailAddress": "mthompson@example.com",
+      "state": "TX",
+      "zipcode": "75201"
+    },
+    "Children": ["Sophia", "Noah"],
+    "salary": 95000
+  },
+  {
+    "userId": "12-345-6789",
+    "jobTitleName": "Data Analyst",
+    "firstName": "Michael",
+    "lastName": "Williams",
+    "dataofjoining": "03/11/2021",
+    "contactinfo": {
+      "city": "New York",
+      "phone": "212-555-3456",
+      "emailAddress": "mwilliams@example.com",
+      "state": "NY",
+      "zipcode": "10001"
+    },
+    "Children": ["Ava", "William", "James"],
+    "salary": 110000
+  },
+  {
+    "userId": "98-765-4321",
+    "jobTitleName": "Nurse",
+    "firstName": "Emily",
+    "lastName": "Brown",
+    "dataofjoining": "22/07/2017",
+    "contactinfo": {
+      "city": "Boston",
+      "phone": "617-555-7890",
+      "emailAddress": "ebrown@example.com",
+      "state": "MA",
+      "zipcode": "02108"
+    },
+    "Children": ["Isabella", "Benjamin"],
+    "salary": 85000
+  },
+  {
+    "userId": "87-654-3210",
+    "jobTitleName": "Teacher",
+    "firstName": "David",
+    "lastName": "Jones",
+    "dataofjoining": "05/03/2016",
+    "contactinfo": {
+      "city": "Chicago",
+      "phone": "312-555-2345",
+      "emailAddress": "djones@example.com",
+      "state": "IL",
+      "zipcode": "60602"
+    },
+    "Children": ["Mia", "Lucas"],
+    "salary": 65000
+  },
+  {
+    "userId": "76-543-2109",
+    "jobTitleName": "Software Engineer",
+    "firstName": "John",
+    "lastName": "Garcia",
+    "dataofjoining": "15/01/2019",
+    "contactinfo": {
+      "city": "San Francisco",
+      "phone": "415-555-6789",
+      "emailAddress": "jgarcia@example.com",
+      "state": "CA",
+      "zipcode": "94102"
+    },
+    "Children": ["Charlotte", "Henry"],
+    "salary": 195000
+  },
+  {
+    "userId": "65-432-1098",
+    "jobTitleName": "Accountant",
+    "firstName": "Jessica",
+    "lastName": "Miller",
+    "dataofjoining": "18/09/2020",
+    "contactinfo": {
+      "city": "Dallas",
+      "phone": "214-555-0123",
+      "emailAddress": "jmiller@example.com",
+      "state": "TX",
+      "zipcode": "75202"
+    },
+    "Children": ["Amelia"],
+    "salary": 78000
+  },
+  {
+    "userId": "54-321-0987",
+    "jobTitleName": "Marketing Manager",
+    "firstName": "Robert",
+    "lastName": "Davis",
+    "dataofjoining": "10/05/2018",
+    "contactinfo": {
+      "city": "Los Angeles",
+      "phone": "213-555-4567",
+      "emailAddress": "rdavis@example.com",
+      "state": "CA",
+      "zipcode": "90012"
+    },
+    "Children": ["Evelyn", "Alexander"],
+    "salary": 125000
+  },
+  {
+    "userId": "43-210-9876",
+    "jobTitleName": "Social Worker",
+    "firstName": "Jennifer",
+    "lastName": "Rodriguez",
+    "dataofjoining": "14/02/2022",
+    "contactinfo": {
+      "city": "Houston",
+      "phone": "713-555-8901",
+      "emailAddress": "jrodriguez@example.com",
+      "state": "TX",
+      "zipcode": "77002"
+    },
+    "Children": ["Harper"],
+    "salary": 88000
+  },
+  {
+    "userId": "32-109-8765",
+    "jobTitleName": "Teacher",
+    "firstName": "Lisa",
+    "lastName": "Martinez",
+    "dataofjoining": "05/03/2016",
+    "contactinfo": {
+      "city": "Phoenix",
+      "phone": "602-555-1234",
+      "emailAddress": "lmartinez@example.com",
+      "state": "AZ",
+      "zipcode": "85001"
+    },
+    "Children": ["Abigail", "Daniel"],
+    "salary": 62000
+  },
+  {
+    "userId": "21-098-7654",
+    "jobTitleName": "Nurse",
+    "firstName": "Emily",
+    "lastName": "Hernandez",
+    "dataofjoining": "22/07/2017",
+    "contactinfo": {
+      "city": "Philadelphia",
+      "phone": "215-555-5678",
+      "emailAddress": "ehernandez@example.com",
+      "state": "PA",
+      "zipcode": "19102"
+    },
+    "Children": ["Emily", "Michael"],
+    "salary": 92000
+  },
+  {
+    "userId": "10-987-6543",
+    "jobTitleName": "Data Analyst",
+    "firstName": "Thomas",
+    "lastName": "Lopez",
+    "dataofjoining": "03/11/2021",
+    "contactinfo": {
+      "city": "San Antonio",
+      "phone": "210-555-9012",
+      "emailAddress": "tlopez@example.com",
+      "state": "TX",
+      "zipcode": "78201"
+    },
+    "Children": ["Elizabeth", "Matthew"],
+    "salary": 105000
+  },
+  {
+    "userId": "09-876-5432",
+    "jobTitleName": "Software Engineer",
+    "firstName": "Charles",
+    "lastName": "Gonzalez",
+    "dataofjoining": "15/01/2019",
+    "contactinfo": {
+      "city": "San Diego",
+      "phone": "619-555-2345",
+      "emailAddress": "cgonzalez@example.com",
+      "state": "CA",
+      "zipcode": "92101"
+    },
+    "Children": ["Sofia", "David"],
+    "salary": 175000
+  },
+  {
+    "userId": "98-765-4320",
+    "jobTitleName": "Accountant",
+    "firstName": "Patricia",
+    "lastName": "Wilson",
+    "dataofjoining": "18/09/2020",
+    "contactinfo": {
+      "city": "Dallas",
+      "phone": "214-555-3456",
+      "emailAddress": "pwilson@example.com",
+      "state": "TX",
+      "zipcode": "75203"
+    },
+    "Children": ["Avery", "Joseph"],
+    "salary": 82000
+  },
+  {
+    "userId": "87-654-3219",
+    "jobTitleName": "Marketing Manager",
+    "firstName": "Christopher",
+    "lastName": "Anderson",
+    "dataofjoining": "10/05/2018",
+    "contactinfo": {
+      "city": "Chicago",
+      "phone": "312-555-6789",
+      "emailAddress": "canderson@example.com",
+      "state": "IL",
+      "zipcode": "60603"
+    },
+    "Children": ["Ella", "Samuel"],
+    "salary": 118000
+  },
+  {
+    "userId": "76-543-2108",
+    "jobTitleName": "Social Worker",
+    "firstName": "Amanda",
+    "lastName": "Thomas",
+    "dataofjoining": "14/02/2022",
+    "contactinfo": {
+      "city": "New York",
+      "phone": "212-555-0123",
+      "emailAddress": "athomas@example.com",
+      "state": "NY",
+      "zipcode": "10002"
+    },
+    "Children": ["Scarlett"],
+    "salary": 91000
+  },
+  {
+    "userId": "65-432-1097",
+    "jobTitleName": "Teacher",
+    "firstName": "Matthew",
+    "lastName": "Taylor",
+    "dataofjoining": "05/03/2016",
+    "contactinfo": {
+      "city": "Los Angeles",
+      "phone": "213-555-1234",
+      "emailAddress": "mtaylor@example.com",
+      "state": "CA",
+      "zipcode": "90013"
+    },
+    "Children": ["Victoria", "Andrew"],
+    "salary": 68000
+  },
+  {
+    "userId": "54-321-0986",
+    "jobTitleName": "Nurse",
+    "firstName": "Ashley",
+    "lastName": "Moore",
+    "dataofjoining": "22/07/2017",
+    "contactinfo": {
+      "city": "Houston",
+      "phone": "713-555-5678",
+      "emailAddress": "amoore@example.com",
+      "state": "TX",
+      "zipcode": "77003"
+    },
+    "Children": ["Grace", "Christopher"],
+    "salary": 87000
+  },
+  {
+    "userId": "43-210-9875",
+    "jobTitleName": "Data Analyst",
+    "firstName": "Daniel",
+    "lastName": "Jackson",
+    "dataofjoining": "03/11/2021",
+    "contactinfo": {
+      "city": "Phoenix",
+      "phone": "602-555-9012",
+      "emailAddress": "djackson@example.com",
+      "state": "AZ",
+      "zipcode": "85002"
+    },
+    "Children": ["Chloe"],
+    "salary": 98000
+  },
+  {
+    "userId": "32-109-8764",
+    "jobTitleName": "Software Engineer",
+    "firstName": "John",
+    "lastName": "White",
+    "dataofjoining": "15/01/2019",
+    "contactinfo": {
+      "city": "Philadelphia",
+      "phone": "215-555-2345",
+      "emailAddress": "jwhite@example.com",
+      "state": "PA",
+      "zipcode": "19103"
+    },
+    "Children": ["Lily", "Joshua"],
+    "salary": 185000
+  },
+  {
+    "userId": "21-098-7653",
+    "jobTitleName": "Accountant",
+    "firstName": "Michelle",
+    "lastName": "Harris",
+    "dataofjoining": "18/09/2020",
+    "contactinfo": {
+      "city": "San Antonio",
+      "phone": "210-555-3456",
+      "emailAddress": "mharris@example.com",
+      "state": "TX",
+      "zipcode": "78202"
+    },
+    "Children": ["Zoey", "Ryan"],
+    "salary": 76000
+  },
+  {
+    "userId": "10-987-6542",
+    "jobTitleName": "Marketing Manager",
+    "firstName": "Sarah",
+    "lastName": "Clark",
+    "dataofjoining": "10/05/2018",
+    "contactinfo": {
+      "city": "San Diego",
+      "phone": "619-555-6789",
+      "emailAddress": "sclark@example.com",
+      "state": "CA",
+      "zipcode": "92102"
+    },
+    "Children": ["Penelope", "Nathan"],
+    "salary": 122000
+  },
+  {
+    "userId": "09-876-5431",
+    "jobTitleName": "Social Worker",
+    "firstName": "James",
+    "lastName": "Lewis",
+    "dataofjoining": "14/02/2022",
+    "contactinfo": {
+      "city": "Dallas",
+      "phone": "214-555-0123",
+      "emailAddress": "jlewis@example.com",
+      "state": "TX",
+      "zipcode": "75204"
+    },
+    "Children": ["Riley", "Caleb"],
+    "salary": 89000
+  },
+  {
+    "userId": "98-765-4319",
+    "jobTitleName": "Teacher",
+    "firstName": "Elizabeth",
+    "lastName": "Robinson",
+    "dataofjoining": "05/03/2016",
+    "contactinfo": {
+      "city": "New York",
+      "phone": "212-555-1234",
+      "emailAddress": "erobinson@example.com",
+      "state": "NY",
+      "zipcode": "10003"
+    },
+    "Children": ["Nora", "Luke"],
+    "salary": 67000
+  },
+  {
+    "userId": "87-654-3218",
+    "jobTitleName": "Nurse",
+    "firstName": "Emily",
+    "lastName": "Walker",
+    "dataofjoining": "22/07/2017",
+    "contactinfo": {
+      "city": "Chicago",
+      "phone": "312-555-5678",
+      "emailAddress": "ewalker@example.com",
+      "state": "IL",
+      "zipcode": "60604"
+    },
+    "Children": ["Hannah", "Jack"],
+    "salary": 94000
+  },
+  {
+    "userId": "76-543-2107",
+    "jobTitleName": "Data Analyst",
+    "firstName": "Andrew",
+    "lastName": "Perez",
+    "dataofjoining": "03/11/2021",
+    "contactinfo": {
+      "city": "Los Angeles",
+      "phone": "213-555-9012",
+      "emailAddress": "aperez@example.com",
+      "state": "CA",
+      "zipcode": "90014"
+    },
+    "Children": ["Lillian"],
+    "salary": 102000
+  },
+  {
+    "userId": "65-432-1096",
+    "jobTitleName": "Software Engineer",
+    "firstName": "Joshua",
+    "lastName": "Hall",
+    "dataofjoining": "15/01/2019",
+    "contactinfo": {
+      "city": "Houston",
+      "phone": "713-555-2345",
+      "emailAddress": "jhall@example.com",
+      "state": "TX",
+      "zipcode": "77004"
+    },
+    "Children": ["Addison", "Christian"],
+    "salary": 190000
+  },
+  {
+    "userId": "54-321-0985",
+    "jobTitleName": "Accountant",
+    "firstName": "Nicole",
+    "lastName": "Young",
+    "dataofjoining": "18/09/2020",
+    "contactinfo": {
+      "city": "Phoenix",
+      "phone": "602-555-3456",
+      "emailAddress": "nyoung@example.com",
+      "state": "AZ",
+      "zipcode": "85003"
+    },
+    "Children": ["Eleanor", "Dylan"],
+    "salary": 80000
+  },
+  {
+    "userId": "43-210-9874",
+    "jobTitleName": "Marketing Manager",
+    "firstName": "Kevin",
+    "lastName": "Allen",
+    "dataofjoining": "10/05/2018",
+    "contactinfo": {
+      "city": "Philadelphia",
+      "phone": "215-555-6789",
+      "emailAddress": "kallen@example.com",
+      "state": "PA",
+      "zipcode": "19104"
+    },
+    "Children": ["Stella", "Logan"],
+    "salary": 128000
+  },
+  {
+    "userId": "32-109-8763",
+    "jobTitleName": "Social Worker",
+    "firstName": "Stephanie",
+    "lastName": "Sanchez",
+    "dataofjoining": "14/02/2022",
+    "contactinfo": {
+      "city": "San Antonio",
+      "phone": "210-555-0123",
+      "emailAddress": "ssanchez@example.com",
+      "state": "TX",
+      "zipcode": "78203"
+    },
+    "Children": ["Savannah"],
+    "salary": 93000
+  },
+  {
+    "userId": "21-098-7652",
+    "jobTitleName": "Teacher",
+    "firstName": "Richard",
+    "lastName": "Wright",
+    "dataofjoining": "05/03/2016",
+    "contactinfo": {
+      "city": "San Diego",
+      "phone": "619-555-1234",
+      "emailAddress": "rwright@example.com",
+      "state": "CA",
+      "zipcode": "92103"
+    },
+    "Children": ["Aria", "Gabriel"],
+    "salary": 69000
+  },
+  {
+    "userId": "10-987-6541",
+    "jobTitleName": "Nurse",
+    "firstName": "Kimberly",
+    "lastName": "King",
+    "dataofjoining": "22/07/2017",
+    "contactinfo": {
+      "city": "New York",
+      "phone": "212-555-5678",
+      "emailAddress": "kking@example.com",
+      "state": "NY",
+      "zipcode": "10004"
+    },
+    "Children": ["Allison", "Carter"],
+    "salary": 96000
+  },
+  {
+    "userId": "09-876-5430",
+    "jobTitleName": "Data Analyst",
+    "firstName": "Jeffrey",
+    "lastName": "Scott",
+    "dataofjoining": "03/11/2021",
+    "contactinfo": {
+      "city": "Chicago",
+      "phone": "312-555-9012",
+      "emailAddress": "jscott@example.com",
+      "state": "IL",
+      "zipcode": "60605"
+    },
+    "Children": ["Natalie"],
+    "salary": 107000
+  },
+  {
+    "userId": "98-765-4318",
+    "jobTitleName": "Software Engineer",
+    "firstName": "John",
+    "lastName": "Green",
+    "dataofjoining": "15/01/2019",
+    "contactinfo": {
+      "city": "Los Angeles",
+      "phone": "213-555-2345",
+      "emailAddress": "jgreen@example.com",
+      "state": "CA",
+      "zipcode": "90015"
+    },
+    "Children": ["Leah", "Julian"],
+    "salary": 200000
+  },
+  {
+    "userId": "87-654-3217",
+    "jobTitleName": "Accountant",
+    "firstName": "Angela",
+    "lastName": "Baker",
+    "dataofjoining": "18/09/2020",
+    "contactinfo": {
+      "city": "Houston",
+      "phone": "713-555-3456",
+      "emailAddress": "abaker@example.com",
+      "state": "TX",
+      "zipcode": "77005"
+    },
+    "Children": ["Aubrey", "Wyatt"],
+    "salary": 84000
+  },
+  {
+    "userId": "76-543-2106",
+    "jobTitleName": "Marketing Manager",
+    "firstName": "Timothy",
+    "lastName": "Adams",
+    "dataofjoining": "10/05/2018",
+    "contactinfo": {
+      "city": "Phoenix",
+      "phone": "602-555-6789",
+      "emailAddress": "tadams@example.com",
+      "state": "AZ",
+      "zipcode": "85004"
+    },
+    "Children": ["Claire", "Isaiah"],
+    "salary": 115000
+  },
+  {
+    "userId": "65-432-1095",
+    "jobTitleName": "Social Worker",
+    "firstName": "Rebecca",
+    "lastName": "Nelson",
+    "dataofjoining": "14/02/2022",
+    "contactinfo": {
+      "city": "Philadelphia",
+      "phone": "215-555-0123",
+      "emailAddress": "rnelson@example.com",
+      "state": "PA",
+      "zipcode": "19105"
+    },
+    "Children": ["Audrey"],
+    "salary": 95000
+  },
+  {
+    "userId": "54-321-0984",
+    "jobTitleName": "Teacher",
+    "firstName": "Brian",
+    "lastName": "Hill",
+    "dataofjoining": "05/03/2016",
+    "contactinfo": {
+      "city": "San Antonio",
+      "phone": "210-555-1234",
+      "emailAddress": "bhill@example.com",
+      "state": "TX",
+      "zipcode": "78204"
+    },
+    "Children": ["Bella", "Eli"],
+    "salary": 71000
+  },
+  {
+    "userId": "43-210-9873",
+    "jobTitleName": "Nurse",
+    "firstName": "Laura",
+    "lastName": "Ramirez",
+    "dataofjoining": "22/07/2017",
+    "contactinfo": {
+      "city": "San Diego",
+      "phone": "619-555-5678",
+      "emailAddress": "lramirez@example.com",
+      "state": "CA",
+      "zipcode": "92104"
+    },
+    "Children": ["Skylar", "Aaron"],
+    "salary": 99000
+  },
+  {
+    "userId": "32-109-8762",
+    "jobTitleName": "Data Analyst",
+    "firstName": "Steven",
+    "lastName": "Campbell",
+    "dataofjoining": "03/11/2021",
+    "contactinfo": {
+      "city": "New York",
+      "phone": "212-555-9012",
+      "emailAddress": "scampbell@example.com",
+      "state": "NY",
+      "zipcode": "10005"
+    },
+    "Children": ["Paisley"],
+    "salary": 112000
+  },
+  {
+    "userId": "21-098-7651",
+    "jobTitleName": "Software Engineer",
+    "firstName": "Eric",
+    "lastName": "Mitchell",
+    "dataofjoining": "15/01/2019",
+    "contactinfo": {
+      "city": "Chicago",
+      "phone": "312-555-2345",
+      "emailAddress": "emitchell@example.com",
+      "state": "IL",
+      "zipcode": "60606"
+    },
+    "Children": ["Anna", "Charles"],
+    "salary": 180000
+  },
+  {
+    "userId": "10-987-6540",
+    "jobTitleName": "Accountant",
+    "firstName": "Amy",
+    "lastName": "Roberts",
+    "dataofjoining": "18/09/2020",
+    "contactinfo": {
+      "city": "Los Angeles",
+      "phone": "213-555-3456",
+      "emailAddress": "aroberts@example.com",
+      "state": "CA",
+      "zipcode": "90016"
+    },
+    "Children": ["Caroline", "Thomas"],
+    "salary": 86000
+  },
+  {
+    "userId": "09-876-5429",
+    "jobTitleName": "Marketing Manager",
+    "firstName": "Sarah",
+    "lastName": "Carter",
+    "dataofjoining": "10/05/2018",
+    "contactinfo": {
+      "city": "Houston",
+      "phone": "713-555-6789",
+      "emailAddress": "scarter@example.com",
+      "state": "TX",
+      "zipcode": "77006"
+    },
+    "Children": ["Nova", "Levi"],
+    "salary": 130000
+  },
+  {
+    "userId": "98-765-4317",
+    "jobTitleName": "Social Worker",
+    "firstName": "Melissa",
+    "lastName": "Phillips",
+    "dataofjoining": "14/02/2022",
+    "contactinfo": {
+      "city": "Phoenix",
+      "phone": "602-555-0123",
+      "emailAddress": "mphillips@example.com",
+      "state": "AZ",
+      "zipcode": "85005"
+    },
+    "Children": ["Genesis"],
+    "salary": 97000
+  },
+  {
+    "userId": "87-654-3216",
+    "jobTitleName": "Teacher",
+    "firstName": "Mark",
+    "lastName": "Evans",
+    "dataofjoining": "05/03/2016",
+    "contactinfo": {
+      "city": "Philadelphia",
+      "phone": "215-555-1234",
+      "emailAddress": "mevans@example.com",
+      "state": "PA",
+      "zipcode": "19106"
+    },
+    "Children": ["Kennedy", "Josiah"],
+    "salary": 73000
+  },
+  {
+    "userId": "76-543-2105",
+    "jobTitleName": "Nurse",
+    "firstName": "Emily",
+    "lastName": "Turner",
+    "dataofjoining": "22/07/2017",
+    "contactinfo": {
+      "city": "San Antonio",
+      "phone": "210-555-5678",
+      "emailAddress": "eturner@example.com",
+      "state": "TX",
+      "zipcode": "78205"
+    },
+    "Children": ["Sadie", "Jeremiah"],
+    "salary": 101000
+  },
+  {
+    "userId": "65-432-1094",
+    "jobTitleName": "Data Analyst",
+    "firstName": "Paul",
+    "lastName": "Parker",
+    "dataofjoining": "03/11/2021",
+    "contactinfo": {
+      "city": "San Diego",
+      "phone": "619-555-9012",
+      "emailAddress": "pparker@example.com",
+      "state": "CA",
+      "zipcode": "92105"
+    },
+    "Children": ["Hazel"],
+    "salary": 108000
+  },
+  {
+    "userId": "54-321-0983",
+    "jobTitleName": "Software Engineer",
+    "firstName": "John",
+    "lastName": "Collins",
+    "dataofjoining": "15/01/2019",
+    "contactinfo": {
+      "city": "New York",
+      "phone": "212-555-2345",
+      "emailAddress": "jcollins@example.com",
+      "state": "NY",
+      "zipcode": "10006"
+    },
+    "Children": ["Brielle", "Ezekiel"],
+    "salary": 210000
+  },
+  {
+    "userId": "43-210-9872",
+    "jobTitleName": "Accountant",
+    "firstName": "Samantha",
+    "lastName": "Edwards",
+    "dataofjoining": "18/09/2020",
+    "contactinfo": {
+      "city": "Chicago",
+      "phone": "312-555-3456",
+      "emailAddress": "sedwards@example.com",
+      "state": "IL",
+      "zipcode": "60607"
+    },
+    "Children": ["Madelyn", "Hudson"],
+    "salary": 89000
+  },
+  {
+    "userId": "32-109-8761",
+    "jobTitleName": "Marketing Manager",
+    "firstName": "Ryan",
+    "lastName": "Stewart",
+    "dataofjoining": "10/05/2018",
+    "contactinfo": {
+      "city": "Los Angeles",
+      "phone": "213-555-6789",
+      "emailAddress": "rstewart@example.com",
+      "state": "CA",
+      "zipcode": "90017"
+    },
+    "Children": ["Autumn", "Lincoln"],
+    "salary": 135000
+  },
+  {
+    "userId": "21-098-7650",
+    "jobTitleName": "Social Worker",
+    "firstName": "Heather",
+    "lastName": "Flores",
+    "dataofjoining": "14/02/2022",
+    "contactinfo": {
+      "city": "Houston",
+      "phone": "713-555-0123",
+      "emailAddress": "hflores@example.com",
+      "state": "TX",
+      "zipcode": "77007"
+    },
+    "Children": ["Quinn"],
+    "salary": 102000
+  }
+]
