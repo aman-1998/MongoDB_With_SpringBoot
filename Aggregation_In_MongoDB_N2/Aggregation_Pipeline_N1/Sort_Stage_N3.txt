@@ -47,3 +47,47 @@ db.sales.aggregate([
 		}
 	}
 ]);
+
+
+=> Group students based on their state and sort on the basis of count in ascending order
+db.student.aggregate([
+	{
+		$match: {
+			"age": {$gt: 20}
+		}
+	},
+	{
+		$group: {
+			"_id": {"state": "$contactinfo.state"},
+			"count": {$sum: 1},
+			"student": {$addToSet: "$name"}
+		}
+	},
+	{
+		$sort: {
+			"count": 1
+		}
+	}
+]);
+
+
+=> Group students based on their department and sort on the basis of count in ascending order
+db.student.aggregate([
+	{
+		$match: {
+			"age": {$gt: 20}
+		}
+	},
+	{
+		$group: {
+			"_id": {"department": "$department"},
+			"count": {$sum: 1},
+			"student": {$addToSet: "$name"}
+		}
+	},
+	{
+		$sort: {
+			"count": 1
+		}
+	}
+]);

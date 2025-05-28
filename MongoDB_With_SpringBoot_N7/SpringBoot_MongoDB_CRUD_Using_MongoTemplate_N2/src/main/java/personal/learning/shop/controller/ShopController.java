@@ -3,8 +3,10 @@ package personal.learning.shop.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import personal.learning.genric.exception.ErrorPayload;
 import personal.learning.shop.entity.Car;
 import personal.learning.shop.entity.Sales;
 import personal.learning.shop.service.CarService;
@@ -49,6 +52,24 @@ public class ShopController {
 							@RequestParam(name = "seller", required = false) String seller) {
 		
 		salesService.delete(id, seller);
+	}
+	
+	@GetMapping("/car/classifybyprice")
+	public ResponseEntity<?> getCarsWithTypeClassification() {
+		
+		List<Document> carTypeByPrice = new ArrayList<>();
+		carTypeByPrice = carService.getCarsWithTypeClassification();
+		
+		return ResponseEntity.ok(carTypeByPrice);
+	}
+	
+	
+	@GetMapping("/sales/product")
+	public ResponseEntity<?> getSellersWhoSellParticularProductType(@RequestParam("productType") String productType) {
+		
+		List<Document> sellerList = new ArrayList<>();
+		sellerList = salesService.getSellersWhoSellParticularProductType(productType);
+		return ResponseEntity.ok(sellerList);
 	}
 
 }

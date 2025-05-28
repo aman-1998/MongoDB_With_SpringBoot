@@ -24,3 +24,42 @@ db.sales.aggregate([
 		}
 	}
 ]);
+
+
+=> Find Students who study Microprocessor
+db.student.aggregate([
+	{
+		"$unwind": "$subject"
+	},
+	{
+		$match: {
+			"subject": "Microprocessor"
+		}
+	},
+	{
+		$group: {
+			"_id": {"subject": "$subject"},
+			"count": {$sum: 1},
+			"student_name": {$push: "$name"} 
+		}
+	}
+]);
+
+
+=> Find sellers who sell Footwears
+db.sales.aggregate([
+	{
+		"$unwind": "$varietyOfProducts"
+	},
+	{
+		$match: {
+			"varietyOfProducts": "Footwears"
+		}
+	},
+	{
+		$group: {
+			"_id": {"subject": "$varietyOfProducts"},
+			"seller": {$addToSet: "$seller"} 
+		}
+	}
+]);

@@ -47,11 +47,14 @@ public class Student {
 
     @JsonProperty("bio")
     private String bio;
+    
+    @JsonProperty("contactInfo")
+    private Contactinfo contactinfo;
 
     public Student() { }
 
 	public Student(ObjectId id, String name, String firstName, String lastName, int age, int roll, String gender,
-			String department, List<String> subject, String bio) {
+			String department, List<String> subject, String bio, Contactinfo contactinfo) {
 		this.id = id;
 		this.name = name;
 		this.firstName = firstName;
@@ -62,6 +65,7 @@ public class Student {
 		this.department = department;
 		this.subject = subject;
 		this.bio = bio;
+		this.contactinfo = contactinfo;
 	}
 
 	// Getters and Setters
@@ -146,11 +150,19 @@ public class Student {
         this.bio = bio;
     }
 
+	public Contactinfo getContactinfo() {
+		return contactinfo;
+	}
+
+	public void setContactinfo(Contactinfo contactinfo) {
+		this.contactinfo = contactinfo;
+	}
+
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", firstName=" + firstName + ", lastName=" + lastName + ", age="
 				+ age + ", roll=" + roll + ", gender=" + gender + ", department=" + department + ", subject=" + subject
-				+ ", bio=" + bio + "]";
+				+ ", bio=" + bio + ", contactinfo=" + contactinfo + "]";
 	}
     
 }
