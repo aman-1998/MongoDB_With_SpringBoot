@@ -1,0 +1,711 @@
+{
+	"info": {
+		"_postman_id": "15e8a41a-0b52-4a27-8646-8b38911246a1",
+		"name": "MongoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35285717"
+	},
+	"item": [
+		{
+			"name": "Student min max age gender",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/school/student/ageandgender?minAge=21&maxAge=24&gender=Male",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"school",
+						"student",
+						"ageandgender"
+					],
+					"query": [
+						{
+							"key": "minAge",
+							"value": "21"
+						},
+						{
+							"key": "maxAge",
+							"value": "24"
+						},
+						{
+							"key": "gender",
+							"value": "Male"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Car by fuel_type and transmission",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/shoping/car?fuel=Petrol&transmission=Automatic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"shoping",
+						"car"
+					],
+					"query": [
+						{
+							"key": "fuel",
+							"value": "Petrol"
+						},
+						{
+							"key": "transmission",
+							"value": "Automatic"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Car by fuel_type",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/shoping/car?fuel=Petrol",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"shoping",
+						"car"
+					],
+					"query": [
+						{
+							"key": "fuel",
+							"value": "Petrol"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Car by transmission",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/shoping/car?transmission=Manual",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"shoping",
+						"car"
+					],
+					"query": [
+						{
+							"key": "transmission",
+							"value": "Manual"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert Sales",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"seller\": \"Aagarwal Store\",\r\n  \"varietyOfProducts\": [\r\n    \"Shirts\",\r\n    \"T-Shirts\",\r\n    \"Footwears\"\r\n  ],\r\n  \"shopRating\": 4.0,\r\n  \"productCategory\": \"Clothes\",\r\n  \"quantity\": 5,\r\n  \"price\": 250,\r\n  \"targetPrice\": 1400\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/shoping/sales",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"shoping",
+						"sales"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Sales",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/shoping/sales/delete?id=6831a772ae9a5a5b68157a1e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"shoping",
+						"sales",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6831a772ae9a5a5b68157a1e"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student name starts with",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/school/student/start?initials=Am",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"school",
+						"student",
+						"start"
+					],
+					"query": [
+						{
+							"key": "initials",
+							"value": "Am"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student insert",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sikha Jha\",\r\n    \"firstName\": \"Sikha\",\r\n    \"lastName\": \"Jha\",\r\n    \"age\": 22,\r\n    \"roll\": 117,\r\n    \"gender\": \"Female\",\r\n    \"department\": \"Information Technology\",\r\n    \"subject\": [\r\n        \"DBMS\",\r\n        \"Networking\",\r\n        \"OS\",\r\n        \"Java\"\r\n    ],\r\n    \"bio\": \"I love watching movies\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/school/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"school",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student age greater than",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/school/student/age?age=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"school",
+						"student",
+						"age"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student state and age pagination",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/school/student/stateandage?state=West%20Bengal&age=20&page=1&limit=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"school",
+						"student",
+						"stateandage"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "West%20Bengal"
+						},
+						{
+							"key": "age",
+							"value": "20"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student department and age pagination version1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/school/student/v1/deptandage?dept=Mechanical%20Engineering&age=20&page=1&limit=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"school",
+						"student",
+						"v1",
+						"deptandage"
+					],
+					"query": [
+						{
+							"key": "dept",
+							"value": "Mechanical%20Engineering"
+						},
+						{
+							"key": "age",
+							"value": "20"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student department and age pagination version2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/school/student/v2/deptandage?dept=Mechanical%20Engineering&age=20&page=1&limit=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"school",
+						"student",
+						"v2",
+						"deptandage"
+					],
+					"query": [
+						{
+							"key": "dept",
+							"value": "Mechanical%20Engineering"
+						},
+						{
+							"key": "age",
+							"value": "20"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Statewise student count age gt",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/school/student/stateWiseCount?age=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"school",
+						"student",
+						"stateWiseCount"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deptwise student count age gt",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/school/student/deptWiseCount?age=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"school",
+						"student",
+						"deptWiseCount"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Car classify by price",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/school/deptWiseCount?age=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"school",
+						"deptWiseCount"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student by subject ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/school/student/subject?sub=Microprocessor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"school",
+						"student",
+						"subject"
+					],
+					"query": [
+						{
+							"key": "sub",
+							"value": "Microprocessor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sellers by productType",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/shoping/sales/product?productType=Footwears",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"shoping",
+						"sales",
+						"product"
+					],
+					"query": [
+						{
+							"key": "productType",
+							"value": "Footwears"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
