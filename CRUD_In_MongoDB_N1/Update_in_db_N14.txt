@@ -26,6 +26,18 @@ db.dummyCourse.updateOne({"title": "System Design Bootcamp"},
 db.dummyCourse.updateOne({"title": "System Design Bootcamp"}, 
 					     {$set: {"hours": "18 hours", "comments.1.text": "Plz consider providing notes"}});
 						 
+
+db.student.updateOne({"roll": 142}, 
+	{
+		$set: {
+			"name": "Krunal Deshmukh",
+			"firstName": "Krunal",
+			"lastName": "Deshmukh",
+			"contactinfo.emailAddress": "krunaldeshmukh@google.com"
+		}
+	}
+);
+
 Explanation on positional operator($) :
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Based on filter condition, main document is filtered. After we got main document, 

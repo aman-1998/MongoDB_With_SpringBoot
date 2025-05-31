@@ -11,7 +11,7 @@ db.student.updateOne({"name": "Rajiv Ghai"},
 });
 
 ===========================================================================================
-Now, if age field does not exist in the docuemnt where name os "Rajiv Ghai" then 
+Now, if age field does not exist in the docuemnt where name is "Rajiv Ghai" then 
 age will be added in that document. But if there is no document where name is "Rajiv Ghai"
 then in that case nothing will happen.
 ===========================================================================================

@@ -116,7 +116,7 @@ Cons:
 ~~~~~
 -> Risk of hotspot due to hot-chunk. When most of the students belong to one particular
    range of age, say 20 to 30. In such case all writes will be directed on particular chunk.
-   So, ranged hashing may lead to hotspot sometimes.
+   So, ranged shading may lead to hotspot sometimes.
    
    
 2. Hashed Sharding:

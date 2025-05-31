@@ -1,0 +1,206 @@
+==============================================
+# Complex update using aggregation pipeline :
+==============================================
+
+Syntax:
+
+db.collection.updateOne(
+	{
+		<filter>
+	},
+	[
+		{<aggregation stage 1>},
+		{<aggregation stage 2>},
+		{<aggregation stage 3>},
+		...
+	]
+)
+
+
+=> Add Mr. in front of name where roll is 138
+db.student.updateOne(
+	{
+		"roll": 138
+	},
+	[
+		{
+			$set: {
+				"name": {
+					"$concat": ["Mr.", "$name"]
+				}
+			}
+		}
+	]
+);
+
+
+=> Add prefix in front of name where roll is 140. Make sure Mr. for male and Mrs. for female
+db.student.updateOne(
+	{
+		"roll": 140
+	},
+	[
+		{
+			$set: {
+				"name": {
+					"$concat": [
+						{
+							$cond: {
+								if: {$eq: ["$gender", "Male"]},
+								then: "Mr.",
+								else: "Mrs."
+							}
+						}, "$name"
+					]
+				}
+			}
+		}
+	]
+);
+
+
+=> Add discount field and its value should be 10 if target price is achieved
+db.sales.updateMany(
+	{},
+	[
+		{
+			$set: {
+				"discount": {
+					$cond: {
+						if: {$gte: [{$multiply: ["$price", "$quantity"]}, "$targetPrice"]},
+						then: 10,
+						else: 0
+					}
+				}
+			}
+		}
+	]
+);
+
+Verificaton:
+
+db.sales.find({
+	$expr: {
+		$gte: [{$multiply: ["$price", "$quantity"]}, "$targetPrice"]
+	}
+});
+
+
+=> Add totalPrice field and remove tempField
+db.products.updateMany(
+  {},
+  [
+    { $addFields: { totalPrice: { $multiply: ["$price", "$quantity"] } } },
+    { $unset: "tempField" }
+  ]
+);
+
+
+=> Combine fields into a subdocument
+db.employees.updateMany(
+  {},
+  [
+    {
+      $set: {
+        contact: {
+          phone: "$phone",
+          email: "$email"
+        }
+      }
+    },
+    { $unset: ["phone", "email"] }
+  ]
+);
+
+
+--------------------------------------------------------------------------------------
+Note: Below one is incorrect                                                          |
+-> MongoServerError: $unset specification must be a string or an array                |
+-> MongoDB server version does not support object-style $unset when used inside an    |
+   aggregation pipeline.                                                              |
+db.employees.updateMany(                                                          	  |
+  {},                                                                             	  |
+  [                                                                               	  |
+    {                                                                             	  |
+      $set: {                                                                     	  |
+        contact: {                                                                	  |
+          phone: "$phone",                                                        	  |
+          email: "$email"                                                         	  |
+        }                                                                         	  |
+      }                                                                           	  |
+    },                                                                            	  |
+    { $unset: {"phone": 1, "email": 1} }                                          	  |
+  ]                                                                               	  |
+);                                                                                	  |
+--------------------------------------------------------------------------------------
+
+
+=> Date transformation:
+db.logs.updateMany(
+  {},
+  [
+    {
+      $set: {
+        formattedDate: {
+          $dateToString: {
+            format: "%Y-%m-%d",
+            date: "$timestamp"
+          }
+        }
+      }
+    }
+  ]
+)
+
+=> Add contactinfo and random phone number.
+db.customer.updateOne(
+	{"cus_id": 1},
+	[
+		{
+			$set: {
+				"contactinfo": {
+					"email": "$email",
+					"phone": {
+						$concat: [
+							"9", 
+							{
+								$toString: {
+									$toInt: {
+										$multiply: [100000000, {$rand: {}}]
+									}
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			$unset: ["email"]
+		}
+	]
+);
+
+
+=> Add random phone number for all students.
+db.student.updateMany(
+	{},
+	[
+		{
+			$set: {
+				"contactinfo.phone": {
+					$concat: [
+						"9",
+						{
+							$toString: {
+								$toInt: {
+									$multiply: [100000000, {$rand: {}}]
+								}
+							}
+						}
+					]
+				}
+			}
+		}
+	]
+);

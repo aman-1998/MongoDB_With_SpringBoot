@@ -8,6 +8,12 @@ Syntax: db.dummyCourse.deleteOne({filterCondition});
 
 db.dummyCourse.deleteOne({"hours": "36 hrs"});
 
+db.sales.deleteOne({ 
+  $expr: { 
+    $gt: [{ $multiply: ["$price", "$quantity"] }, 1000] 
+  } 
+});
+
 
 -------------------------
 2. delete many document:
@@ -18,3 +24,9 @@ use udemy;
 Syntax: db.dummyCourse.deleteMany({filterCondition});
 
 db.dummyCourse.deleteMany({"hours": "25 hrs"});
+
+db.sales.deleteMany({ 
+  $expr: { 
+    $gt: [{ $multiply: ["$price", "$quantity"] }, 1000] 
+  } 
+});
